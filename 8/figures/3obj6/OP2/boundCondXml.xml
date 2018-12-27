@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+
+<HydroBoundaryConditions>
+    <Density Rho='998.2'/>
+    <Rotation BladeRowName='Stator' Speed='0.0'/>
+    <Rotation BladeRowName='Rotor' Speed='141.339'/>
+    <BoundaryConditions Projekt='StatorRotor'>
+	<BoundaryInlet Type='IN_STAG_DISTRIB' Name='Inlet' ExtrapolOrder='0' PrescribeOnFace='1'>
+	<Parameter FileName='p0_prof.txt'>
+	</Parameter>
+	<BoundaryName Name='WestEnd' BladeRowName='Stator'>
+	</BoundaryName>
+	</BoundaryInlet>
+	<BoundaryOutlet Type='OUT_PSTAG_BY_EQUILIB' Name='Outlet' ExtrapolOrd='1' PrescribeOnFace='1'>
+	<Parameter PStag='0' RadOfRadEqu='0.178358' RefreshFac='0.1'>
+	</Parameter>
+	<BoundaryName Name='EastEnd' BladeRowName='Rotor'>
+	</BoundaryName>
+	</BoundaryOutlet>
+        <BoundaryInterface Type='INTER_PRESS_ALLAVERAGE' Name='Interface' ExtrapolOrd='0' ValOnFace='0'>
+            <BoundaryName Name='EastEnd' BladeRowName='Stator'/>
+            <BoundaryName Name='WestEnd' BladeRowName='Rotor'/>
+        </BoundaryInterface>
+        <BoundaryWall Type='SOLID_WALL' Name='MainBladeStator'>
+            <BoundaryName Name='SolidWall' BladeRowName='Stator'/>
+        </BoundaryWall>
+        <BoundaryWall Type='SOLID_WALL' Name='HubStator'>
+            <BoundaryName Name='SolidWallHub' BladeRowName='Stator'/>
+        </BoundaryWall>
+        <BoundaryWall Type='SOLID_WALL' Name='ShroudStator'>
+            <BoundaryName Name='SolidWallShroud' BladeRowName='Stator'/>
+        </BoundaryWall>
+        <BoundaryWall Type='SOLID_WALL' Name='MainBladeRotor'>
+            <BoundaryName Name='SolidWall' BladeRowName='Rotor'/>
+        </BoundaryWall>
+        <BoundaryWall Type='SOLID_WALL' Name='HubRotor'>
+            <BoundaryName Name='SolidWallHub' BladeRowName='Rotor'/>
+        </BoundaryWall>
+        <BoundaryWall Type='SOLID_WALL' Name='ShroudRotor'>
+            <BoundaryName Name='SolidWallShroud' BladeRowName='Rotor'/>
+        </BoundaryWall>
+    </BoundaryConditions>
+    <Density Rho='1000'/>
+</HydroBoundaryConditions>

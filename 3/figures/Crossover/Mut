@@ -1,0 +1,45 @@
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Mutation.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xlabel 'd'
+set ylabel 'P'
+set parametric
+set samples 10000
+###
+# the function integral_f(x) approximates the integral of f(x) from 0 to x.
+# integral2_f(x,y) approximates the integral from x to y.
+# define f(x) to be any single variable function
+#
+# the integral is calculated using Simpson's rule as 
+#          ( f(x-delta) + 4*f(x-delta/2) + f(x) )*delta/6
+# repeated x/delta times (from x down to 0)
+#
+delta = 0.1
+#  delta can be set to 0.025 for non-MSDOS machines
+#
+# integral_f(x) takes one variable, the upper limit.  0 is the lower limit.
+# calculate the integral of function f(t) from 0 to x
+# choose a step size no larger than delta such that an integral number of
+# steps will cover the range of integration.
+integral_f(x) = (x>0)?int1a(x,x/ceil(x/delta)):-int1b(x,-x/ceil(-x/delta))
+int1a(x,d) = (x<=d*.1) ? 0 : (int1a(x-d,d)+(ff(x-d)+4*ff(x-d*.5)+ff(x))*(f(x)-f(x-d))/6.)
+int1b(x,d) = (x>=-d*.1) ? 0 : (int1b(x+d,d)+(ff(x+d)+4*ff(x+d*.5)+ff(x))*(f(x)-f(x-d))/6.)
+#
+integral_f1(x) = (x>0)?int11a(x,x/ceil(x/delta)):-int11b(x,-x/ceil(-x/delta))
+int11a(x,d) = (x<=d*.1) ? 0 : (int11a(x-d,d)+(ff(x-d)+4*ff(x-d*.5)+ff(x))*(f1(x)-f1(x-d))/6.)
+int11b(x,d) = (x>=-d*.1) ? 0 : (int11b(x+d,d)+(ff(x+d)+4*ff(x+d*.5)+ff(x))*(f1(x)-f1(x-d))/6.)
+###3
+f(t)=t**2
+ff(t)=1/sqrt(2*pi*(1.0/6.0)**2)*exp(-(t-0.5)**2/(2*(1.0/6.0)**2))
+f1(t)=t**5
+
+#p f(t),ff(t)/integral_f(1.0)  t'n = 2' ,f1(t),ff(t)/integral_f1(1.0) t'n = 5',f(t),integral_f(t)/integral_f(1.0),f1(t),integral_f1(t)/integral_f1(1.0) 
+p f(t),ff(t)/integral_f(1.0)  t'n = 2' ,f1(t),ff(t)/integral_f1(1.0) t'n = 5',f(t),1 t'uniform'
+

@@ -1,0 +1,6 @@
+set isosample 40,40
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 10 
+sp './new_fit.fit' u 1:2:($7/10000) with pm3d 
+

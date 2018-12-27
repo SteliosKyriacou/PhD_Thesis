@@ -1,0 +1,40 @@
+%Nomenclature
+\thispagestyle{empty}
+%
+%
+%
+\selectlanguage{english}
+{\bf Nomeclature}
+\begin{table}[h!]
+\begin{tabular}{ ll }
+\textbf{EA} &  \greek{Εξελικτικός Αλγόριθμος}\\
+\textbf{EA} & Evolutionary Algorithm \\
+\\
+\textbf{\greek{ΠΠΑ}} & \greek{Προσεγγιστική Προ-Αξιολόγηση}\\
+\textbf{IPE} & Inexact Pre-Evaluation \\
+\\
+\textbf{\greek{ΥΡΔ}} & \greek{Υπολογιστική Ρευστοδυναμική}\\
+\textbf{CFD} & Computational Fluid Dynamics\\
+\\
+\textbf{\greek{ΑσΚΣ}} & \greek{Ανάλυση σε Κύριες Συνιστώσες}\\
+\textbf{PCA} & Principal Component Analysis\\
+\\
+\textbf{\greek{ΜΦ}} & \greek{Μερικό Φορτίο}\\
+\textbf{PL}       & Part Load\\
+\\
+\textbf{\greek{ΠΦ}} & \greek{Πλήρες Φορτίο}\\
+\textbf{FL}       & Full Load\\
+\\
+\textbf{\greek{ΜΑ}} & \greek{Μέγιστη Απόδοση}\\
+\textbf{BE}       & Best Efficiency\\
+\\
+\textbf{MAEA} & Metamodel-Assisted Evolutionary Algorithm \\
+\textbf{HEA} & Hierarchical Evolutionary Algorithm \\
+\textbf{KBD} & Knowledge Based Design\\
+\textbf{MAEA(PCA)} & MAEA with PCA-Driven Evolution Operators\\
+\textbf{M(PCA)AEA(PCA)} & MAEA(PCA) with PCA-Driven Metamodels\\
+\textbf{TE}       & Trailing Edge\\
+\textbf{LE}       & Leading Edge\\
+\end{tabular}
+\end{table}
+\selectlanguage{greek}

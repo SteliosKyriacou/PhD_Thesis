@@ -1,0 +1,12 @@
+A sixth PhD, {Ref, Kontoleontos etc} also used the EASY platform to PARE KATI APO TIN AGGLIKI PERILIPSI tis pou sou stelnw.
+Min anafertheis se projects klp. Den se aforoun!!!!!!
+ 
+The AEA was also used for the optimization of heat transfer systems, such as
+geothermal power plants and ground source heat pump systems. Regarding the
+geothermal power plants, the design and the development of an Organic Rankine
+Cycle (ORC) prototype, using low temperature geothermal resources, was the main
+goal of the European project LOW-BIN (Efficient Low Temperature Geothermal
+Binary Power, FP6). CRES (Centre for Renewable Energy Sources and Saving,
+Greece) was the coordinator of this project and the contribution of PCOpt/LTT,
+as reflected in this thesis, was to provide expertise on optimization methods for the
+design of an efficient, low-cost ORC.

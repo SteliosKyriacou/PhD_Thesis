@@ -1,0 +1,67 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces GEA nomenclature}}{26}{table.caption.12}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces The Welded Beam Case: Exact response and RBF network predictions of $f_1$ and $f_2$ at A, using either $x_1$ or $x_2$ as the only input to the network.\relax }}{84}{table.caption.64}
+\contentsline {table}{\numberline {4.2}{\ignorespaces The Welded Beam Case: Exact responses and RBF network predictions of $f_1$ and $f_2$ at A, using either $e_1$ or $e_2$ as the only input to the network.\relax }}{84}{table.caption.65}
+\addvspace {10\p@ }
+\select@language {greek}
+\select@language {english}
+\contentsline {table}{\numberline {5.1}{\ignorespaces The design variables used to parameterize the Francis runner.\relax }}{110}{table.caption.89}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Optimization of a Francis Turbine: Operating point weights.\relax }}{111}{table.caption.91}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Optimization of a Francis Turbine: Constraints per operating point.\relax }}{112}{table.caption.92}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Optimization of a Francis Turbine: Quality metrics (objectives and constraints) for the 3 archived designs (B1, B2 and B3) for all operating points (BE, PL and FL). An asterisk (*) next to an inequality means that the corresponding constraint is violated\relax }}{114}{table.caption.94}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Optimization of a Francis Turbine: The $6$ Groups defining the $6 \times 3=18$ optimization variables out of the $19$ used in the KBD method.\relax }}{122}{table.caption.104}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Optimization of a Francis Turbine: Quality metrics (objectives and constraints) regarding the chosen design A for all operating points (BE, PL $\&$ FL). The design is safe from cavitation at all operating points and operates within the desirable range.\relax }}{123}{table.caption.108}
+\contentsline {table}{\numberline {5.7}{\ignorespaces The $52$ design variables used to parameterize the Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$ runner. This is the array of design variables the EA is dealing with.\relax }}{135}{table.caption.118}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Optimization of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$ Turbine: Weights associated with the quality-metrics. Based on these weights, the quality metrics are grouped into two objective functions $f_1$ and $f_2$.\relax }}{136}{table.caption.119}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Optimization of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$ Turbine: Operating point weights.\relax }}{137}{table.caption.121}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Experimental validation of the design of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$: The three operating points.\relax }}{166}{table.caption.140}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\contentsline {table}{\numberline {B.2}{\ignorespaces Experimental validation of the design of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$: Weights associated with the grouping of quality-metrics into objectives.\relax }}{166}{table.caption.141}
+\contentsline {table}{\numberline {B.3}{\ignorespaces Experimental validation of the design of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$: Operating point weights.\relax }}{167}{table.caption.142}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}

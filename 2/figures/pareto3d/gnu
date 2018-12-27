@@ -1,0 +1,2 @@
+sp './DominatedGrid.dat' pt 1 ps 1  linecolor rgb "grey" t'','./out_L1_G2.log' u ($1/0.08):($2/0.24):($3/1.5) pt 7 lw 15 linecolor rgb "black" t'A','./ab' pt 7  linecolor rgb "red" t'(b1,b2,b3)'
+

@@ -1,0 +1,24 @@
+%Nomenclature
+\thispagestyle{empty}
+%
+%
+%
+{\bf Nomeclature}
+\begin{table}[h!]
+\begin{tabular}{ ll }
+\textbf{CFD} & Computational Fluid Dynamics\\
+\textbf{EA} & Evolutionary Algorithm \\
+\textbf{MAEA} & Metamodel Assisted Evolutionary Algorithm \\
+\textbf{HEA} & Hierarchical Evolutionary Algorithm \\
+\textbf{IPE} & Inexact Pre-Evaluation \\
+\textbf{KBD} & Knowledge Based Design\\
+\textbf{PCA} & Principal Component Analysis\\
+\textbf{MAEA(PCA)} & MAEA with PCA-Driven Evolution Operators\\
+\textbf{M(PCA)AEA(PCA)} & MAEA(PCA) with PCA-Driven Metamodels\\
+\textbf{TE}       & Trailing Edge\\
+\textbf{LE}       & Leading Edge\\
+\textbf{PL}       & Part Load\\
+\textbf{FL}       & Full Load\\
+\textbf{BE}       & Best Efficiency\\
+\end{tabular}
+\end{table}

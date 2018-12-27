@@ -1,0 +1,20 @@
+reset
+set term post eps m enhanced
+set output 'tpsExample.eps'
+set size 0.6,0.6
+set parametric
+set grid
+set xr[0:1]
+set yr[0:1]
+set xtics 0, 0.1, 1
+set ytics 0, 0.1, 1
+set size ratio -1
+set xlabel 'x_1' 0.5,0.0 
+set ylabel 'x_2' 1.0,0.0 
+set ticslevel 0.4
+unset key
+plot [0:2*pi] (sin(t)+1.5)/5,(cos(t)+1.5)/5 lw 2, \
+              (sin(t)+4.5)/5,(cos(t)+4.5)/5 lw 2 lt 1, \
+'sqF.dat'  u 1:2 w p pt 5  ps 1.5 lt 3 lw 2, \
+'sqE.dat'  u 1:2 w p pt 4  ps 1.5 lt 3 lw 2, \
+'trig.dat' u 1:2 w p pt 8  ps 1.5 lt 3 lw 2

@@ -1,0 +1,30 @@
+% Thesis Acknowledgements ------------------------------------------------
+
+
+%\begin{acknowledgementslong} %uncommenting this line, gives a different acknowledgements heading
+\begin{acknowledgements}      %this creates the heading for the acknowlegments
+%This thesis was performed in close collaboration with ANDRITZ HYDRO GmbH based on their experience and tools.
+I would like to express my deep and sincere gratitude to my supervisor, Professor Kyriakos Giannakoglou, Lab of Thermal Turbomachines and Head of the Parallel CFD \& Optimization Unit, School of Mechanical Engineering, National Technical University of Athens. His wide knowledge and structured way of thinking have been of great value for me. His understanding, encouraging and personal guidance have provided a good basis for the present thesis.
+
+I also would like to thank Dr. K. Mathioudakis and Dr. J. Anagnostopoulos for their valuable comments and participation in the advisory committee of my PhD thesis.
+
+I am deeply grateful to Erwin Oberbichler, Simon Weissenberger and Peter Grafenberger (Andritz Linz) for guiding me into the inner workings of hydraulic turbines and, above all, sharing their experience and knowledge on what the optimal turbine should really look like. I also wish to thank all of my colleges in Andritz Linz for their detailed and constructive comments, and for their important support throughout this work. 
+
+I wish to express my warm and sincere thanks to Arno Gehrer (Andritz Graz) for sharing his ideas and concepts on optimization regarding hydraulic pumps and pump-turbines and Irida Skouteropoulou (Andritz Graz) and Kostas Tsiakas (ex Andritz Graz and, currently PhD student at NTUA) for implementing and testing some of the optimization methods developed in this PhD thesis. Furthermore I would like to thank Etienne Parkinson and  Florent Champet (Andritz Vevey) for their ideas concerning optimization of pelton distributors. 
+
+My warm thanks are due to Paul Pieringer and Livia Koch for providing parameterization, grid generation and flow solver tools used for the industrial-scale hydraulic turbine optimization problems solved in this thesis.      
+
+I warmly thank Dr. Ioannis Kampolis for laying the stable foundations on which this thesis was built upon and guiding me during my early research years. Also, i would like to thank Dr. Varvara Asouti for her valuable help in the field of Evolutionary Algorithms.
+
+During this PhD thesis, I have collaborated with many colleagues, from the PCOpt/NTUA, for whom I have great regard. Without exception, all new ideas/methods presented in this thesis have their roots in constructive conversations with them and for that I warmly thank them.   
+
+Last but not least, I owe my loving thanks to my family, Antonis, Anna and Nektaria Kyriacou.  Without their encouragement and understanding it would have been impossible for me to finish this PhD thesis. 
+
+The financial support of ANDRITZ HYDRO and the EU project named ``HYDROACTION-Development and laboratory testing of improved action and Matrix hydro turbines designed by advanced analysis and optimization tools" (PROJECT NUMBER : 211983) is gratefully acknowledged.
+
+\end{acknowledgements}
+%\end{acknowledgmentslong}
+
+% ------------------------------------------------------------------------
+
+

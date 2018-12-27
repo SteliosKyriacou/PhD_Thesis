@@ -1,0 +1,18 @@
+# objective_id_number	Weight_factor	on/off
+16
+0 1 0 		! mass Flow OutletKC.opt
+0 1 0		! Swirl  OutletKC.opt
+2 0.2 0		! Sum of Profiles Load Median Deviation 
+0 0 0		! Sum of SS monotony Changes 
+0 0 0		! Sum of monotony Changes  
+2 100 0		! Sum of BAD CP Profile  
+0 1 0		! hptot  
+0 1 0		! hMzRot
+0 1 0		! minus hMzRot
+0 1 0		! hcuRot();
+0 -1 0		! sigma_his_rotor_blade
+0 1 0		! sigma_his_rotor_hub
+0 1 0		! sigma_his_rotor_shroud 
+0 0.1 0  	! Sum of Profiles Load Median Deviation  spanwise
+0 1 1		! SUM ALL RESIDUALS
+0 1 1		! massFlow 

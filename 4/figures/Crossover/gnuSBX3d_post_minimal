@@ -1,0 +1,41 @@
+#Need results from gnuSBX3dPCA (set tables)
+reset
+set term post eps m enhanced
+#set term post eps color
+set output 'SBX3dparents2.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set title"SBX (n=0)" 
+set grid
+set view map
+set samples 100, 100
+set isosamples 100, 100
+unset surface
+set contour base
+set cntrparam bspline
+
+
+set xr[0:8]
+set yr[0:8]
+
+sp './SBX3dparents2.dat' u 1:2:3  t ""
+reset
+set term post eps m enhanced
+#set term post eps color
+set output 'SBX3dparents2PCA.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set title"SBX (n=0)" 
+set grid
+set view map
+set samples 25, 25
+set isosamples 26, 26
+unset surface
+set contour base
+set cntrparam bspline
+
+
+set xr[0:8]
+set yr[0:8]
+
+sp './SBX3dparents2PCA.dat' u 1:2:3  t ""

@@ -1,0 +1,32 @@
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+set output 'mathCorr.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set pm3d map 
+set xl "X1"
+set yl "X2"
+set xr [-1:1]
+set yr [-1:1]
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp (x+y)**2 with pm3d  t''
+
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+set palette gray 
+set output 'CaseCorr2.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+#set zr [0:5.5]
+#set yr [0.0:10]
+set pm3d map 
+set xl 'X1'
+set yl 'X2'
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u 1:2:($7/10000) with pm3d  t''

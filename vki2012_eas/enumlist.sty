@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  A slight modification of the standard LaTeX list environment: keep
+%  increasing the counter (in an enumerated list), even if an iterm argument
+%  is present.
+%
+%  10 Jun 2005, Marios K. Karakasis
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{enumlist}[2005/06/10 Enumeration List]
+
+\newcommand{\eolsymbol}{}
+
+\def\list#1#2{%
+  \ifnum \@listdepth >5\relax
+    \@toodeep
+  \else
+    \global\advance\@listdepth\@ne
+  \fi
+  \rightmargin\z@
+  \listparindent\z@
+  \itemindent\z@
+  \csname @list\romannumeral\the\@listdepth\endcsname
+  \def\@itemlabel{#1}%
+  \let\makelabel\@mklab
+  \@nmbrlistfalse
+  #2\relax
+  \@trivlist
+  \parskip\parsep
+  \parindent\listparindent
+  \advance\linewidth -\rightmargin
+  \advance\linewidth -\leftmargin
+  \advance\@totalleftmargin \leftmargin
+  \parshape \@ne \@totalleftmargin \linewidth
+  \ignorespaces}
+\newcount\par@deathcycles
+\def\@trivlist{%
+  \if@noskipsec \leavevmode \fi
+  \@topsepadd \topsep
+  \ifvmode
+    \advance\@topsepadd \partopsep
+  \else
+    \unskip \par
+  \fi
+  \if@inlabel
+    \@noparitemtrue
+    \@noparlisttrue
+  \else
+    \if@newlist \@noitemerr \fi
+    \@noparlistfalse
+    \@topsep \@topsepadd
+  \fi
+  \advance\@topsep \parskip
+  \leftskip \z@skip
+  \rightskip \@rightskip
+  \parfillskip \@flushglue
+  \par@deathcycles \z@
+  \@setpar{\if@newlist
+             \advance\par@deathcycles \@ne
+             \ifnum \par@deathcycles >\@m
+               \@noitemerr
+               {\@@par}%
+             \fi
+           \else
+             {\@@par}%
+           \fi}%
+  \global \@newlisttrue
+  \@outerparskip \parskip}
+\def\trivlist{%
+  \parsep\parskip
+  \@nmbrlistfalse
+  \@trivlist
+  \labelwidth\z@
+  \leftmargin\z@
+  \itemindent\z@
+  \let\@itemlabel\@empty
+  \def\makelabel##1{##1}}
+\def\endlist{%
+	\eolsymbol
+  \global\advance\@listdepth\m@ne
+  \endtrivlist}
+\def\endtrivlist{%
+  \if@inlabel
+    \leavevmode
+    \global \@inlabelfalse
+  \fi
+  \if@newlist
+    \@noitemerr
+    \global \@newlistfalse
+  \fi
+  \ifhmode\unskip \par\fi
+  \if@noparlist \else
+    \ifdim\lastskip >\z@
+      \@tempskipa\lastskip \vskip -\lastskip
+      \advance\@tempskipa\parskip \advance\@tempskipa -\@outerparskip
+      \vskip\@tempskipa
+    \fi
+    \@endparenv
+  \fi
+}
+\def\@endparenv{%
+  \addpenalty\@endparpenalty\addvspace\@topsepadd\@endpetrue}
+\def\@doendpe{\@endpetrue
+     \def\par{\@restorepar\everypar{}\par\@endpefalse}\everypar
+               {{\setbox\z@\lastbox}\everypar{}\@endpefalse}}
+\newif\if@endpe
+\@endpefalse
+\def\@mklab#1{\hfil #1}
+\def\item{%
+  \@inmatherr\item
+  \@ifnextchar [\@item{\@noitemargtrue \@item[\@itemlabel]}}
+\def\@donoparitem{%
+  \@noparitemfalse
+  \global\setbox\@labels\hbox{\hskip -\leftmargin
+                               \unhbox\@labels
+                                \hskip \leftmargin}%
+  \if@minipage\else
+    \@tempskipa\lastskip
+    \vskip -\lastskip
+    \advance\@tempskipa\@outerparskip
+    \advance\@tempskipa -\parskip
+    \vskip\@tempskipa
+  \fi}
+\def\@item[#1]{%
+  \if@noparitem
+    \@donoparitem
+  \else
+    \if@inlabel
+      \indent \par
+    \fi
+    \ifhmode
+      \unskip\unskip \par
+    \fi
+    \if@newlist
+      \if@nobreak
+        \@nbitem
+      \else
+        \addpenalty\@beginparpenalty
+        \addvspace\@topsep
+        \addvspace{-\parskip}%
+      \fi
+    \else
+      \addpenalty\@itempenalty
+      \addvspace\itemsep
+    \fi
+    \global\@inlabeltrue
+  \fi
+  \everypar{%
+    \@minipagefalse
+    \global\@newlistfalse
+    \if@inlabel
+      \global\@inlabelfalse
+      {\setbox\z@\lastbox
+       \ifvoid\z@
+         \kern-\itemindent
+       \fi}%
+      \box\@labels
+      \penalty\z@
+    \fi
+    \if@nobreak
+      \@nobreakfalse
+      \clubpenalty \@M
+    \else
+      \clubpenalty \@clubpenalty
+      \everypar{}%
+    \fi}%
+  % mkk:	
+  % Commented to keep increasing the counter, even when an item arg exists:
+  %\if@noitemarg
+  %  \@noitemargfalse
+    \if@nmbrlist
+      \refstepcounter\@listctr
+    \fi
+  %\fi
+  \sbox\@tempboxa{\makelabel{#1}}%
+  \global\setbox\@labels\hbox{%
+    \unhbox\@labels
+    \hskip \itemindent
+    \hskip -\labelwidth
+    \hskip -\labelsep
+    \ifdim \wd\@tempboxa >\labelwidth
+      \box\@tempboxa
+    \else
+      \hbox to\labelwidth {\unhbox\@tempboxa}%
+    \fi
+    \hskip \labelsep}%
+  \ignorespaces}
+\def\makelabel#1{%
+  \@latex@error{Lonely \string\item--perhaps a missing
+        list environment}\@ehc}
+\def\@nbitem{%
+  \@tempskipa\@outerparskip
+  \advance\@tempskipa -\parskip
+  \addvspace\@tempskipa}
+\def\usecounter#1{\@nmbrlisttrue\def\@listctr{#1}\setcounter{#1}\z@}
+

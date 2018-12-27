@@ -1,0 +1,98 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+\chapter{Introduction}
+
+%\begin{flushright}
+%I am just now beginning to discover the difficulty 
+%\linebreak
+%of expressing one's ideas on paper. As long as it 
+%\linebreak
+%consists solely of description it is pretty easy, but  
+%\linebreak
+%where reasoning comes into play, to make a proper
+%\linebreak
+%connection, a clearness \& a moderate fluency, is to me,   
+%\linebreak
+%as i have said, a difficulty of which i had no idea.
+%\linebreak
+%C. Darwin
+%\end{flushright}
+\ifpdf
+    \graphicspath{{1_introduction/figures/PNG/}{1_introduction/figures/PDF/}{1_introduction/figures/}}
+\else
+    \graphicspath{{1_introduction/figures/EPS/}{1_introduction/figures/}}
+\fi
+
+%: ----------------------- HELP: latex document organisation
+% the commands below help you to subdivide and organise your thesis
+%    \chapter{}       = level 1, top level
+%    \section{}       = level 2
+%    \subsection{}    = level 3
+%    \subsubsection{} = level 4
+% note that everything after the percentage sign is hidden from output
+
+Goal of this PhD thesis was to propose, develop and validate new methods aiming at transforming Evolutionary Algorithms (EAs) into a viable, fast, design/optimization tool for turbo-Machines (focusing on hydraulic turbines). The resulting EA, equipped with all the methods proposed by this thesis, should be able to return high quality designs into acceptable, by industrial standards, time. The above qualities are necessary for a design optimization tool to be used successfully/frequently as one of the main design tools in an industrial environment. To achieve that, firstly, a method that exploits all the available information, in the form of archived designs that took place for similar projects in the past, should be devised.  For this purpose this PhD thesis proposes the combination of Knowledge based systems (KBS) with EAs succeeding in creating a very fast hybrid method named Knowledge based design (KBD). Furthermore the deterioration of EA efficiency/speed when dealing with problems with correlated design variables and the fact that optimization problems like turbo-machine design typically belong in that category motivated the development of a method that could regain a big portion of the lost efficiency. This method resulted in a innovative way to recognise the aforementioned correlations and the introduction of new evolution operators that can exploit them, the so-called PCA-driven evolution operators. A side product of the variable correlation recognition method was the assignment of importance to each and every design variable (or to be more precise direction in the design space). This fact inspired the use of the aforementioned importance information in a dimension reduction step during the use of artificial neural networks (ANNs) as metamodels and thus avoiding the curse of dimensionality. 
+
+All of the aforementioned methods are validated, during this PhD thesis, in cases raging from, common in literature,  mathematical tests to 2D compressor cascade design and finally to real industrial 3D Hydro turbines and a real 3D compressor cascade with tip clearance installed in LTT/NTUA. The mathematical test cases give the ability to investigate the performance of the proposed methods in a number of different random number generator seedings ensuring the observations. 2D cases allow the demonstration of the methods in simple aerodynamic optimization cases. Furthermore two types of hydro-turbines, a traditional Francis and a new type of hydro-turbine named HYDROMATRIX$\circledR$, are used to validate the performance of the aforementioned methods in an industrial environment. Finally the 3D compressor cascade installed in LTT/NTUA is optimized.     
+
+
+This PhD thesis is a continuation of a number of previous PhDs \cite{phd_Giotis,phd_Karakasis,phd_Kampolis,phd_Vera} form the PCOpt/NTUA that had created the algorithmic basis (platform) on which the new methods where build upon. This platform offering the basic EA enhanced with efficient use of parallel systems (PEA), incorporation of ANNs as metamodels (MAEA) and Hierarchical optimization schemes (HEA) provided fertile ground for the new methods proposed by this PhD thesis to build upon.                       
+ 
+A review on the previews works by PCOpt this thesis has build upon and the thesis structure follow.
+
+\section{Previews work by LTT/NTUA} % section headings are printed smaller than chapter names
+This PhD thesis comprises a continuations of $4$ older PhDs of PCOpt/NTUA. First among them \cite{phd_Giotis} has introduced a generalised EA able to combine components of the two major EA families namely Evolutionary Strategies (ESs) and Genetic Algorithms (GAs). Furthermore, during the same thesis, the use of artificial neural networks as metamodels was proposed in order to increase EA efficiency/speed. For the same reason, parallel processing via PVM protocol was also introduced. 
+
+The second PhD thesis \cite{phd_Karakasis} aimed at improving EA efficiency focusing on the use of metamodels for multi objective optimization problems. During the same PhD thesis the introduction of distributed EA was proposed aiming at increasing the parallel efficiency of EAs, improving convergence and avoiding premature population stagnation. Furthermore the notion of Hierarchical EA was introduced for the first time during this PhD, and refined later in \cite{phd_Kampolis}.    In \cite{phd_Karakasis} the use of distributed EA at each level associated with different evaluation models was proposed.
+
+In \cite{phd_Kampolis} hierarchical EA was refined introducing apart form    hierarchy in the evaluation tool also in parameterization and even search method thus making possible the combination of EAs with other, deterministic, search methods combining the merits of both stochastic and deterministic optimization methods. Furhtermore the introduction of gradient trained artificial neural networks was proposed during the same thesis.          
+
+The final PhD thesis \cite{phd_Vera} aimed at increasing the parallel efficiency of EAs. This was achieved by the introduction of the so-called asynchronous EA (AEA). AEAs,  by utilizing a number of strongly interconnected demes, managed to avoid the "end of generation" synchronization barrier and thus optimally use all the available processors.    
+
+\section{Thesis Structure} % section headings are printed smaller than chapter names
+A short overview of the chapters of this PhD thesis follows:
+
+Chapter $2$ presents the, pre-existing, algorithmic basis of this PhD. This includes the generalized EA with all its evolution operators, the metamodel assisted EA and the Hierarchical EA.
+
+Chapter $3$ is devoted in the first innovative method proposed in this PhD thesis, the knowledge based design (KBD). During this chapter a short overview of knowledge based systems and specially the case based reasoning (CBR) is offered for reasons of clarity. Furthermore the proposed KBD method is presented in detail and finally the design of a 2D compressor cascade is used to demonstrate the merits of the newly proposed method.
+
+Chapter $4$ deals with variable correlation in optimization problems. First the effects of variable correlation on EA efficiency are investigated. Furthermore an innovative way to estimate this variable correlations, in the form of directions in the design space, is proposed.   New evolution operators, the sa-called PCA-driven evolution operators in order to recover the lost EA efficiency due to the correlated design variables are, then, proposed and validated. Furthermore the use of the importance information, resulting form the "variable correlation" estimation technique, is used to enhance metamodel efficiency. Finally the combined gain of the aforementioned proposed methods is validated through a 2D compressor cascade design/optimization case.
+
+In chapter $5$ the efficiency gains from the use of the methods proposed in this thesis are validated in real industrial cases from the field of hydro turbo-machines. In more detail, after presenting the parameterization, grid generation and CFD tools in use, the quality metrics that demonstrate each hydro-turbine quality are presented. After that the optimization of a Francis turbine, in the scope of a modernization/rehabilitation project, is used to demonstrate the merits of the KBD method as opposed to a classic EA. Furthermore the optimization of a new type of hydro-turbine, namely HYDROMATRIX$\circledR$, is used to demonstrate the merits of the proposed PCA-driven evolution operators.
+
+Chapter $6$ is dedicated to the design/optimization of the compressor cascade installed in LTT/NTUA. This case is used to investigate the combined effects of the use of PCA-driven evolution operators combined the PCA assisted metamodels as proposed in Chapter $4$.
+
+Finally Chapter $7$ presents the conclusions of this PhD thesis.      
+
+%: ----------------------- HELP: references
+% References can be links to figures, tables, sections, or references.
+% For figures, tables, and text you define the target of the link with \label{XYZ}. Then you call cross-link with the command \ref{XYZ}, as above
+% Citations are bound in a very similar way with \cite{XYZ}. You store your references in a BibTex file with a programme like BibDesk.
+
+
+%%%%%%%% template for figures
+%see fig \ref{A common glucose polymers}
+%\figuremacro{EAvsPCA_zdt3}{A common glucose polymers}{The figure shows starch granules in potato cells, %taken from \href{http://molecularexpressions.com/micro/gallery/burgersnfries/burgersnfries4.html}{Molecular %Expressions}.}
+
+%%: ----------------------- HELP: adding figures with macros
+%% This template provides a very convenient way to add figures with minimal code.
+%% \figuremacro{1}{2}{3}{4} calls up a series of commands formating your image.
+%% 1 = name of the file without extension; PNG, JPEG is ok; GIF doesn't work
+%% 2 = title of the figure AND the name of the label for cross-linking
+%% 3 = caption text for the figure
+
+%%: ----------------------- HELP: www links
+%% You can also see above how, www links are placed
+%% \href{http://www.something.net}{link text}
+
+%\figuremacroW{EAvsPCA_zdt3}{Title}{Caption}{0.8}
+%% variation of the above macro with a width setting
+%% \figuremacroW{1}{2}{3}{4}
+%% 1-3 as above
+%% There you go. You already know the most important things.
+
+
+

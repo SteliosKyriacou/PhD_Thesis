@@ -1,0 +1,83 @@
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Const_ALL.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set title 'OVERALL'
+set xr [0:8.2]
+set yr [0:8.2]
+set xlabel 'X1'
+set ylabel 'X2'
+p "constALL.fail"  pt 5 ps  0.35 lw 0.01    w p t"", "constALL.feasible" pt 4  ps  0.1 lw 0.01  w p t"" 
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Const_P.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set title 'buckling load'
+set xr [0:8.2]
+set yr [0:8.2]
+set xlabel 'X1'
+set ylabel 'X2'
+p "const_P.fail"  pt 5 lw 0.1  w p t"", "const_P.feasible" pt 4 lw 0.1  w p t"" 
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Const_sx.eps'
+set xr [0:8.2]
+set yr [0:8.2]
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set title 'bending stress'
+set xlabel 'X1'
+set ylabel 'X2'
+p "const_sx.fail"  pt 5 lw 0.1  w p t"", "const_sx.feasible" pt 4 lw 0.1  w p t"" 
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Const_tx.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set xr [0:8.2]
+set yr [0:8.2]
+set grid
+set title 'shear stress'
+set xlabel 'X1'
+set ylabel 'X2'
+p "const_tx.fail"  pt 5 lw 0.1  w p t"", "const_tx.feasible" pt 4 lw 0.1  w p t"" 
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Const_Price.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set xr [0:8.2]
+set yr [0:8.2]
+set title 'Cost'
+set xlabel 'X1'
+set ylabel 'X2'
+p "const_Price.fail"  pt 5 lw 0.1  w p t"", "const_Price.feasible" pt 4 lw 0.1  w p t"" 
+
+#HyperVolume
+set term post eps m enhanced
+set output 'Const_Dx.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set grid
+set xr [0:8.2]
+set yr [0:8.2]
+set title 'Deflection'
+set xlabel 'X1'
+set ylabel 'X2'
+p "const_Dx.fail"  pt 5 lw 0.1  w p t"", "const_Dx.feasible" pt 4 lw 0.1  w p t"" 

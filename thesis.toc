@@ -1,0 +1,134 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}CFD-Based Optimization}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}EAs: Previous work at PCOpt/NTUA}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Thesis Outline}{10}{section.1.3}
+\contentsline {chapter}{\numberline {2}Evolutionary Algorithms (EAs)}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction - Overview of EAs}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Optimization Problems - Definitions}{18}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Multi-Objective Optimization and EAs}{18}{subsection.2.2.1}
+\contentsline {paragraph}{Pareto Dominance:}{19}{section*.6}
+\contentsline {paragraph}{Pareto Optimality:}{19}{section*.7}
+\contentsline {subsection}{\numberline {2.2.2}Constrained Optimization and EAs}{19}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}The Evolutionary Algorithm SYstem (EASY)}{20}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}The $(\mu ,\lambda )$EA}{21}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Evolution Operators}{22}{subsubsection.2.3.1.1}
+\contentsline {paragraph}{Parent Selection:}{22}{section*.10}
+\contentsline {paragraph}{Recombination:}{23}{section*.11}
+\contentsline {paragraph}{Mutation:}{26}{section*.18}
+\contentsline {paragraph}{Elitism:}{29}{section*.20}
+\contentsline {subsection}{\numberline {2.3.2}Solving MOO Problems with EASY}{29}{subsection.2.3.2}
+\contentsline {paragraph}{SPEA:}{29}{section*.21}
+\contentsline {paragraph}{SPEA2:}{30}{section*.22}
+\contentsline {paragraph}{NSGA2:}{30}{section*.23}
+\contentsline {subsection}{\numberline {2.3.3}Constraints' Handling in EASY}{31}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Metamodel-Assisted Evolutionary Algorithm (MAEA)}{32}{subsection.2.3.4}
+\contentsline {paragraph}{Radial Basis Function (RBF) Networks:}{32}{section*.25}
+\contentsline {subsubsection}{\numberline {2.3.4.1}Inexact Pre--Evaluation Algorithm}{35}{subsubsection.2.3.4.1}
+\contentsline {subsection}{\numberline {2.3.5}Hierarchical Evolutionary Algorithms}{36}{subsection.2.3.5}
+\contentsline {paragraph}{(a) Hierarchical Evaluation Scheme:}{36}{section*.28}
+\contentsline {paragraph}{(b) Hierarchical Search Scheme:}{37}{section*.30}
+\contentsline {paragraph}{(c) Hierarchical Parameterization Scheme:}{38}{section*.31}
+\contentsline {chapter}{\numberline {3}Knowledge-Based Design}{39}{chapter.3}
+\contentsline {section}{\numberline {3.1}Knowledge-Based Systems (KBS)}{40}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Case-Based Reasoning Method - Principles}{41}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}The KBD Method}{42}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Optimization Variables's Definition}{43}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Design of a Compressor Cascade using KBD}{46}{section.3.3}
+\contentsline {chapter}{\numberline {4}EAs and MAEAs Driven by Principal Component Analysis}{53}{chapter.4}
+\contentsline {section}{\numberline {4.1}Ill-Posed Optimization Problems}{54}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Anisotropic Objective Function}{55}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Non-Separable Objective Function}{56}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Investigation of EAs Efficiency Degradation in Ill-Posed Problems}{57}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Ill-Posed MOO Problems}{61}{section.4.2}
+\contentsline {section}{\numberline {4.3}Principal Component Analysis}{61}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Welded Beam Case}{62}{section.4.4}
+\contentsline {section}{\numberline {4.5}PCA-Driven Evolution Operators}{64}{section.4.5}
+\contentsline {paragraph}{}{66}{section*.51}
+\contentsline {subsection}{\numberline {4.5.1}PCA-Driven Recombination}{66}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}PCA-Driven Mutation}{67}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Gain from the Use of EA(PCA)}{68}{subsection.4.5.3}
+\contentsline {section}{\numberline {4.6}EAs Assisted by PCA-Driven Metamodels}{69}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Gain from the Use of M(PCA)AEA(PCA)}{74}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Design of a Compressor Cascade}{76}{section.4.7}
+\contentsline {chapter}{\numberline {5}Optimization of Hydraulic Turbomachines}{79}{chapter.5}
+\contentsline {section}{\numberline {5.1}Evaluation Procedure}{81}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Parameterization for Turbine Blades}{81}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Space Discretization - Grid Generation}{84}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Flow Solver}{87}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Hydraulic Turbine-Runner Quality Metrics}{88}{section.5.2}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\contentsline {subsection}{\numberline {5.2.1}Cavitation Metric}{88}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Outlet Velocity Profiles}{90}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Blade Loading Quality Metric}{91}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Pumping Surface Metric}{93}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Optimization of a Francis Turbine Runner}{94}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Francis Turbine}{95}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Case Presentation}{96}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Design Parameterization}{97}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}Objectives and Constraints}{98}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Results}{100}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}Archived Designs}{100}{subsubsection.5.3.3.1}
+\contentsline {section}{\numberline {5.4}Optimization of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$ Turbine}{119}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}The Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$ Turbine}{119}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Case Presentation}{121}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}Case Formulation}{121}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}Design Parameterization}{121}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}Objectives and Constraints}{123}{subsubsection.5.4.2.3}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\contentsline {subsection}{\numberline {5.4.3}Results}{124}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}Optimization of a Compressor Annular Cascade}{135}{chapter.6}
+\contentsline {section}{\numberline {6.1}Blade Shape Parameterization}{136}{section.6.1}
+\contentsline {section}{\numberline {6.2}Case Presentation}{137}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objectives and Constraints}{137}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Results}{139}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusions - Future Work}{143}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Work}{145}{section.7.1}
+\contentsline {section}{\numberline {7.2}Publications - Conference Presentations}{145}{section.7.2}
+\contentsline {chapter}{\numberline {A}Regulated Hydraulic Turbines}{147}{appendix.A}
+\contentsline {section}{\numberline {A.1}Single-Regulated Turbines}{147}{section.A.1}
+\contentsline {section}{\numberline {A.2}Double-Regulated Turbines}{149}{section.A.2}
+\contentsline {chapter}{\numberline {B}Design of a Hydromatrix$\text {$\mathsurround \z@ \mathchar "472$}$: Experimental Validation}{151}{appendix.B}
+\contentsline {section}{\numberline {B.1}Optimization Procedure}{151}{section.B.1}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\contentsline {section}{\numberline {B.2}Experimental Validation}{155}{section.B.2}
+\contentsline {chapter}{Bibliography}{159}{appendix*.145}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}
+\babel@toc {greek}{}
+\babel@toc {english}{}

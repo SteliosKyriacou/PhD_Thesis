@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<HydroGraphicOutput>
+<GrfOutput FileName='grfDimless.grf' Type='GRF_DIMLESS'>
+<GrfDimlessFac g='9.810000' hydrHead='11.080087' p0='0.000000' cRef='14.744196' pRef='0.000000'/>
+<GrfPlane BlN='0' nPitch='11' dir='k' val='0.0'/>
+<GrfPlane BlN='1' nPitch='11' dir='k' val='0.0'/>
+<GrfPlane BlN='2' nPitch='11' dir='k' val='0.0'/>
+<GrfPlane BlN='3' nPitch='11' dir='k' val='0.0'/>
+<GrfPlane BlN='0' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='1' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='2' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='3' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='0' nPitch='11' dir='j' val='0.999'/>
+<GrfPlane BlN='4' nPitch='4' dir='k' val='0.0'/>
+<GrfPlane BlN='5' nPitch='4' dir='k' val='0.0'/>
+<GrfPlane BlN='6' nPitch='4' dir='k' val='0.0'/>
+<GrfPlane BlN='7' nPitch='4' dir='k' val='0.0'/>
+<GrfPlane BlN='4' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='5' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='6' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='7' nPitch='2' dir='k' val='0.999'/>
+<GrfPlane BlN='4' nPitch='4' dir='j' val='0.999'/>
+</GrfOutput>
+</HydroGraphicOutput>

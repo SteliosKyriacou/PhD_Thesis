@@ -1,0 +1,217 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<HydroGridProject Name='rla_24_LR577' Type='HYDRO_ROTOR_STATOR'>
+<HydroBladeRow Name='Rotor' Active='1'>
+<ConformalMapping DeltRSMin='2' RCutHigh='3.75742515805704E-02' RCutLow='3.56955390015419E-02'>
+</ConformalMapping>
+<HydroBladeRowXML FileName='../Rotor-op.xml' IMax='80' MeridMax='16'>
+<ResampleBlade Type='RESAMPLE_NO' noType='RESAMPLE_FROM_TRAILEDGE'>
+<DirLead x='1' y='-1' z='1'>
+</DirLead>
+<North iMax='300' DHP_A='-3' DHP_B='3' DHP_linSt='0' DHP_linEn='0' DHP_linCen='0'>
+</North>
+<South iMax='300' DHP_A='-3' DHP_B='3' DHP_linSt='0' DHP_linEn='0' DHP_linCen='0'>
+</South>
+</ResampleBlade>
+<TurnMainBlade P1x='0' P1y='0' P1z='0' P2x='-1' P2y='0' P2z='0' PhiGrad='0' FileName='turnedMainBlade.grf4'>
+</TurnMainBlade>
+</HydroBladeRowXML>
+<Topology2D Topology='TOPO_C_DOVETAIL'>
+<RelaxData calcDistToWallLoops='3' nRelaxMax='50' relaxPitchMin='0.01' relaxPitchMax='1'>
+</RelaxData>
+<BladeHints phiBladeIn='40' phiBladeOut='30' BladeType='BLADE_TYPE_DOVETAIL'>
+</BladeHints>
+<Topo2DcDoveTail>
+<Indices jMaxC='4' iChannelCenter='8'>
+</Indices>
+<VariousWidth NoseN='0.08' NoseS='0.01' OffsetNose='0'>
+</VariousWidth>
+<BezDist NS='0.2' W='0.08' E='0.07' FacPitchIn='0.25'>
+</BezDist>
+<PhiGrad In='0' Out='0' TurnNoseToInlet='30' TurnNoseToChanel='0'>
+</PhiGrad>
+<JNoseN iMax='8' DHP_A='0' DHP_B='1.5' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JNoseN>
+<JNoseS iMax='4' DHP_A='-0.5' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JNoseS>
+<IChannelN iMax='12' DHP_A='1' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IChannelN>
+<IChannelS DHP_A='-1.5' DHP_B='1.8' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IChannelS>
+<JChannel iMax='24' DHP_A='-1.5' DHP_B='1.5' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JChannel>
+<IInlet iMax='8' DHP_A='0' DHP_B='0.3' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IInlet>
+<IOutlet iMax='12' DHP_A='-1' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IOutlet>
+<JWake iMax='4' DHP_A='-0.5' DHP_B='0.5' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JWake>
+</Topo2DcDoveTail>
+</Topology2D>
+<MakeGrid3DExample Active='0'>
+<MakeSingle2DGrid Active='1' kIndex='0'>
+</MakeSingle2DGrid>
+<MakeSingle2DGrid Active='1' kIndex='7'>
+</MakeSingle2DGrid>
+<MakeSingle2DGrid Active='1' kIndex='15'>
+</MakeSingle2DGrid>
+</MakeGrid3DExample>
+<MakeGrid3D Active='1'>
+<Span iMax='12' DHP_A='-2' DHP_B='2' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='2'>
+</Span>
+<WriteGrid3DGRF Active='1' FileName='RotorFinalGrid3d.grf' MaxPitch='2' PosK1='0' PosK2='-1' PosK3='12'>
+</WriteGrid3DGRF>
+<WriteBASEGrid3DGRF Active='0' FileName='RotorbaseGrid3d.grf' MaxPitch='1' PosK1='0'>
+</WriteBASEGrid3DGRF>
+<WriteGeom Active='0' FileName='Rotorgeom.txt'>
+</WriteGeom>
+<WriteXmlFacesEuler Active='0' FileName='RotorfacesXml.xml'>
+</WriteXmlFacesEuler>
+<WriteXmlDefBoundConditions Active='0' FileName='RotorboundCondXml.xml'>
+</WriteXmlDefBoundConditions>
+<WriteTascflowGrid Active='0' FileName='RotortascFlow.out'>
+</WriteTascflowGrid>
+<WriteTascflowGCI Active='0' FileName='Rotor.gci'>
+</WriteTascflowGCI>
+<WriteGrfParamRefBoundaryFace Active='0' FileName='RotorgrfParam.xml' GrfName='RotorgrfDimless.grf' boundaryName1='Inlet' area1='-1' boundaryName2='Outlet' area2='-1'>
+</WriteGrfParamRefBoundaryFace>
+</MakeGrid3D>
+<ExportMeridZR FileName='RotorzrEvalPositions.xml' IMax='40' MeridMax='16'>
+</ExportMeridZR>
+</HydroBladeRow>
+<HydroBladeRow Name='Stator' Active='1'>
+<ConformalMapping DeltRSMin='2' RCutHigh='0.05' RCutLow='0.04'>
+</ConformalMapping>
+<HydroBladeRowXML FileName='./Stator-op.xml' IMax='80' MeridMax='16'>
+<TurnMainBlade P1x='0' P1y='0' P1z='-0.240006' P2x='0.294448637287' P2y='0.0' P2z='-0.070006' PhiGrad='0' FileName='turnedStatorBlade.grf4'>
+</TurnMainBlade>
+<TurnMainBlade P1x='0' P1y='0' P1z='0' P2x='0' P2y='0' P2z='1' PhiGrad='0' FileName='dummy.grf'>
+</TurnMainBlade>
+<TurnMainBlade P1x='0' P1y='0' P1z='0' P2x='0' P2y='0' P2z='1' PhiGrad='0' FileName='dummy.grf'>
+</TurnMainBlade>
+<TurnMainBlade P1x='0' P1y='0' P1z='0' P2x='0' P2y='0' P2z='1' PhiGrad='0' FileName='dummy.grf'>
+</TurnMainBlade>
+</HydroBladeRowXML>
+<Topology2D Topology='TOPO_C_DOVETAIL'>
+<RelaxData calcDistToWallLoops='3' nRelaxMax='50' relaxPitchMin='0.01' relaxPitchMax='1'>
+</RelaxData>
+<BladeHints phiBladeIn='0' phiBladeOut='30' BladeType='BLADE_TYPE_DOVETAIL'>
+</BladeHints>
+<Topo2DcDoveTail>
+<Indices jMaxC='4' iChannelCenter='4'>
+</Indices>
+<VariousWidth NoseN='0.05' NoseS='0.05' OffsetNose='0'>
+</VariousWidth>
+<BezDist NS='0.07' W='0.08' E='0.07' FacPitchIn='0.25'>
+</BezDist>
+<PhiGrad In='0' Out='0' TurnNoseToInlet='30' TurnNoseToChanel='0'>
+</PhiGrad>
+<JNoseN iMax='4' DHP_A='0' DHP_B='1.5' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JNoseN>
+<JNoseS iMax='4' DHP_A='-0.5' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JNoseS>
+<IChannelN iMax='12' DHP_A='1' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IChannelN>
+<IChannelS DHP_A='-1' DHP_B='1' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IChannelS>
+<JChannel iMax='4' DHP_A='-1' DHP_B='1' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JChannel>
+<IInlet iMax='12' DHP_A='0' DHP_B='0.3' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IInlet>
+<IOutlet iMax='8' DHP_A='-1' DHP_B='0' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</IOutlet>
+<JWake iMax='4' DHP_A='-0.5' DHP_B='0.5' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='-1'>
+</JWake>
+</Topo2DcDoveTail>
+</Topology2D>
+<MakeGrid3DExample Active='0'>
+<MakeSingle2DGrid Active='1' kIndex='0'>
+</MakeSingle2DGrid>
+<MakeSingle2DGrid Active='1' kIndex='7'>
+</MakeSingle2DGrid>
+<MakeSingle2DGrid Active='1' kIndex='15'>
+</MakeSingle2DGrid>
+</MakeGrid3DExample>
+<MakeGrid3D Active='1'>
+<Span iMax='8' DHP_A='-2' DHP_B='2' DHP_linSt='-1' DHP_linEn='-1' DHP_linCen='2'>
+</Span>
+<WriteGrid3DGRF Active='1' FileName='StatorFinalGrid3d.grf' MaxPitch='2' PosK1='0' PosK2='-1' PosK3='8'>
+</WriteGrid3DGRF>
+<WriteBASEGrid3DGRF Active='0' FileName='StatorbaseGrid3d.grf' MaxPitch='1' PosK1='0'>
+</WriteBASEGrid3DGRF>
+<WriteGeom Active='0' FileName='Statorgeom.txt'>
+</WriteGeom>
+<WriteXmlFacesEuler Active='0' FileName='StatorfacesXml.xml'>
+</WriteXmlFacesEuler>
+<WriteXmlDefBoundConditions Active='0' FileName='StatorboundCondXml.xml'>
+</WriteXmlDefBoundConditions>
+<WriteTascflowGrid Active='1' FileName='StatortascFlow.out'>
+</WriteTascflowGrid>
+<WriteTascflowGCI Active='1' FileName='Stator.gci'>
+</WriteTascflowGCI>
+<WriteGrfParamRefBoundaryFace Active='0' FileName='StatorgrfParam.xml' GrfName='StatorgrfDimless.grf' boundaryName1='Inlet' area1='-1' boundaryName2='Outlet' area2='-1'>
+</WriteGrfParamRefBoundaryFace>
+</MakeGrid3D>
+<ExportMeridZR FileName='StatorzrEvalPositions.xml' IMax='40' MeridMax='16'>
+</ExportMeridZR>
+</HydroBladeRow>
+<Output Active='1'>
+<WriteGeom Active='1' FileName='geom.txt'>
+</WriteGeom>
+<WriteXmlFacesEuler Active='1' FileName='facesXml.xml'>
+</WriteXmlFacesEuler>
+<WriteXmlDefBoundConditions Active='0' FileName='boundCondXml.xml'>
+</WriteXmlDefBoundConditions>
+<WriteGrfParam Active='1' FileName='grfParam.xml' GrfName='grfDimless.grf' g='9.81' hydrHead='11.080086867881' p0='0' cRef='14.7441956154897' pRef='0'>
+</WriteGrfParam>
+<WriteHydroReport Active='1' FileName='hydroReport.xml' OutputName='rla_1004A_LR-2222-is-1031-beta14_beta_-0.5_alfa_78'>
+<ProcessPath Path='D:\Program Files\MiKTeX 2.7\miktex\bin\'>
+</ProcessPath>
+<ReportGravConst Value='9.81'>
+</ReportGravConst>
+<ReportRefValues PressRef='0' PressAmpl='108695.652173913'>
+</ReportRefValues>
+<AreaKavitation>
+<AreaKaviationBlade Value='0.001'>
+</AreaKaviationBlade>
+<AreaKaviationBlade Value='0.005'>
+</AreaKaviationBlade>
+<AreaKaviationBlade Value='0.01'>
+</AreaKaviationBlade>
+<AreaKaviationBlade Value='0.02'>
+</AreaKaviationBlade>
+<AreaKaviationHub Value='0.015'>
+</AreaKaviationHub>
+<AreaKaviationHub Value='0.025'>
+</AreaKaviationHub>
+<AreaKaviationShroud Value='0.016'>
+</AreaKaviationShroud>
+<AreaKaviationShroud Value='0.026'>
+</AreaKaviationShroud>
+</AreaKavitation>
+<AllOverviewPlot Active='1'>
+</AllOverviewPlot>
+<KcPlot Active='1'>
+</KcPlot>
+<BladeLoadPlot Active='1'>
+</BladeLoadPlot>
+<ConfMapPlot Active='1'>
+<SpanOfStator Value='0'>
+</SpanOfStator>
+<SpanOfStator Value='0.5'>
+</SpanOfStator>
+<SpanOfStator Value='1'>
+</SpanOfStator>
+<SpanOfRotor Value='0'>
+</SpanOfRotor>
+<SpanOfRotor Value='0.5'>
+</SpanOfRotor>
+<SpanOfRotor Value='0.75'>
+</SpanOfRotor>
+<SpanOfRotor Value='1'>
+</SpanOfRotor>
+</ConfMapPlot>
+<BladeSidesPlot Active='1'>
+</BladeSidesPlot>
+</WriteHydroReport>
+</Output>
+</HydroGridProject>

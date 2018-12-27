@@ -1,0 +1,314 @@
+TURBINE                !typ
+1.2    !meshd
+../f1117b_cf/f1117          !lnr
+cf/f1117      !name
+b            !ver
+cf           !var
+53           !bpk
+13           !z2
+3000         !ite
+1.35         !cm2
+6x20x8x4x20      !ijk
+neptun       !mgen
+-189.       !zmin
+188.         !rmax
+4.5        !FoFi
+85          !etaT
+-100.        !saugkoo
+#
+euler             !solver
+1           !nr. of meshes -1
+1          !type of cycle / 1=v-cycle 2=w-cycle
+30          !presmooth
+30         !postsmooth
+250          !ite on coarsegrid
+0     !flag fullmultigrid = 1
+1e-007          !accurancy
+1BP1            Opt          !num/opnam
+0.33120               !Kcm2
+1.00607                !Ku2
+1.00607                !phi
+26.30              !alpha
+40.00                  !H
+0.17                 !R2
+93.5700                !eta
+0.2490              !sigma
+12BP12         nedp20          !num/opnam
+0.39744               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+34.60              !alpha
+27.778                  !H
+0.17                 !R2
+92.9000                !eta
+-4.2730              !sigma
+13BP13         nedp20          !num/opnam
+0.36432               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+30              !alpha
+27.778                  !H
+0.17                 !R2
+92.7000                !eta
+-4.2730              !sigma
+14BP14         nedp20          !num/opnam
+0.33120               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+26.2              !alpha
+27.778                  !H
+0.17                 !R2
+90.5000                !eta
+-4.2730              !sigma
+15BP15         nedp20          !num/opnam
+0.29808               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+22.8              !alpha
+27.778                  !H
+0.17                 !R2
+87.5000                !eta
+-4.2730              !sigma
+16BP16         nedp20          !num/opnam
+0.26496               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+20.              !alpha
+27.778                  !H
+0.17                 !R2
+84.5000                !eta
+-4.2730              !sigma
+17BP17         nedp20          !num/opnam
+0.23184               !Kcm2
+1.20728                !Ku2
+1.20728                !phi
+17.00              !alpha
+27.778                  !H
+0.17                 !R2
+79.5000                !eta
+-4.2730              !sigma
+32BP32         nedp10          !num/opnam
+0.39744               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+35.4              !alpha
+33.058                  !H
+0.17                 !R2
+92.9000                !eta
+-3.5905              !sigma
+33BP33         nedp10          !num/opnam
+0.36432               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+30.70              !alpha
+33.058                  !H
+0.17                 !R2
+92.7000                !eta
+-3.5905              !sigma
+34BP34         nedp10          !num/opnam
+0.33120               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+26.70              !alpha
+33.058                  !H
+0.17                 !R2
+90.5000                !eta
+-3.5905              !sigma
+35BP35         nedp10          !num/opnam
+0.29808               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+23.20              !alpha
+33.058                  !H
+0.17                 !R2
+87.5000                !eta
+-3.5905              !sigma
+36BP36         nedp10          !num/opnam
+0.26496               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+20.30              !alpha
+33.058                  !H
+0.17                 !R2
+84.5000                !eta
+-3.5905              !sigma
+37BP37         nedp10          !num/opnam
+0.23184               !Kcm2
+1.10667                !Ku2
+1.10667                !phi
+17.50              !alpha
+33.058                  !H
+0.17                 !R2
+79.5000                !eta
+-3.5905              !sigma
+52bpkt52         nedOpt          !num/opnam
+0.39744               !Kcm2
+1.00607                !Ku2
+15.00                !phi
+35.60              !alpha
+40                  !H
+0.17                 !R2
+92.9000                !eta
+0.2490              !sigma
+53BP53         nedOpt          !num/opnam
+0.36432               !Kcm2
+1.00607                !Ku2
+1.00607                !phi
+30.90              !alpha
+40                  !H
+0.17                 !R2
+92.7000                !eta
+0.2490              !sigma
+54BP54         nedOpt          !num/opnam
+0.33120               !Kcm2
+1.00607                !Ku2
+1.00607                !phi
+27.75              !alpha
+40                  !H
+0.17                 !R2
+90.5000                !eta
+0.2490              !sigma
+55bpkt55         nedOpt          !num/opnam
+0.29808               !Kcm2
+1.00607                !Ku2
+15.00                !phi
+23.50              !alpha
+40                  !H
+0.17                 !R2
+87.5000                !eta
+0.2490              !sigma
+56bpkt56         nedOpt          !num/opnam
+0.26496               !Kcm2
+1.00607                !Ku2
+15.00                !phi
+20.20              !alpha
+40                  !H
+0.17                 !R2
+84.5000                !eta
+0.2490              !sigma
+57BP57         nedOpt          !num/opnam
+0.23184               !Kcm2
+1.00607                !Ku2
+1.00607                !phi
+17.30              !alpha
+40                  !H
+0.17                 !R2
+79.5000                !eta
+0.2490              !sigma
+58BP58         nedOpt93          !num/opnam
+0.30802               !Kcm2
+1.00607                !Ku2
+1.00607                !phi
+27.9              !alpha
+40                  !H
+0.17                 !R2
+79.5000                !eta
+0.2490              !sigma
+72BP72         nedm10          !num/opnam
+0.39744               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+35.4              !alpha
+48.4                  !H
+0.17                 !R2
+92.9000                !eta
+-2.4524              !sigma
+73BP73         nedm10          !num/opnam
+0.36432               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+30.80              !alpha
+48.4                  !H
+0.17                 !R2
+92.7000                !eta
+-2.4524              !sigma
+74BP74         nedm10          !num/opnam
+0.33120               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+27.00              !alpha
+48.4                  !H
+0.17                 !R2
+90.5000                !eta
+-2.4524              !sigma
+75BP75         nedm10          !num/opnam
+0.29808               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+23.5              !alpha
+48.4                  !H
+0.17                 !R2
+87.5000                !eta
+-2.4524              !sigma
+76BP76         nedm10          !num/opnam
+0.26496               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+20.30              !alpha
+48.4                  !H
+0.17                 !R2
+84.5000                !eta
+-2.4524              !sigma
+77BP77         nedm10          !num/opnam
+0.23184               !Kcm2
+0.91461                !Ku2
+0.91461                !phi
+17.5              !alpha
+48.4                  !H
+0.17                 !R2
+79.5000                !eta
+-2.4524              !sigma
+92BP92         nedm20          !num/opnam
+0.39744               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+35.5              !alpha
+57.60                  !H
+0.17                 !R2
+92.9000                !eta
+-2.0607              !sigma
+93BP93         nedm20          !num/opnam
+0.36432               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+30.30              !alpha
+57.60                  !H
+0.17                 !R2
+92.7000                !eta
+-2.0607              !sigma
+94BP94         nedm20          !num/opnam
+0.33120               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+26.6              !alpha
+57.60                  !H
+0.17                 !R2
+90.5000                !eta
+-2.0607              !sigma
+95BP95         nedm20          !num/opnam
+0.29808               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+23.3              !alpha
+57.60                  !H
+0.17                 !R2
+87.5000                !eta
+-2.0607              !sigma
+96BP96         nedm20          !num/opnam
+0.26496               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+20.00              !alpha
+57.60                  !H
+0.17                 !R2
+84.5000                !eta
+-2.0607              !sigma
+97BP97         nedm20          !num/opnam
+0.23184               !Kcm2
+0.83839                !Ku2
+0.83839                !phi
+17.3              !alpha
+57.60                  !H
+0.17                 !R2
+79.5000                !eta
+-2.0607              !sigma

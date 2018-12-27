@@ -1,0 +1,659 @@
+\chapter{Evolutionary Algorithms (EAs)} % top level followed by section, subsection
+
+%: ----------------------- paths to graphics ------------------------
+
+% change according to folder and file names
+\ifpdf
+    \graphicspath{{2/figures/PNG/}{2/figures/PDF/}{2/figures/}}
+\else
+    \graphicspath{{2/figures/EPS/}{2/figures/}}
+\fi
+
+%: ----------------------- contents from here ------------------------
+
+%\begin{flushright}
+%Life results from the non-random survival 
+%\linebreak
+%of randomly varying replicators.
+%\linebreak
+%Richard Dawkins 
+%\end{flushright}
+\section{Introduction - Overview of EAs}
+\label{EAintro}
+Several stochastic optimization methods have been inspired by and/or based on Darwin's theory of evolution on the origin of species \cite{Darwin}. Hereafter, the aforementioned methods along with their variants (there are plenty of them) will be referred to as Evolutionary Algorithms (EAs) \cite{HowToSolveIt}. The increasing power of modern multi-processor computational platforms and their availability at relatively low cost, combined with the inherent parallelization of population-based algorithms, suggest that EAs, combined with existing analysis tools, can be used as efficient industrial design tools. In our case, the analysis or problem-specific solution software is a Computational Fluid Dynamics (CFD) code. The cost of running the CFD code, quite often more than once per candidate solution (such as in case of a multi-point design) times the number of required trials determines the overall computational cost of the EA-based optimization.      
+
+An EA is a generation-based, stochastic optimization method handling populations of individuals evolving from generation to generation. Each individual $\vec{x}$ represents a potential solution to the optimization problem in hand and must be evaluated to obtain a measure of its ``fitness'' or ``cost'', according to user-defined objective functions. In each generation, the EA selects the most fit among the previous generation members (the so-called ``parents'') and evolves them by applying evolution operators (recombination, mutation, etc.). The new population (``offspring'') is expected to fit better to the environment determined by the selected objective function(s).     
+
+The first attempts to use EAs as problem solving techniques are dated back to mid-50's and can be found in separate works by Friedberg, Bremermann and Box. Friedberg \cite{Friedberg:1958:LMP:1662346.1662347, Friedberg:1959:LMP:1661923.1661930} presented an EA capable of creating a program to perform a given task; though quite premature by that time, this was in fact an ancestor of evolutionary programming (see below). During the same period of time, Bremermann \cite{Bremermann_62} was among the first to apply EAs to numerical (linear and convex) optimization problems including the solution of systems of nonlinear equations. Box proposed the use of EAs as a method for improving industrial processes and increasing productivity \cite{Box57a,BoDr98a}. By that time, these first attempts were treated with considerable skepticism. Soon after, several methods which initiated the three broad classes of EAs, namely evolutionary programming (EP), evolutionary strategies (ES) and genetic algorithms (GA), were brought to light.
+
+EP was proposed by L. J. Fogel by mid-60's  \cite{fogel62,fogel64,fogel66}. EP was developed by considering machine learning tasks by means of finite-state machines (FSM\footnote{A finite-state machine (FSM) is a mathematical model used to design computer programs and digital logic circuits. FSM is an abstract machine that can be in one among a finite number of states.}). The optimization problem was  initially defined as evolving an algorithm (program) for predicting arbitrary time series.  In EP,  \cite{fogel66}, each offspring is created by randomly mutating each parent. The offspring with the best value is, then, retained to become a parent in the next generation. EP was successfully applied to problems in prediction identification, automatic control and pattern recognition. Until mid-80's, EP was confined to the FSM representation. In 1986 EP was extended to alternative representations including ordered lists for the travelling salesman problem and real-valued vectors for continuous function minimization. Later on, a self-adaptative EP \cite{fogel95} was proposed by including mutation variance in the evolution.
+
+The first ES was proposed in 1965 by Rechenberg \cite{Rechenberg_1965} using discrete, binomially distributed mutations (centered at the parent's position) and just a single parent and a single offspring per generation. Later on, ES was further developed both by Rechenberg \cite{Rechenberg71} and Schwefel \cite{Schwefel75}, by introducing recombination and adaptive mutation \cite{Rechenberg71}. Using real-valued representation of the optimization variables, mutation is performed by adding a normally distributed random value to them. The introduction of recombination as an additional evolution operator for creating offspring, being impossible with just a single parent, led to the multi-membered ES. This is usually referred to as a $(\mu, \lambda)ES$, i.e.\ an ES with $\mu$ parents and $\lambda$ offspring. One of the most successful variances of ES is the covariance matrix adaptation ES (CMA-ES) \cite{hansen2003ecj}. In CMA-ES, the covariance matrix of the multivariate normal distribution, from which the candidate solutions are sampled, is updated during the evolution. CMA-ES was found to be particularly useful in solving non-separable optimization problems. \cite{hansen2001ecj,hansen1997ecj}.
+
+In 1962, GAs were proposed by Holland \cite{Holland:1962:OLT:321127.321128,holland_1975} as an evolution emulating tool for aiding the understating of the underlying principles of adaptive systems \footnote{Systems that are capable to undergo self-modifications in response to their interactions with the environment which they must function in.}. In comparison to other contemporary researchers in the field of EAs, Holland focused differently and laid emphasis on the algorithmic nature of GAs in the sense that the reproduction and inheritance  mechanisms were based on operators, such as mutation, crossover and inversion, which are well known from genetics \footnote{Genetics is a branch of biology, the science of genes, heredity and the variation in living organisms.}. In addition, the representation of the evolving objects was made by using binary strings in direct analogy to the genetics genome. The binary string representation was one of the distinctions between ES and GA, considered as important at least in the early stages of their lives.  
+ 
+Genetic Programming (GP) was proposed by Crammer in mid-80's \cite{cramer85} and was, then, improved by Koza \cite{Koz94} aiming at the automated design of computer programs with the ability to perform a given computational task. In GP, individuals (computer programs) are represented as tree structures \footnote{A tree structure can represent graphically the hierarchical nature of an object. Tree structures start from the so-called ``root" node, which is the highest in hierarchy. Lines connecting elements, to be referred to a nodes, are called ``branches". The lowest in hierarchy nodes are called ``end-nodes" or ``leaves". } where each node is given an operator function and each terminal node an operand. Representing programs in this way offers easy evaluation and makes the application of the evolution operators possible, in the sense that recombination can take place by exchanging nodes between the parents whereas mutation by replacing nodes at random. 
+ 
+
+In PCOpt/NTUA, GA and ES are both represented by a generalised $(\mu,\lambda)EA$ \cite{phd_Giotis,phd_Karakasis,phd_Kampolis}, as described in section \ref{EASY_def}.  The $(\mu,\lambda)EA$ main characteristics are the population-based evolution and the fact that the inheritance of candidate solution features is based on both probabilistic criteria and decisions made upon a fitness or cost function, which quantifies the ability of each individual to survive in the user-defined environment. The evolution, from each generation to the next, fig.\ \ref{EA}, is carried out through the so-called evolution operators (parent selection, recombination, elitism and mutation). The generalised $(\mu,\lambda)EA$, which is used and enhanced in this PhD thesis, can be used as either a conventional ES or a conventional GA, by carefully adjusting the algorithmic settings and the optimization variable representation (binary or real coding).  
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{!}{8 cm}{\includegraphics{EA.eps}}
+\end{minipage}
+\caption{Schematic representation of an EA. Each population is derived by the previous one via the application of evolution operators such as parent selection, crossover and mutation. Elitism is not shown here. } 
+\label{EA}
+\end{figure}
+
+
+
+The three main advantages of EAs are their ability to (a) avoid being trapped into local optima and, thus, locate the global optimum, (b) compute Pareto fronts of optimal solutions in MOO problems, with a single run and (c) accommodate any ready-to-use analysis software without requiring access to its source code. The only prerequisite for carrying out an EA-based optimization is the availability of an appropriate evaluation software (even a commercial one, considered as a black–box tool within the optimization loop), objective functions and well defined design variables along with lower and upper bounds for each of them. However, the need to evaluate all individuals in each generation, so as to assign fitness or cost values to all of them, is the weak point of EAs, particularly if the evaluation of each candidate solution is computationally demanding. Optimization in aerodynamics or hydrodynamics which relies on expensive CFD software is a typical example.  This increases noticeably the optimization turn-around time and, often, makes the whole process non-affordable for industrial use. To overcome this weakness, several techniques have been proposed, \cite{LTT_2_020,Jin2002}. These  are classified in those reducing the optimization turn-around time by performing concurrent evaluations of the population members on a multi-processor platform and those reducing the number of evaluations needed to reach the optimal solution(s). These two techniques can certainly be combined. A first overview of these techniques is given below.  
+
+A Parallel Evolutionary Algorithm (PEA) \cite{phd_Giotis,phd_Karakasis,phd_Kampolis,phd_Vera} is an EA adapted to take advantage of the availability of multi-processor systems, for reducing the optimization turn-around time. PEAs can be classified into single- and multi-population EAs. In a single-population or panmictic EA, each population member can, potentially, mate (be recombined) with any other. Standard way of parallelization is the concurrent evaluation scheme, with centralized selection and evolution (the so-called ``master-slave'' model). A multi-population EA handles partitioned individual subsets, according to a topology which often maps directly onto the parallel platform and employs decentralized evolution schemes; these can be further classified into distributed \cite{LTT_2_023,Herr1999,LTT_2_044} and cellular EAs \cite{alba_08,Nebro:2009p48}, depending on the subpopulations’ structure and granularity. 
+
+All the aforementioned PEAs refer to synchronous EAs, in which the use of the multi-processor platform is restricted to the concurrent evaluation of candidate solutions, without altering the, generation-by-generation, sequential nature of evolution in EAs. This creates a synchronization barrier at the end of each generation; at this point, a number of processors may remain idle while waiting for the remaining generation members to be evaluated.  In order to minimize (practically eliminate) the idle time of processors, asynchronous EA (AEA) \cite{LTT_2_040,Alba2001} have been developed. The AEA proposed by PCOpt/NTUA overcomes the sequential nature of evolution by applying the evolution operators to a number of strongly interacting (overlapping) demes which may optimally use all the available processors.     
+
+A metamodel-assisted EA (MAEA) employs low-cost surrogate evaluation models, i.e.\ the so-called ``metamodels'', as often as possible, during the optimization. This decreases substantially the number of calls to the computationally expensive, problem-specific evaluation code (such as the CFD software). Polynomial regression, artificial neural networks, Gaussian processes etc.\ have all been used as metamodels. Schemes based on different interactions between the metamodel and the problem-specific evaluation tool can be found in the literature \cite{KEANEbook,LTT_2_020,Jin2002,LTT_2_027}. MAEA implementations can be classified in two basic categories, depending on whether the metamodel(s) is/are trained separately from (off-line) or during (on-line) the evolution. Additionally, global (i.e.\ a single metamodel for the entire search space) or local (i.e.\ each of which being valid over a different part of the search space) metamodels can be used.
+
+Additional reduction in the optimization turn-around time can be achieved by employing hierarchical EAs (HEAs) or MAEAs (HMAEAs)\cite{phd_Karakasis,phd_Kampolis,Herr1999,LTT_2_044, LTT_2_031,Lim2007}. These are built based on a small number of interconnected levels. On each level, different search methods, different evaluation software and/or different sets of design variables can be employed. One- or two-way inter-level communication schemes can be used. On levels employing EA-based search, a PEA or MAEA or both can optionally be used. Multi-level optimization algorithms can, generally, be classified as follows \cite{ParCFD}:
+
+(a) \emph{Multi-level Evaluation,} where each level is associated with
+a different evaluation software. The lower levels are responsible
+for detecting promising solutions  at low CPU cost, through low-cost problem--specific evaluation models, and
+delivering them to the higher level(s). There, evaluation models of
+higher fidelity and CPU cost are employed and the immigrated
+solutions are further refined. 
+
+(b) \emph{Multi-level Search,} where each level is associated with a
+different search technique. Stochastic methods, such as EAs, are
+preferably used on the lower level(s) for the exploration of the
+design space, leaving the refinement of promising solutions, often via gradient-based methods, on the higher level(s). Other
+combinations of search tools are also possible. Memetic algorithms \cite{Krans2005,Ong2004,Ong2006,LTT_2_043,LTT_2_053,LTT_4_04} is a class of multi-level search that combines global and local search methods, where the latter aims at improving the quality of
+promising solutions.
+
+
+(c) \emph{Multi-level Parameterization,} where each level is
+associated with a different set of design variables. On the lowest
+level, a subproblem with just a few design variables is solved. On
+the higher level(s), the problem dimension increases. The most detailed parameterization is used on the highest level.
+
+
+%\figuremacroW{EA}{EA schematic representation }{Schematic representation of the EA. Each population is derived by the previous one via evolution operators, such as parent selection, crossover and mutation }{0.8}
+
+\section{Optimization Problems - Definitions}
+\label{OPt_def}
+Any optimization problem with $M$ objectives (cast in vector $\vec{F}$) and $K$ constraints (cast in vector $\vec{C}$) can be formulated as:
+\begin{align} 
+   &min ~ \vec{F}(\vec{x})=(f_1(\vec{x}),f_1(\vec{x}),...,f_M(\vec{x}))\in \Re^{M} \nonumber \\
+   &\mbox{subject to} ~ c_k(\vec{x})\leq d_k, ~~~~~ k =1,K
+\label{OptimIN}
+\end{align}
+where $\vec{x}\in X \!\leq\! \Re^{N}$ is the design vector and $X$ the design space. If equality constraints $ c^*(x)=d^* $ are to be imposed, these can be transformed into inequality ones $ c(x)=\Vert c^*(x)-d^*\Vert \leq d $, where $ d \in \Re $ is an infinitessimally small number. If $M \!> \!1$, problem \ref{OptimIN} represents a multi-objective optimization (MOO) problem; in such a case, the notion of Pareto dominance \cite{Zitzler2000} is used to associate a scalar cost value to each individual, based on which an algorithm solving single-objective optimization (SOO) problems can be employed. In MOO problems, a single run of an EA is capable of delivering a Pareto front of non-dominated individuals, rather than a single ``optimal" solution, standing for an offset among the various objective functions. 
+
+\subsection{Multi-Objective Optimization and EAs}
+\label{MOOini}
+In contrast to SOO where the scalar cost function, which determines the survival of candidate solutions from generation to generation, is derived directly from the objective function, a solver for MOO problems handles a vector of objectives. Therefore, in order to rely on the EA built for solving SOO problems, a technique to transform this vector to an appropriate scalar cost value is needed. In the literature, several techniques for handling this problem exist \cite{CoCo99,coe02,Miett99}. The most commonly used among them concatenate the $M$ objective functions into a scalar cost function, either by associating weights to each one of them or by accounting for the distance between the candidate solution and a user-defined ideal point in the objective space or, even, by using ranking techniques based on the notion of Pareto dominance (see below). In this PhD thesis, all MOO problems are handled using techniques relying on Pareto dominance criteria. Different implementations of Pareto dominance based techniques exist in the literature; among them, the most widely used ones are MOGA \footnote{Multi-objective Genetic Algorithm.} \cite{Fon93}, NPGA \footnote{Niched Pareto Genetic Algorithm.} \cite{horn94}, NSGA \footnote{Non-Dominated Sorting Genetic Algorithm.} \cite{Sri1995}, NSGA2 \cite{Deb00a}, SPEA \footnote{Strength Pareto Evolutionary Algorithm.}\cite{ZiTh98}, SPEA2 \cite{Zitz02}, PAES \footnote{Pareto Archived Evolution Strategy.} \cite{knowles99} and PESA \footnote{Pareto Envelope-based Selection Algorithm.} \cite{corne00}. The definition of Pareto dominance and Pareto optimality in minimization problems, which the aforementioned techniques rely on, follow:
+
+\paragraph{Pareto Dominance:} Solution $\vec{x}_1$ dominates solution $\vec{x}_2$ ($\vec{x}_1\prec\vec{x}_2$) if and only if $\vec{F}(\vec{x}_1)$ is partially less than $\vec{F}(\vec{x}_2)$, i.e.
+\begin{eqnarray}
+    \vec{x}_1\prec\vec{x}_2 \Leftrightarrow (\forall i \in[1,M] :  f_i(\vec{x}_1) \leq f_i(\vec{x}_2))\wedge (\exists _i : f_i(\vec{x}_1) < f_i(\vec{x}_2))
+   \label{pareto_eq} 
+\end{eqnarray}
+
+\paragraph{Pareto Optimality:} Solution  $\vec{x}_1 \in X$ is a Pareto optimal solution with respect to $X$ if and only if there is no $\vec{x} \in X$ that dominates $\vec{x}_1$, or 
+
+
+\begin{eqnarray}
+    \nexists\vec{x}:\vec{x}\prec\vec{x}_1, ~~~~ \vec{x},\vec{x}_1\in X \!\subseteq\! \Re^{N}
+\end{eqnarray}
+ 
+%\figuremacroW{Pareto2}{Pareto dominance}{Schematic representation of Pareto dominality. $\vec{x}_1$ is a Pareto optimal solution since it is not dominated by any other solution. Furthermore $\vec{x}_1$ itself dominates all individuals located in the grey box.}{0.5}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{!}{8 cm}{\includegraphics{Pareto2.eps}}
+\end{minipage}
+\caption{Schematic representation of Pareto dominance in a two-objective minimization problem ($min(f_1)$ and $min(f_2)$). $\vec{x}_1$ is a Pareto optimal solution since this is not dominated by any other solution. $\vec{x}_1$ dominates all individuals located in the grey box. All Pareto optimal solutions are marked with black circles.} 
+\label{Pareto2}
+\end{figure}
+
+
+In fig.\ \ref{Pareto2}, a schematic representation of the Pareto optimality is shown. A minimization problem with two objective functions, $f_1$ and $f_2$, is considered. Black circles denote the front of non-dominated individuals whereas the empty circles denote dominated individuals. In the sake of clarity, the part of the objective space which is dominated by $\vec{x}_1$ is highlighted in grey. Individuals located in the grey area are dominated, at least, by $\vec{x}_1$. 
+
+A detailed presentation of three techniques (SPEA, SPEA2 and NSGA2) used in this thesis follows in section \ref{MOO}.
+
+\subsection{Constrained Optimization and EAs}
+\label{COPini}
+In engineering, almost all optimization problems are subject to constraints which split the design space into feasible and infeasible regions. EAs may handle constraints through (a) the use of penalty functions \cite{Deb00,morales98}, by assigning greater chances to survive to individuals satisfying the constraints \cite{powell93}, (b) the conversion of constraints into objectives \cite{surry95,surry97} and/or (c) the use of correction operators \cite{mich94}. A detailed survey on the subject can be found in \cite{mich96,coello02}. In the present thesis, penalty functions are used as presented in section \ref{COP}. 
+
+\section{The Evolutionary Algorithm SYstem (EASY)}
+\label{EASY_def}
+EASY is a generic optimization platform which implements the $(\mu,\lambda)EA$, \cite{phd_Giotis,phd_Karakasis,phd_Kampolis,EASYsite}. EASY has been developed by PCOpt/NTUA and was used as the algorithmic basis for all techniques proposed in this thesis. EASY supports MAEAs using on- or off-line trained metamodels, various forms of multi-level optimization as described in section \ref{EAintro}, distributed and asynchronous search; it is also Grid/Cluster-computing enabled, based on the DRMAA library, \cite{phd_Liakopoulos}. A detailed analysis of the implemented $(\mu,\lambda)EA$, considered as the background optimization method in this thesis, follows.  
+
+
+\subsection{The $(\mu,\lambda)$EA}
+\label{MLEA}
+Each generation, denoted by superscript $g$, of the $(\mu,\lambda)$EA is associated with three dynamically updated populations: the offspring $P_{\lambda}^g$ population with $\lambda$ offspring, the parent $P_{\mu}^g$ population containing $\mu$ parents and the elite $P_{e}^g$ population with $e$ elites. $P_{e}^g$ contains all or some of the currently best individuals. Depending on the design variables coding (binary, binary Gray or real), appropriate evolution operators are applied. 
+
+The background $(\mu,\lambda)$EA in use, \cite{phd_Giotis}, comprises the following steps:
+\begin{itemize}
+\item[]{\bf Step 1:}  (Initialization) $g=0$, $P_{e}^{g-1}= \emptyset$ and $P_{\mu}^g= \emptyset$. All $P_{\lambda}^g$  members are initialized using a pseudo-random number generator, in accordance to the user-defined lower and upper bounds of each design variable. A number of user-defined individuals, such as existing sub-optimal solutions to the same problem or optimal solutions to similar problems, can optionally be included into the initial population. 
+\item[]{\bf Step 2:}  (Evaluation) All individuals in $P_{\lambda}^g$ are evaluated using the problem-specific evaluation model. In all applications this thesis is dealing with, this is a CFD code. Later, when dealing with MAEAs, this will also be referred to as ``exact evaluation model'' to clearly distinguish it from evaluations (pre-evaluations) on cheaper surrogate models. The evaluation step is, always, considered to be time-consuming and yields vectors $\vec{F}(\vec{x}) \in \Re^{M} $ for each $\vec{x} \in P_{\lambda}^g$.
+\item[]{\bf Step 3:}  (Cost assignment) For each $\vec{x} \in P_{\lambda}^g \cup P_{\mu}^g \cup P_{e}^{g-1}$, a scalar cost $\Phi(\vec{x})$ value is assigned based on $\vec{F}(\vec{x})$. In SOO, $\Phi(\vec{x}) \equiv F(\vec{x})$. In MOO, the techniques presented in section \ref{MOO} are employed. 
+\item[]{\bf Step 4:}  (Elite selection) The $e^*$ non-dominated individuals (in a MOO problem) or the best one (SOO) in $P_{\lambda}^g \cup P_{e}^{g-1}$ are selected to enter $P_e^g$. If $e^*\!>\!e$, a thinning operator \cite{phd_Giotis} can be applied to remove the  $e^*\!-\!e$ excess individuals.     
+\item[]{\bf Step 5:}  (Elitism) A few elite individuals, selected at random from $P_e^g$, replace the worst members of $P_{\lambda}^g$.  
+\item[]{\bf Step 6:}  (Parent selection) The new parent population $P_{\mu}^{g}$ is selected from $P_{\mu}^{g-1}$ and $P_{\lambda}^g$ by taking into account the scalar cost values $\Phi$ computed in step 3 and the maximum allowed age  $\kappa$ (measured in generations) of each individual. Symbolically, $P_{\mu}^{g}=S(P_{\mu}^{g-1},P_{\lambda}^g,\kappa)$ 
+\item[]{\bf Step 7:}  (Recombination and mutation) The next generation of the offspring population $P_{\lambda}^{g+1}$ is derived from 
+$P_{\mu}^{g}$  by applying the recombination (or crossover) and mutation operators. Recombination $\mathcal{R}()$ is the process of combining the genotypes of $\rho$ parents to create an offspring (section \ref{evOps}). The recombination operator is used $\lambda$ times, with different sets of $\rho$ parents, randomly selected from $P_{\mu}^{g}$,  to create $\lambda$ new offspring. Next step is the application of the mutation operator. Mutation $\mathcal{M}()$ is a process which, with a small probability, randomly alters parts of the individual genotype. Symbolically, $P_{\lambda}^{g+1} = \mathcal{M}(\mathcal{R}(P_{\mu}^{g}))$ (section \ref{evOps}).
+\item[]{\bf Step 8:}  (Stopping criterion) Unless any of the stopping criteria is met, return to $Step 2$.
+\end{itemize}
+
+The basic nomenclature of the ($\mu,\lambda$)EA is given in table \ref{GEA nomenclature}. 
+
+\begin{table}[htdp]
+\centering
+\begin{tabular}{lr} 
+\hline
+\hline
+Number of design variables & N\\
+Number of objectives & M\\
+Number of constraints   & K\\
+\hline
+Candidate solution, design vector   & $\vec{x}=(x_1,...,x_N)$\\
+Objective function &$f_i(\vec{x})$ \\
+Vector of objective values (if M$>\!1$)  &$\vec{F}=(f_1(\vec{x}),...,f_M(\vec{x}))$\\
+Constraint function &$c_i(\vec{x})$ \\
+Vector of constraint values  & $\vec{C}=(c_1(\vec{x}),...,c_K(\vec{x}))$\\
+Scalar cost value ($\Phi\!=\!f$ for M=1) & $\Phi$ \\
+\hline
+Number of offspring &   $\lambda$ 			\\
+Number of parents &  $\mu$ 				\\
+Number of elites &  $e$			\\
+Maximum allowed age (in number of generations)&  $\kappa$			\\
+Number of parents per offspring &  $\rho$			\\
+\hline
+\hline
+\end{tabular}
+\caption[GEA nomenclature]{Nomenclature of the ($\mu,\lambda$)EA.}
+\label{GEA nomenclature} 
+\end{table}
+\FloatBarrier
+
+\subsubsection{Evolution Operators}
+\label{evOps}
+The evolution operators employed in EASY are the parent selection,  recombination, mutation and  elitism. These are further discussed below: 
+   
+\paragraph{Parent Selection:}
+The parent selection operator selects the members of $P_{\mu}^{g}$ from a set of already evaluated individuals. In EASY, based on the sixth step of the  algorithm presented in section \ref{MLEA}, this set is the union of $P_{\mu}^{g-1}$ and $P_{\lambda}^g$. The most common parent selection techniques  \cite{Back1996} are: 
+\begin{itemize}
+\item[]{\bf a) Proportional Selection:} Each member of $P_{\mu}^{g-1} \cup P_{\lambda}^g$ is given a probability to become a parent, which is inversely proportional to its cost value $\Phi$. Recall that a minimization problem is to be solved. The proportional selection is, practically, implemented via a roulette wheel. On the roulette wheel, each and every set member is given a slot, the angular size of which is proportional to its probability to become a parent. The roulette wheel is used $\mu$ times so as to create $\mu$ parents.  
+\item[]{\bf b) Linear Ranking:} In linear ranking, the $P_{\mu}^{g-1} \cup P_{\lambda}^g$ members are sorted according to their $\Phi$ values. The probability of each one of them to become a parent depends linearly on its position in the corresponding list and not on the $\Phi$ values themselves.
+\item[]{\bf c) Probabilistic Tournament Selection:}
+In probabilistic tournament selection, \cite{goldberg1991}, a number of individuals are selected at random from the $P_{\mu}^{g-1} \cup P_{\lambda}^g$ set and, with a user-defined (typically high) probability, the best individual from this group is selected to become a parent. Otherwise, a randomly chosen one among the remaining individuals becomes parent. This is repeated $\mu$ times. In tournament selection, the most important user-defined parameters are the tournament size, i.e.\ how many individuals participate in each tournament and the probability of the best among them to be selected as parent. Typical values are: participation of $2$ or $3$ individuals in each tournament and $80\%$-$95\%$ probability to select the best among them.
+\end{itemize}
+
+
+\paragraph{Recombination:}
+\label{RecombinationLabel}
+Since the first appearance of EAs, numerous discussions about the advantages of employing the recombination operator can be found \cite{Schaffer87,Schaffer91,Navy92crossoveror}. In general, the purpose of recombination is to increase the probability of an offspring to become fitter than its parent(s). Recombination schemes can be classified depending on the design variables' coding. 
+
+In EAs based on {\bf binary coding}, the recombination operator undertakes the exchange of pieces of binary strings encoding the design vector between the parents, in order to create an offspring. In EASY, the following recombination operators, which are appropriate for use with binary coding, exist:
+\begin{itemize}
+\item[]{\bf a) One-Point Recombination:} 
+In the one-point binary recombination, with $\rho$ parents per offspring, the binary string is divided into $\rho \! - \! 1$ parts of equal length in binary digits. Then, $\rho$ parents are selected at random from the $P_{\mu}^{g}$ set and, using them, $(\rho \! - \! 1)$ pairs of parents are formed; all of them include the first parent. If the first parent is denoted by 1, the $(\rho \! - \! 1)$ pairs are: $(1,2),(1,3),...,(1,\rho)$. 
+%The pairings take place serially between the lead parent (parent with higher $\Phi$) and the $i^{th} \in [1,\rho-1] $ one. 
+For each one of the $(\rho \! - \! 1)$ pairs, a random integer $\mathcal{X}$ determines the corresponding crossover point. Each offspring is formed by combining the left part of the first parental string and the right part of the other parent, according to the aforementioned pairings. A three-parent example ($\rho=3$) is presented in fig.\ \ref{1px}.
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{onepointbinary.eps}}
+\end{minipage}
+\caption{One-point binary coding recombination with $\rho=3$. In this case, the chromosome is divided in two parts ($\rho-1 = 2$) and, then  a vertical cut per part is created at random.} 
+\label{1px}
+\end{figure}
+
+\FloatBarrier
+\item[]{\bf b) Two-Point Recombination:} This scheme is similar to its one-point counterpart, the only difference being that two crossover points $\mathcal{X}_1$ and $\mathcal{X}_2$ are used. A two-parent example is illustrated in fig.\ \ref{2px}.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{twopointbinary.eps}}
+\end{minipage}
+\caption{Two-point binary coding recombination with $\rho=2$. In this simple case, the chromosome is handled as a whole ($\rho-1 = 1$) and two vertical cuts are created at random.} 
+\label{2px}
+\end{figure}
+
+\FloatBarrier
+\item[]{\bf c) One- or Two-Point Recombination per Design Variable:} Here, the aforementioned one- and two-point recombination schemes are separately applied to the parts  of the binary string that correspond to each design variable.  
+\end{itemize}
+  
+Using {\bf real coding}, the recombination operator applies directly to the real-valued design variables. In EASY, this is carried out as follows:  
+
+\begin{itemize}
+\FloatBarrier
+\item[]{\bf a) One- or Two-Point Recombination:} The one- and two-point recombination schemes, as described for binary coding, can be adapted to real coding by exchanging  pieces of the design vector $\vec{x}$ instead of pieces of binary strings. The randomly selected crossover variable is the only one to be affected by both parents according to a randomly generated weight $r$. A one-point, two-parent example is presented in fig.\ \ref{1pxreal}.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{pointreal.eps}}
+\end{minipage}
+\caption{One-point real coding recombination with $\rho=2$. The superscript and subscript denote the parent and the design variable respectively. The crossover variable (e.g. $5$) is selected at random. In the offspring, this variable is given by  $x_5^{1,2}=x_5^{1}+r(x_5^{2}-x_5^{1})$, where $r$ is a random number, uniformly distributed in $[0,1]$ ($r \in U(0,1)$).    
+} 
+\label{1pxreal}
+\end{figure}
+ 
+\FloatBarrier 
+\item[]{\bf b) Discrete Recombination:} In discrete recombination with $\rho$ parents, each real-valued design variable in the offspring has $50\%$ probability to be copied either from the first parent $\vec{x}^1$ or any other  $\vec{x}^{~random}$, randomly chosen among the $\rho\!-\!1$ remaining ones. A three-parent example is presented in fig.\ \ref{disc}.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{discrete.eps}}
+\end{minipage}
+\caption{Discrete real coding recombination with $\rho=3$. $\vec{x^1}$ is the first parent.    
+} 
+\label{disc}
+\end{figure}
+    
+\FloatBarrier    
+\item[]{\bf c) Intermediate Recombination:}  In intermediate recombination, each component of  offspring $\vec{x}$ is a linear combination of the first parent $\vec{x}^1$ and $\vec{x}^{~random}$, which may be any other parent randomly chosen among the $\rho-1$ remaining ones. Thus,
+\begin{eqnarray}
+\nonumber
+\vec{x}=\vec{x}^1+r(\vec{x}^{~random}-\vec{x}^1),~ r\in U[0,1]
+\end{eqnarray}  
+where $r \in U(0,1)$ means that $r$ is a random number, uniformly distributed in $[0,1]$. A different random number is generated for each design variable.
+
+\FloatBarrier 
+\item[]{\bf d) Simulated Binary Crossover:} The so-called simulated binary crossover (SBX) \cite{SBX1} aims at recreating the one-point binary recombination by replicating its (a) average property \footnote{The average of the decoded variable values is the same
+before and after the crossover operation.} and (b) spread factor property\footnote{The spread factor ($\beta$) is defined as the ratio of the spread of offspring to that of parents. Contracting, expanding or stationary recombination correspond to $\beta \! <\!1$, $\beta\! >\!1$ or $\beta \!=\!1$ respectively. The spread factor property states that the occurrence of spread factor $\beta \! \approx \! 1$ is more likely than any other $\beta$ value. } \cite{SBX1}. The offspring $\vec{x}$ is generated based on the formulas
+\begin{eqnarray}
+	\vec{x}={\left\{ 
+	\begin{array}{ll}
+    \vec{\overline{x}} - \frac{\beta}{2} (\vec{x}^{~random}-\vec{x}^1)~~,\mbox{$r < 0.5$}\\
+	\vec{\overline{x}} + \frac{\beta}{2} (\vec{x}^{~random}-\vec{x}^1)~~,\mbox{$r \geq 0.5$}
+    \end{array} \right. }
+    \label{sbxx}
+\end{eqnarray}  
+where $r\in U[0,1]$, $\vec{x}^1$ the first parent, $\vec{x}^{~random}$ is randomly selected among the $\rho-1$ remaining parents, $\vec{\overline{x}}$ is the middle point between $\vec{x}^{1}$ and $\vec{x}^{~random}$ and the spread factor $\beta$ is defined by
+\begin{eqnarray}
+	\beta={\left\{ 
+	\begin{array}{ll}
+    (2r)^{n}~~~~~~,\mbox{$r \leq 0.5$}\\
+	\left(\frac{1}{2r}\right)^{n+2}~~,\mbox{$r > 0.5$}
+    \end{array} \right. }
+    \label{betasbx}
+\end{eqnarray}
+
+Given that $r  \! \in  \! U[0,1]$, the probability distribution of $\beta$  can be plotted for various values of $n$ based on eq.\ \ref{betasbx} (fig.\ \ref{sbx}, left). Based on the $\beta$ probability distribution and eq.\ \ref{sbxx}, the probability distribution of offspring appearance on the design space as a function of $n$ can be plotted (fig.\ \ref{sbx}, right for a 1D problem and fig.\ \ref{sbx2} for a 2D problem). In general, higher $n$ values increase the probability of $\beta \approx 1$, which in turn increases the probability of creating near-parent offspring (spread factor property). This, together with the symmetrical offspring probability distribution with respect to $\vec{\overline{x}}$ (average property), show that SBX may in fact simulate the one-point binary crossover.    
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{SBXparents.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{SBX.eps}}
+\end{minipage}
+\caption{The offspring probability distribution of a 1D problem using SBX, with various values of $n$, is plotted as a function of the parents $P_1$ and $P_2$ (left). The corresponding probability distributions of $\beta$ are plotted on the right. Increasing $n$ leads to higher probability of $\beta \approx 1$.  }
+\label{sbx}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{13cm}{!}{\includegraphics{SBX3dparents0.eps}}
+\end{minipage}
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{13cm}{!}{\includegraphics{SBX3dparents2.eps}}
+\end{minipage}
+\caption{The offspring probability distribution in a 2D optimization problem using SBX recombination for $n\!=\!0$ (top) and $n\!=\!2$ (bottom) is presented. The recombination uses two parents, namely $P_1(1,1)$ and $P_2(-1,-1)$.}
+\label{sbx2}
+\end{figure}
+\end{itemize}
+
+%\FloatBarrier   
+\paragraph{Mutation:}
+In EAs, the role of mutation is to introduce and preserve diversity in the population. Thus, mutation prevents the population from becoming prematurely homogenized, in which case slow or stagnated evolution may occur. Mutation is applied to each offspring generated using the recombination operator, subject to a small mutation probability $P_m$. From the implementation viewpoint, mutation depends on whether binary or real coding is used.
+
+In EAs based on {\bf binary coding}, mutation is applied to each and every bit of the binary string. Each bit can be inverted (flip\footnote{Bit flip is a state switch, from 0 to 1, or vice-versa.}), with a probability $P_m$.      
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{10cm}{!}{\includegraphics{mut.eps}}
+\end{minipage}
+\caption{Binary coding mutation.}
+\label{binarymut}
+\end{figure}
+
+In {\bf real coded EAs},  mutation is applied to each real-valued component of $\vec{x}$, 
+
+\begin{eqnarray}
+	\vec{x}_m={\left\{ 
+	\begin{array}{ll}
+    \vec{x}~~~~~~~~~~,\mbox{$P_m > r$}\\
+	M(\vec{x},D)~,\mbox{$P_m \leq r$}
+    \end{array} \right. }
+    \label{}
+\end{eqnarray}
+where $r\in U[0,1]$ seeded separately for each member of $\vec{x}$ and
+
+\begin{eqnarray}
+	M(\vec{x},D)={\left\{ 
+	\begin{array}{ll}
+    \vec{x}+D(g,\vec{U}-\vec{x})~,\mbox{$r_1 > 0.5$}\\
+	\vec{x}-D(g,\vec{x}-\vec{L})~,\mbox{$r_1 \leq 0.5$}
+    \end{array} \right. }
+    \label{}
+\end{eqnarray}
+where $r_1\in U[0,1]$, $\vec{U}$ and $\vec{L}$ are the vectors of upper and lower bounds of $\vec{x}$ respectively and  
+
+\begin{eqnarray}
+   D(g,y) = y r_2 (1-g/g_{max})^{0.2}
+\end{eqnarray}
+where $g_{max}$ the number of maximum generations and $r_2\in U[0,1]$. Alternatively, the termination criterion can be based on the number of evaluations, so $g/g_{max}$ must be replaced with $Ev/Ev_{max}$, where $Ev$ is the evaluation counter and $Ev_{max}$ the maximum allowed number of evaluations.  
+
+%\begin{eqnarray}
+%	\vec{\sigma}=\frac{min(\mid \vec{x}-\vec{UB}\mid,\mid \vec{x}- \vec{LB}\mid)}{3} * (1-\frac{g}{g_{max}})^p
+%	\label{sigmamut} 
+%\end{eqnarray}
+%where $\vec{UB}$ and $\vec{LB}$ the vectors of upper and lower bounds for the design variables respectively. $g$ the current generation and $g_{max}$ the maximum allowed generations.$p \simeq 0.2$.
+
+%The first part of the eq.\ref{sigmamut} ensures that the mutated individual will respect the design variable bounds and the second part reduces exponentially eith $p$ the magnitude of $\vec{\sigma}$ as the generations advance.
+
+%\begin{figure}[h!]
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7cm}{!}{\includegraphics{Mut_1d.eps}}
+%\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{8cm}{!}{\includegraphics{Mut_2d.eps}}
+%\end{minipage}
+%\label{realmut}
+%\caption{Examples of mutant probability distributions for one design variable left $x=0.4$ and two design variable right $\vec{x}=(0.4,0.9)$. For both cases $\vec{LB}=0$ and $\vec{UB}=1$.}
+%\end{figure}
+
+\paragraph{Elitism:}
+In EAs, the purpose of elitism is to guarantee a monotonously improving course of evolution \cite{Back1996}. In EASY, a separate population $P_e^g$ is maintained and updated accordingly at the end of each generation (step 4 of the ($\mu,\lambda$)EA, section \ref{MLEA}). Elitism implies that a user-specified number of elite individuals replace the worst members of the offspring population $P^g_{\lambda}$, prior to the application of the parent selection operator.
+  
+\subsection{Solving MOO Problems with EASY}
+\label{MOO}
+As mentioned in section \ref{MOOini}, in MOO problems, a technique that transforms $\vec{F}$ into a scalar cost function $\Phi$ is required. Symbolically,
+
+\begin{eqnarray}
+    \Phi(\vec{x})=\Phi(\vec{F}(\vec{x})) :\Re ^M \rightarrow \Re ^1 
+	\label{MOOeq}
+\end{eqnarray}
+The SPEA, SPEA2 and NSGA2 techniques, which are available in EASY, are presented below.
+
+\paragraph{SPEA:}
+SPEA was proposed by Zitzler and Thiele \cite{ZiTh98} in 1998 as a MOO cost assignment technique based on Pareto dominance. In SPEA, $\Phi(\vec{x})$ is computed in two steps as follows:
+\begin{itemize}
+
+\item[]{\bf Step 1:}  (Strength Computation) The strength of each member of the population $P=P_{\lambda}^g \cup P_{\mu}^g \cup P_{e}^{g-1}$ is computed. The strength of individual $i$ ($S_i$) is defined as the sum of the population members which are dominated  by $i$, divided by the population size, namely 
+
+\begin{eqnarray}
+	S_i = \frac{\sum(j : j \in P \wedge i \prec j)} {\sum P}, ~~ \forall i \in P =P_{\lambda}^g \cup P_{\mu}^g \cup P_{e}^{g-1}  
+\end{eqnarray}
+
+\item[]{\bf Step 2:}  (Cost Computation) The cost value $\Phi$ for each population member is computed as the sum of strengths of the population members which dominate it,
+
+\begin{eqnarray}
+	\Phi_i = \sum _{j \in P \wedge i \prec j}S_j
+\end{eqnarray}
+\end{itemize}
+  
+ 
+\paragraph{SPEA2:}
+SPEA2 \cite{Zitz02} is an enhanced variant of SPEA which additionally incorporates density information. A nearest neighbour density estimation technique which allows a more precise guidance of the search process is incorporated, thus improving, compared to SPEA, the distribution of individuals along the Pareto front. 
+
+SPEA2 performs three steps to compute $\Phi$. These steps are:
+
+\begin{itemize}
+\item[]{\bf Step 1:}  (Strength Computation) As in SPEA.
+
+\item[]{\bf Step 2:}  (Density Computation) For each population member, the density metric $D_i$ is calculated  as a function of its distance from its closest neighbour in the objective space $d_i$,
+
+\begin{eqnarray}
+	D_i = \frac{1} {d_i+2} 
+\end{eqnarray}
+where
+\begin{eqnarray}
+	\nonumber
+	d_i= min (\parallel \vec{F_i} - \vec{F_k} \parallel), ~ k \in P  
+\end{eqnarray}
+
+
+\item[]{\bf Step 3:}  (Cost Computation) The cost values for all population members are calculated as the sum of the raw cost $R_i$ and the density metric, $D_i$,
+
+\begin{eqnarray}
+	\Phi_i = R_i+D_i
+\label{SPEAIIeq}
+\end{eqnarray}
+Here, $R_i$ is the sum of the individual strengths of the population members which dominate it, namely
+  
+\begin{eqnarray}
+	\nonumber
+	R_i=\sum _{j \in P \wedge i \prec j}S_j 
+\end{eqnarray}  
+\end{itemize}
+
+\paragraph{NSGA2:} 
+NSGA2 \cite{Deb00a} is an improved variant of NSGA \cite{Sri1995} addressing the high computational complexity of non-dominated sorting, the lack of elitism and the need for specifying the sharing parameter of the initial algorithm. A modified variant of NSGA2 is available in EASY. As proposed in \cite{Deb00a}, instead of computing $\Phi$ values, NSGA2 relies upon sorting the individuals according to Pareto dominance and density criteria. The modified variant of NSGA2 used in this PhD thesis includes the following steps:    
+
+
+\begin{itemize}
+\item[]{\bf Step 1:}  (Front Ranking) All members of the population are classified in fronts with decreasing Pareto dominance.  
+\begin{itemize}
+\item[]{\bf Step 1-a:}  (Initialization) Initialize the front counter $i=0$ and the auxiliary set $S=P_{\lambda}^g \cup P_{\mu}^g \cup P_{e}^{g-1}$.
+
+\item[]{\bf Step 1-b:}  (Find non-dominated members of $S$) Locate the non-dominated members of $S$ and copy them to $\mathcal{F}_i$. 
+
+\item[]{\bf Step 1-c:}  (Update) Update $S=S-\mathcal{F}_i$ % http://www.mathwords.com/s/set_subtraction.htm
+and $i=i+1$. if $S\neq\O$ go to Step 1-b; else, set the number of fronts $N_F$ equal to $i-1$.
+\end{itemize}
+\item[]{\bf Step 2:}  (Density Computation) For each member $j \in \mathcal{F}_i$, the density metric $d_j$, which is equal to the average side-length of the cuboid defined by its neighbouring individuals in $\mathcal{F}_i$, is computed. This procedure is repeated for all fronts $i$ and all individuals are given a density metric value.
+
+\item[]{\bf Step 3:}  (Cost Computation) Based on the density metric (calculated in Step 2) and front $i$ (calculated at Step 1) which each individual belongs to, a scalar $\Phi$ is assigned to each individual as follows,
+\begin{itemize}
+\item[]{\bf Step 3-a:}  (Initialization) Set $i=0$ and $\Phi_b=1.0$.
+\item[]{\bf Step 3-b:}  (Computation of $\Phi$) For each member $j \in \mathcal{F}_i$, $\Phi$ is calculated as
+
+\begin{eqnarray}
+	\nonumber
+	\Phi_j= \Phi_b(1+\frac{d_{max}-d_j}{d_{max}}) 
+\end{eqnarray} 
+where $d_{max}$ is the maximum of all $d_k$ $\forall k \in \mathcal{F}_i$   
+\item[]{\bf Step 3-c:}  (Update) Update $\Phi_b=1.1max(\Phi_j)$ and $i=i+1$. If $i \leq N_F$ return to Step 3-b, otherwise stop. 
+\end{itemize}
+\end{itemize}
+
+\subsection{Constraints' Handling in EASY}
+\label{COP}
+In EASY, penalty functions are used to handle constrained optimization problems (COP), see section \ref{OPt_def}. Penalty terms, proportional to the magnitude of the constraint violation, are added to the cost function. According to eq.\ \ref{penal2}, for each constraint, a ``nominal threshold'' $d_k$ is defined as the maximum possible constraint function value allowed by the optimization problem. Furthermore, a ``relaxed'' threshold $d_k^* > d_k$ is introduced. Once an individual violates the relaxed threshold of one of the constraints ($c_k \! > \! d_k^*$), death penalty ($\Phi \! = \! \infty$) is given to it. If the individual violates one or more of the constraints ($d_k \! < \! c_k \! < \! d_k^*$) without exceeding any of the relaxed threshold values, its cost value $\Phi$ is penalized as follows:
+
+\begin{eqnarray}
+	\Phi(\vec{x})=\Phi(\vec{x})+ \prod _{k=1}^K{\left\{ 				\begin{array}{ll}
+    exp(a_k\frac{c_k(x)-d_k}{d_k^* -d_k}) & ~~,c_k(x)>d_k\\
+    1 & ~~,c_k(x)\leq d_k\end{array} \right. }
+    \label{penal2}
+\end{eqnarray}  
+where the user-defined set of coefficient values in $\vec{a}$ control the penalization intensity.
+
+%\begin{figure}[h!]
+%\begin{minipage}[b]{1.0\linewidth}
+% \centering
+% \resizebox*{10cm}{!}{\includegraphics{fit_new.eps}}
+%\end{minipage}
+%\caption{$\Phi$ plot for 1000 randomly chosen individuals over the 2d design space of a two-objective constrained optimization problem (fig.\ref{case}) using the proposed penalization formulation (eq.\ref{penal2}).}
+%\label{fit2}
+%\end{figure}
+ 
+
+\subsection{Metamodel-Assisted Evolutionary Algorithm (MAEA)}
+\label{MAEApar}
+Due to the use of costly evaluation models (such as the CFD software to numerically predict flows in or around complex 3D geometries), solving engineering optimization problems by means of EAs may become very computationally demanding. The extensive smart use of low-cost surrogate evaluation models (often referred to as ``metamodels'') during the optimization decreases substantially the number of calls to the computationally expensive, problem-specific evaluation code (CFD). This makes EAs a viable tool which can routinely be used to solve large-scale industrial optimization problems, in affordable wall clock time. Literature surveys on the use of metamodels within EAs can be found in papers \cite{LTT_2_020,Jin2002,LTT_2_027,EBNK} or books \cite{KEANEbook}.
+
+
+Polynomial regression, artificial neural networks, Gaussian processes etc.\ have all been used as metamodels. The existing MAEAs differ since they apply different interactions between the metamodel and the problem-specific evaluation models. Hereafter, all of them will be referred to as MAEAs. In this thesis, on-line trained metamodels are used \cite{LTT_2_018,LTT_2_020,LTT_2_029}. 
+ 
+In on-line trained metamodels, for all but the first few generations, the metamodels are used to pre-evaluate the current population. Based on the outcome of approximate pre-evaluations (Inexact Pre-Evaluations, IPE), the few most promising individuals are identified and these solely undergo evaluation with the problem-specific evaluation model to compute their ``exact''  objective function value(s), before proceeding to the next generation. The $(\mu,\lambda)$ MAEA is sketched in fig.\ \ref{MAEA}.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=90mm]{MAEA.eps} 
+\caption{The $(\mu,\lambda)$MAEA using on-line trained metamodels. The loop corresponds to a single EA generation. The IPE phase, within the EA--based search, is described in \cite{LTT_2_018,LTT_2_020,LTT_2_029}. }
+\label{MAEA}
+\end{figure}
+
+
+\paragraph{Radial Basis Function (RBF) Networks:}
+In this PhD thesis, RBF networks are used as metamodels. Nevertheless, the new methods proposed in the next chapters could be combined with any other type of metamodels. RBF networks are artificial neural networks (ANNs) \cite{Hayk1999} with three neuron layers, (input, hidden and output) as shown in fig.\ \ref{rbf1}. Signals propagate through the network in the forward direction, from the input to the output layer, by performing a nonlinear mapping (eq.\ \ref{RBFa}) followed by a linear one. This mapping introduces weight coefficients $w_l$ that must be computed during the network training on a number of available patterns. An RBF network to be used within a MAEA should have $N$ input units, i.e.\ as many as the  design variables. The hidden layer includes $L$ nodes, associated with the so–called RBF centers $c^l$. At each hidden neuron, a nonlinear mapping of the input signals to a single value is performed using the radial-basis activation function $G:\Re^N \rightarrow \Re$, acting on the distance of input $\vec{x}$ (eq.\ \ref{RBFa}) from the corresponding center $\vec{c^l} \in \Re^N$.  In the present thesis, the Gaussian activation, 
+
+\begin{eqnarray}
+	G(u,r)=exp(\frac{-u^2}{r^2})
+	\label{RBFa}
+\end{eqnarray}  
+where $u=\Vert x-c^l \Vert_2$ the distance from the corresponding $l^{th}$ RBF center, is used.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=90mm]{RBF.eps} 
+\caption{Radial basis function (RBF) network.}
+\label{rbf1}
+\end{figure}
+
+The radii or widths r values may considerably affect the prediction abilities of the network; these are computed using heuristics, \cite{Hayk1999}. The output layer includes as many nodes as the expected network responses. The single response we are dealing with is expressed by the sum of the weighted output signals from the hidden neurons, as follows             
+\begin{eqnarray}
+	f(x)=\sum _1^K w_i G(u(x_i),r)
+\label{response}
+\end{eqnarray}  
+
+If the number of hidden nodes ($K$) is equal to the number of training patterns ($T$), the choice of the $RBF$ centers is straightforward, i.e.\
+$\vec{c}^{(t)}\!\equiv\!\vec{x}^{(t)}$, $t\!\in\![1,T]$, ensuring
+that the $T$ samples are exactly interpolated. 
+In this case, the network training requires the solution of the $T\!\times\!T$ symmetric linear system of equations, 
+%
+\begin{equation}
+    \sum_{t=1}^{T} w_t G(\|\vec{x}^{(t)}-\vec{c}^{(t)}\|_2)=
+    \zeta^{(t)}
+    \nonumber
+\end{equation}
+
+A common way to increase the network's generalization \cite{Pog1990, Tik76, Tik95} is by using a smaller number of appropriately selected hidden nodes than the training patterns, i.e.\ by selecting $K\!<\!T$. 
+In such a case, the selection of the $RBF$ centers is not as straightforward as in the aforementioned case and is of great importance because 
+it strongly affects the prediction ability of the network. 
+In \cite{LTT_2_029}, a selection scheme for the $RBF$ centers based on 
+self-organizing maps ($SOMs$), \cite{Fri94a, Hayk1999} was proposed. 
+This practically consists of a two level learning process, namely the unsupervised and  supervised ones.
+During the unsupervised learning, through their standard processes: 
+competition, cooperation and adaptation, $SOMs$  classify the training 
+patterns into $K$ clusters.  
+Each cluster gives a single $RBF$ center $\vec{c}^{(k)}$, considered to be representative of the cluster as a whole. The corresponding radius $r_k$ is computed using heuristics based on distances between the centers, \cite{Karay1997, LTT_2_029, Hayk1999, BenArc02}.
+During the supervised learning, the synaptic weights are computed by minimizing the approximation error of the $RBF$ network over the training set, while considering smoothness requirements.
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[scale=0.6]{rbf-som.eps}
+%    \caption{The two phases of an \RBF\ network training based on \SOMs:
+%            (a) self-organized positioning of the \RBF\ centers (unsupervised 
+%            learning) and (b) computation of the synaptic weights (supervised
+%            learning.}
+%    \label{f:rbfn-som}
+%\end{figure}
+
+
+The so-called \textit{Importance Factors} ($IFs$), as proposed by Giotis et al. \cite{LTT_2_018}, can improve the prediction ability of the $RBF$ network. Incorporating $N$ extra coefficients ($I_n, n\!=\!1,N$), the importance of each design parameter on the network response is quantified and exploited in order to increase the overall $RBF$ network prediction quality. High $I_n$ values indicate high sensitivity of the objective function in the vicinity of the design point under consideration with respect to the $n$-th input variable. The $IFs$ are computed by the $RBF$ network as a by-product of the training process and are used to improve the quality of networks' output. 
+In detail, each time an improved solution is computed by the $EA$ (index $b$, which stands for the current best), a local $RBF$ network is built and $N$ partial derivatives $\partial o^{(b)} / \partial x_{n}$ are computed using the closed-form response expressions; by doing so, $\partial o^{(b)} / \partial x_{n}$ become the exact derivatives of an approximate function. 
+Based on these derivatives, a weighted norm is introduced and used instead of the standard one (i.e.\ instead of eq. \ref{response}), as follows
+%
+\begin{equation}\label{e:IFcomp}
+    \left\|\vec x^{(t)}-\vec c^{(k)}\right\|_{wei} =
+    \sqrt{  \sum_{n=1}^N I_n\left(x_n^{(t)}-c_n^{(k)}\right)^2  }
+	\mbox{,~where~~~~}
+    I_n = { {\left|  {\partial o^{(b)}} \over {\partial x_n} \right|} 
+          \over 
+  { \sum_{i=1}^{N} \left| {\partial o^{(b)}} \over {\partial x_i} \right| } }
+\end{equation}
+
+
+\subsubsection{Inexact Pre--Evaluation Algorithm}
+
+
+The algorithm starts as a conventional $(\mu, \lambda)EA$ (by exclusively making use of the exact evaluation model) for the few starting generations until a user--defined minimum number of previously evaluated individuals enter the $DB$. 
+Then, the $IPE$ phase starts and, in subsequent generations, instead of evaluating the offspring population on the costly problem-specific model, the following actions are taken:
+\newcommand{\apprx}[1]{\tilde{#1}}
+\begin{itemize}
+\item[]{\bf Inexact Evaluation:}
+For each offspring, $\vec{x}\!\in\!P_{\lambda,g}$, the objective function values $\apprx{\vec{F}}(\vec{x})$, are approximated using a local metamodel trained on a small number of data selected from the $DB$. 
+%
+\item[]{\bf Screening:}
+%>>>>
+Based on the $\apprx{\vec{F}}(\vec{x})$ values, a provisional
+$\Phi$ value (denoted by $\apprx{\Phi}$) is assigned to each
+offspring.
+%>>>>
+\item[]{\bf Exact Evaluation:}
+%>>>>
+For all $\vec{x}\!\in\!P_{e}$, the ``exact'' objective function values $\vec{F}(\vec{x})$ are computed and stored in the $DB$. 
+Practically, this step determines the $CPU$ cost of each generation.
+%...................
+\end{itemize}
+
+
+\subsection{Hierarchical Evolutionary Algorithms}
+
+As mentioned in section \ref{EAintro}, an additional way to reduce the optimization turn-around time is by using the so-called hierarchical EA (HEA). HEAs are based on a hierarchical search structure, which consists of a number of semi–autonomously ``evolving'' levels (multi-level structure). Within each level, different evaluation tools, search techniques and/or problem parameterizations can be used, \cite{Herr1999, kn:Sef2000, Desid2003, LTT_2_031, LTT_3_092, LTT_2_036, LTT_2_044, LTT_2_048, LTT_4_05}. Each level solves a different variant of the same problem. Furthermore, adjacent levels may exchange their best individuals according to one- or two-way inter-level communication schemes. The following three hierarchical schemes/modes, schematically presented in fig.\ \ref{allheas}, can also be combined in a single scheme.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.8]{multimodes.eps}
+% ------------------------------------------------
+    $\mbox{Hierarchical Evaluation~~~~~Hierarchical Search~~~~~~Hierarchical Parameterization}$
+%   $\mbox{Hierarchical}~~~~~~~~~~~~~~~~
+%    \mbox{Hierarchical}~~~~~~~~~~~~~~~~~~~~
+%    \mbox{Hierarchical}$
+%   \\
+%   $~~~\mbox{ Evaluation }~~~~~~~~~~~~~~~~~~
+%    \mbox{   Search   }~~~~~~~~~~~~~~~~~~~
+%    \mbox{Parameterization}$
+% ------------------------------------------------
+    \caption{$HEAs$. Schematic representation of  three
+            hierarchical schemes. Left: Hierarchical Evaluation. Middle: Hierarchical Search. Right: Hierarchical Parametrization. All this types can be combined or used separately, at will, utilizing two or more levels.}
+    \label{allheas}
+\end{figure}      
+
+The three hierarchical schemes are described below:
+\paragraph{(a) Hierarchical Evaluation Scheme:}  
+The hierarchical evaluation scheme allows the exploitation of a number of different evaluation tools/softwares with different fidelity and cost (computational and/or economical). Each tool is assigned to a different EA or MAEA level. By convention, the lower level undertakes the exploration of the design space by utilizing the low-cost and reduced fidelity tool so as to locate near–optimal solutions at low CPU cost and, then, delivering them to the higher level(s) for further refinement. On the higher level(s), being exploitation-oriented and responsible for delivering optimal solution(s), evaluation tools of higher fidelity and CPU cost are employed. Two–way inter–level communication can be used. So, apart from the migration of promising individuals upwards for them to undergo refinement, higher level individuals may also move downwards so as to stimulate a more exhaustive search in their neighborhood, based on a low-cost evaluation tool. In the hierarchical evaluation scheme, as many DBs as the number of evaluation tools should be maintained. In a two–level algorithm, for instance, the high-fidelity DB, recording entries from evaluations based on the high-level problem–specific tool, is linked to the high level and the associated IPE phase. Next to it, a low-fidelity DB will does the same on the low level. Without loss in generality, differently configured MAEAs can be used on each level. An example of hierarchical evaluation used to handle an industrial application, is presented in fig.\ \ref{HMAEA}, where the higher level is assosiated with a Navier-Stokes equations' solver and the lower level with an Euler one.
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{14cm}{!}{\includegraphics{handmade.eps}}
+\end{minipage}
+\caption{Left: Schematic representation of a two-level HMAEA (Hierarchical MAEA). The high level is associated with the expensive and accurate model and the lower level with the cheap and, thus, less-accurate one. Communication between the two level is possible in both directions including re-evaluation with the evaluation tool associated with receiving level. Right: Example of a HMAEA used in hydraulic turbine design \cite{LTT_3_094}.}
+\label{HMAEA}
+\end{figure} 
+
+\paragraph{(b) Hierarchical Search Scheme:}
+In hierarchical search scheme, each level utilizes a different search technique and thus becomes able to combine the advantages of EAs with other search methods. In case the objective function gradient can be computed, the combination of EAs with gradient–based methods (GBM) is of great interest. Stochastic methods, such as EAs (DEAs, DMAEAs, etc.), are typically used for the exploration of the design space, on the lower level, exploiting their ability to escape local optima. Then, promising solutions migrate from the low level to its immediate higher one which uses a GBM to efficiently, with minimum turn-around time, locate the nearest optimum. The migration of promising solutions can be bi-directional, to accentuate the exploration capabilities of low-level EAs. The opposite configuration (GBM on the low and EA on the high level) is also possible. Hierarchical search requires particular attention if a GBM is employed to solve MOO problems, by seeking the front of non–dominated solutions. A common practice is to act on a fitness function formed by concatenating weighted objectives, which is appropriate only for convex fronts. Alternatively, as proposed in \cite{LTT_2_036}, the GBM can optimize the same scalar cost function ($\Phi$) used by the EA, computed for instance via the SPEA2 technique, after appropriately approximating its non-differentiable functions. Should a GBM undergo the refinement on any level, methods for computing the gradient of the objective function must be available. In aerodynamic optimization, the computation of the gradient can be based on the adjoint method, \cite{LTT_2_032}, at extra cost which is approximately equal to that of solving the flow equations.
+
+
+\paragraph{(c) Hierarchical Parameterization Scheme:}
+In hierarchical parameterization different parameterizations are  associated with each level. Typically a rough parameterization with a reduced number of design variables is associated with the lower level, where rough designs are quickly detected due to the small dimensionality of the problem. On the other hand, a detailed parameterization is associated with the higher level.  The hierarchical or multi-level parameterization scheme should be configured in a way that makes all but the high level not affected (or, at least, slightly affected) by the curse of dimensionality. During the inter-level migration steps, a few promising solutions detected on the low level(s) are sent to the higher level(s) for refinement. This hierarchical scheme is suitable for shape optimization problems in which the design vector comprises the coordinates of control points of parametric curves and surfaces since, increasing or decreasing the number of control points via knot insertion and removal algorithms, allows exact (upwards) or approximate (downwards) transformations of the design vectors.
+
+
+% ---------------------------------------------------------------------------
+% ----------------------- end of thesis sub-document ------------------------
+% ---------------------------------------------------------------------------

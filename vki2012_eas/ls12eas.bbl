@@ -1,0 +1,432 @@
+\begin{thebibliography}{10}
+
+\bibitem{LTT_2_040}
+V.G. Asouti and K.C. Giannakoglou.
+\newblock Aerodynamic optimization using a parallel asynchronous evolutionary
+  algorithm controlled by strongly interacting demes.
+\newblock {\em Engineering Optimization}, 41(3):241--257, 2009.
+
+\bibitem{LTT_2_045}
+V.G. Asouti, I.C. Kampolis, and K.C. Giannakoglou.
+\newblock A grid-enabled asynchronous metamodel-assisted evolutionary algorithm
+  for aerodynamic optimization.
+\newblock {\em Genetic Programming and Evolvable Machines (SI:Parallel and
+  Distributed Evolutionary Algorithms, Part One)}, 10(3):373--389, 2009.
+
+\bibitem{LTT_2_051}
+V.G. Asouti, X.S. Trompoukis, I.C. Kampolis, and K.C. Giannakoglou.
+\newblock Unsteady {CFD} computations using vertex-centered finite volumes for
+  unstructured grids on {G}raphics {P}rocessing {U}nits.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  67(2):232--246, 2011.
+
+\bibitem{BenArc02}
+N.~Benoudjit, C.~Archambeau, A.~Lendasse, J.~Lee, and M.~Verleysen.
+\newblock Width optimization of the {G}aussian kernels in radial basis function
+  networks.
+\newblock In {\em European Symposium on Artificial Neural Networks -- ESANN
+  2002}, pages 425--432, Bruges, Belgium, 2002.
+
+\bibitem{Brank2005}
+J.~Branke and C.~Schmidt.
+\newblock Faster convergence by means of fitness estimation.
+\newblock {\em Soft Computing -- A Fusion of Foundations, Methodologies and
+  Applications}, 9(1):13--20, 2005.
+
+\bibitem{Buch2005}
+D.~B{\"{u}}che, N.~Schraudolph, and P.~Koumoutsakos.
+\newblock Accelerating evolutionary algorithms with {G}aussian process fitness
+  function models.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics --- Part C:
+  Applications and Reviews}, 35(2):183--194, May 2005.
+
+\bibitem{kn:Bull1999}
+L.~Bull.
+\newblock On model-based evolutionary computation.
+\newblock {\em Soft Computing --- A Fusion of Foundations, Methodologies and
+  Applications}, 3(2):76--82, 1999.
+
+\bibitem{Deb2000}
+K.~Deb, S.~Agrawal, A.~Pratap, and T.~Meyarivan.
+\newblock A fast elitist non-dominated sorting genetic algorithm for
+  multi-objective optimization: {NSGA-II}.
+\newblock In {\em Parallel Problem Solving from Nature -- PPSN VI}, Paris,
+  France, 2000.
+
+\bibitem{Desid2003}
+J.-A. D\'{e}sid\'{e}ri and A.~Janka.
+\newblock Hierarchical parametrization for multilevel evolutionary shape
+  optimization with application to aerodynamics.
+\newblock In {\em EUROGEN 2003, Evolutionary Methods for Design, Optimisation
+  and Control with Applications to Industrial Problems}, Barcelona (Spain),
+  2003.
+
+\bibitem{Drel1987}
+M.~Drela and M.B. Giles.
+\newblock Viscous-inviscid analysis of transonic and low {R}eynolds number
+  airfoils.
+\newblock {\em AIAA Journal}, 25(10):1347--1355, 1987.
+
+\bibitem{LTT_2_027}
+M.~Emmerich, K.C. Giannakoglou, and B.~Naujoks.
+\newblock Single- and multi-objective evolutionary optimization assisted by
+  {G}aussian random field metamodels.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 10(4):421--439,
+  2006.
+
+\bibitem{LTT_3_064}
+M.~Emmerich, A.~Giotis, M.~Ozdemir, B\"{a}ck T., and K.C. Giannakoglou.
+\newblock Metamodel-assisted evolution strategies.
+\newblock In {\em Parallel Problem Solving from Nature -- PPSN VII}, pages
+  361--370, Granada, Spain, 2002. Springer.
+
+\bibitem{Farina2002}
+M.~Farina.
+\newblock A neural network based generalized response surface multiobjective
+  evolutionary algorithm.
+\newblock In {\em 2002 Congress on Evolutionary Computation -- CEC '02},
+  Honolulu, HI, USA, May 2002.
+
+\bibitem{Fri94a}
+B.~Fritzke.
+\newblock Fast learning with incremental {RBF} {N}etworks.
+\newblock {\em Neural Processing Letters}, 1(1):2--5, 1994.
+
+\bibitem{LTT_2_043}
+C.A. Georgopoulou and K.C. Giannakoglou.
+\newblock A multi-objective metamodel-assisted memetic algorithm with
+  strength-based local refinement.
+\newblock {\em Engineering Optimization}, 41(10):909--923, 2009.
+
+\bibitem{LTT_4_04}
+C.A. Georgopoulou and K.C. Giannakoglou.
+\newblock {\em Multiobjective Metamodel-Assisted Memetic Algorithms}.
+\newblock Springer Series, 2009.
+
+\bibitem{LTT_3_048}
+K.C. Giannakoglou.
+\newblock Designing turbomachinery blades using evolutionary methods.
+\newblock ASME Paper 99-GT-181, 44th ASME Gas Turbine \& Aeroengine Congress,
+  Indianapolis, IN, USA, June 1999.
+
+\bibitem{EASYsite}
+K.C. Giannakoglou.
+\newblock The \mbox{EASY} ({E}volutionary {A}lgorithms {SY}stem) software,
+  \mbox{http://velos0.ltt.mech.ntua.gr/EASY}, 2008.
+
+\bibitem{LTT_2_018}
+K.C. Giannakoglou, A.P. Giotis, and M.K. Karakasis.
+\newblock Low-cost genetic optimization based on inexact pre-evaluations and
+  the sensitivity analysis of design parameters.
+\newblock {\em Inverse Problems in Engineering}, 9(4):389--412, 2001.
+
+\bibitem{LTT_4_05}
+K.C. Giannakoglou and I.C. Kampolis.
+\newblock {\em Multilevel Optimization Algorithms based on Metamodel- and
+  Fitness Inheritance-Assisted Evolutionary Algorithms.}, chapter~3.
+\newblock Springer-Verlag, 2009.
+
+\bibitem{LTT_3_054}
+A.P. Giotis, K.C. Giannakoglou, and J.~P\'{e}riaux.
+\newblock A reduced-cost multi-objective optimization method based on the
+  {P}areto front technique, neural networks and {PVM}.
+\newblock In {\em European Congress on Computational Methods in Applied
+  Sciences and Engineering -- ECCOMAS 00}, Barcelona, Spain, September 2000.
+
+\bibitem{Green1999}
+R.M. Greenman and K.R. Roth.
+\newblock Minimizing computational data requirements for multi-element airfoils
+  using neural networks.
+\newblock In {\em 37\textsuperscript{th} AIAA Aerospace Sciences Meeting and
+  Exhibit}, Reno, NV, USA, January 1999.
+\newblock \mbox{AIAA-1999-0258}.
+
+\bibitem{Hayk1999}
+S.~Haykin.
+\newblock {\em Neural Networks: A Comprehensive Foundation}.
+\newblock Prentice Hall, New Jersey, USA, 2nd edition, 1999.
+
+\bibitem{Herr1999}
+F.~Herrera, M.~Lozano, and C.~Moraga.
+\newblock Hierarchical distributed genetic algorithms.
+\newblock {\em International Journal of Intelligent Systems}, 14(9):1099--1121,
+  1999.
+
+\bibitem{Jin2002}
+Y.~Jin, M.~Olhofer, and B.~Sendhoff.
+\newblock A framework for evolutionary optimization with approximate fitness
+  functions.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 6(5):481--494,
+  October 2002.
+
+\bibitem{Jin2004}
+Y.~Jin and B.~Sendhoff.
+\newblock Reducing fitness evaluations using clustering techniques and neural
+  network ensembles.
+\newblock In {\em Genetic and Evolutionary Computation -- GECCO 2004}, pages
+  688--699, Seattle, WA, USA, June 2004.
+
+\bibitem{LTT_2_036}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock A multilevel approach to single- and multiobjective aerodynamic
+  optimization.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  197(33-40):2963--2975, 2008.
+
+\bibitem{LTT_2_044}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock Distributed evolutionary algorithms with hierarchical evaluation,
+  engineering optimization.
+\newblock {\em Engineering Optimization}, 41(11):1037--1049, 2009.
+
+\bibitem{LTT_2_050}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock Synergetic use of different evaluation, parameterization and search
+  tools within a multilevel optimization platform.
+\newblock {\em Applied Soft Computing}, 11(1):645--651, 2011.
+
+\bibitem{LTT_2_047}
+I.C. Kampolis, X.S. Trompoukis, V.G Asouti, and K.C. Giannakoglou.
+\newblock {CFD}-based analysis and two-level aerodynamic optimization on
+  graphics processing units.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  199(9-12):712--722, 2010.
+
+\bibitem{LTT_3_092}
+I.C. Kampolis, A.S. Zymaris, V.G. Asouti, and K.C. Giannakoglou.
+\newblock Multilevel optimization strategies based on metamodel-assisted
+  evolutionary algorithms, for computationally expensive problems.
+\newblock In {\em 2007 Congress on Evolutionary Computation -- CEC '07},
+  Singapore, September 2007.
+
+\bibitem{LTT_3_075}
+M.K. Karakasis and K.C. Giannakoglou.
+\newblock Metamodel-assisted multi-objective evolutionary optimization.
+\newblock EUROGEN 05, Evolutionary and Deterministic Methods for Design,
+  Optimization and Control with Applications to Industrial and Societal
+  Problems, Munich, September 2005.
+
+\bibitem{LTT_2_029}
+M.K. Karakasis and K.C. Giannakoglou.
+\newblock On the use of metamodel-assisted, multi-objective evolutionary
+  algorithms.
+\newblock {\em Engineering Optimization}, 38(8):941--957, 2006.
+
+\bibitem{LTT_2_023}
+M.K. Karakasis, A.P. Giotis, and K.C. Giannakoglou.
+\newblock Inexact information aided, low-cost, distributed genetic algorithms
+  for aerodynamic shape optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  43(10-11):1149--1166, 2003.
+
+\bibitem{LTT_2_031}
+M.K. Karakasis, D.G. Koubogiannis, and K.C. Giannakoglou.
+\newblock Hierarchical distributed evolutionary algorithms in shape
+  optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  53(3):455--469, 2007.
+
+\bibitem{Karay1997}
+N.B. Karayiannis and G.W. Mi.
+\newblock Growing radial basis neural networks: Merging supervised and
+  unsupervised learning with network growth techniques.
+\newblock {\em IEEE Transactions on Neural Networks}, 8(6):1492--1506, 1997.
+
+\bibitem{Knu97}
+D.~Knuth.
+\newblock {\em The Art of Computer Programming, Volume 1: Fundamental
+  Algorithms}.
+\newblock Addison-Wesley, 3rd edition, 1997.
+
+\bibitem{Koe96}
+J.R. Koehler and A.B. Owen.
+\newblock {\em Handbook on Statistics}, volume~13, chapter Computer
+  Experiments, pages 239--245.
+\newblock Elsevier-Science, 1996.
+
+\bibitem{LTT_2_053}
+E.A Kontoleontos, V.G. Asouti, and K.C. Giannakoglou.
+\newblock An asynchronous metamodel-assisted memetic algorithm for cfd-based
+  shape optimization.
+\newblock {\em Engineering Optimization}, 44(2):157--173, 2012.
+
+\bibitem{Krans2005}
+N.~Krasnogor and J.~Smith.
+\newblock A tutorial for competent memetic algorithms: model, taxonomy, and
+  design issues.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 9(5):474--488,
+  2005.
+
+\bibitem{Kri66}
+D.G. Krige.
+\newblock A study of gold and uranium distribution patterns in the {K}lerksdorp
+  gold field.
+\newblock {\em Geoexploration}, 4(1):43--53, 1966.
+
+\bibitem{LTT_2_054}
+S.A. Kyriacou, S.~Weissenberger, and K.C. Giannakoglou.
+\newblock Design of a matrix hydraulic turbine using a metamodel-assisted
+  evolutionary algorithm with pca-driven evolution operators.
+\newblock {\em International Journal of Mathematical Modelling and Numerical
+  Optimization (SI:Simulation-Based Optimization Techniques for Computationally
+  Expensive Engineering Design Problems)}, 2011.
+
+\bibitem{LTT_2_037}
+P.I.K. Liakopoulos, I.C. Kampolis, and K.C. Giannakoglou.
+\newblock Grid-enabled, hierarchical distributed metamodel-assisted
+  evolutionary algorithms for aerodynamic shape optimization.
+\newblock {\em Future Generation Computer Systems}, 24(7):701--708, 2008.
+
+\bibitem{Melab2006}
+N.~Melab, S.~Cahon, and E-G. Talbi.
+\newblock Grid computing for parallel bioinspired algorithms.
+\newblock {\em Journal of Parallel and Distributed Computing},
+  66(8):1052--1061, 2006.
+
+\bibitem{Mont2005}
+D.C. Montgomery.
+\newblock {\em Design and Analysis of Experiments}.
+\newblock John Wiley \& Sons, New York, USA, 6th edition, 2005.
+
+\bibitem{Nak2004}
+H.~Nakayama, K.~Inoue, and Y.~Yoshimori.
+\newblock Approximate optimization using computational intelligence and its
+  application to reinforcement of cable-stayed bridges.
+\newblock In {\em ECCOMAS 2004, European Congress on Computational Methods in
+  Applied Sciences and Engineering}, J{\"y}vask{\"y}la, Finland, July 2004.
+
+\bibitem{Ong2003b}
+Y.~S. Ong, K.~Y. Lum, P.~B. Nair, D.~M. Shi, and Z.~K. Zhang.
+\newblock Global convergence of unconstrained and bound constrained
+  surrogate-assisted evolutionary search in aerodynamic shape design.
+\newblock In {\em 2003 Congress on Evolutionary Computation -- CEC '03},
+  volume~3, pages 1856--1863, Canberra, Australia, 2003.
+
+\bibitem{Ong2003a}
+Y.~S. Ong, P.~B. Nair, and A.~J. Keane.
+\newblock Evolutionary optimization of computationally expensive problems via
+  surrogate modeling.
+\newblock {\em AIAA Journal}, 41(4):687--696, 2003.
+
+\bibitem{Ong2004}
+Y.S. Ong and A.J. Keane.
+\newblock Meta-lamarckian learning in memetic algorithms.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 8(2):99--110,
+  2004.
+
+\bibitem{Ong2006}
+Y.S. Ong, M.H. Lim, N.~Zhu, and K.W. Wong.
+\newblock Classification of adaptive memetic algorithms: a comparative study.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics - Part B},
+  36(1):141--152, 2006.
+
+\bibitem{Ong2003}
+Y.S. Ong, P.B. Nair, and A.J. Keane.
+\newblock Evolutionary optimization of computationally expensive problems via
+  surrogate modeling.
+\newblock {\em AIAA Journal}, 41(4):687--696, 2003.
+
+\bibitem{Papad1998}
+M.~Papadrakakis, N.D. Lagaros, and Y.~Tsompanakis.
+\newblock Structural optimization using evolution strategies and neural
+  networks.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  156(1--4):309--333, 1998.
+
+\bibitem{NURBSBook}
+L.~Piegl and W.~Tiller.
+\newblock {\em The {NURBS} {B}ook}.
+\newblock Springer-Verlag, Germany, 2nd edition, 1997.
+
+\bibitem{Pier1999}
+S.~Pierret and R.~A. Van~den Braembussche.
+\newblock Turbomachinery blade design using a {N}avier-{S}tokes solver and
+  artificial neural network.
+\newblock {\em Journal of Turbomachinery}, 121(2):326--332, April 1999.
+\newblock \mbox{ASME Paper 99-GT-4}.
+
+\bibitem{Pog1990}
+T.~Poggio and F.~Girosi.
+\newblock Networks for approximation and learning.
+\newblock {\em Proceedings of the IEEE}, 78(9):1481--1497, 1990.
+
+\bibitem{Rat1999}
+A.~Ratle.
+\newblock Optimal sampling strategies for learning a fitness model.
+\newblock In {\em 1999 Congress on Evolutionary Computation -- CEC '99}, pages
+  2078--2085, Washington, DC, USA, 1999.
+
+\bibitem{Sefr2000}
+M.~Sefrioui and J.~P\'{e}riaux.
+\newblock A hierarchical genetic algorithm using multiple models for
+  optimization.
+\newblock In M.~Schoenauer, K.~Deb, and et~al., editors, {\em 6th international
+  conference on parallel problem solving from nature (PPSN VI). Lecture Notes
+  in Computer Science}, volume 1917, pages 879--888. Springer-Verlag, Paris,
+  2000.
+
+\bibitem{LTT_3_104}
+I.A. Skouteropoulou, S.A. Kyriacou, V.G. Asouti, K.C. Giannakoglou,
+  S.~Weissenberger, and P.~Grafenberger.
+\newblock Design of a hydromatrix turbine runner using an asynchronous
+  algorithm on a multi-processor platform.
+\newblock In {\em 7th GRACM, International Congress on Computational
+  Mechanics}, Athens, 30 June-2 July 2011.
+
+\bibitem{Spa94}
+P.~Spalart and S.~Allmaras.
+\newblock A one--equation turbulence model for aerodynamic flows.
+\newblock {\em La Recherche A\'{e}rospatiale}, 1:5--21, 1994.
+
+\bibitem{Sri1995}
+N.~Srinivas and K.~Deb.
+\newblock Multiobjective optimization using nondominated sorting in genetic
+  algorithms.
+\newblock {\em Evolutionary Computation}, 2(3):221--248, 1995.
+
+\bibitem{Tik76}
+A.~Tikhonov and V.~Ars\'{e}nine.
+\newblock {\em M\'{e}thodes de R\'{e}solution de probl\`{e}mes mal pos\'{e}s.}
+\newblock Editions MIR, Moscou, 1976.
+
+\bibitem{Tik95}
+A.N. Tikhonov, A.V. Goncharsky, V.V. Stepanov, and A.G. Yagola.
+\newblock {\em Numerical Methods for the Solution of Ill-Posed Problems}.
+\newblock Kluwer Academic Publishers, 1995.
+
+\bibitem{Ulm2003}
+H.~Ulmer, F.~Streichert, and A.~Zell.
+\newblock Evolution strategies assisted by {G}aussian processes with improved
+  pre-selection criterion.
+\newblock In {\em 2003 Congress on Evolutionary Computation -- CEC '03},
+  Canberra, Australia, 2003.
+
+\bibitem{Willmes2003}
+L.~Willmes, T.~Back, Y.~Jin, and B.~Sendhoff.
+\newblock Comparing neural networks and kriging for fitness approximation in
+  evolutionary optimization.
+\newblock In {\em Proceedings of the 2003 Congress on Evolutionary Computation
+  -- CEC '03}, volume~1, pages 663--670, 2003.
+
+\bibitem{Zitz2002}
+E.~Zitzler, M.~Laumans, and L.~Thiele.
+\newblock {SPEA2}: Improving the strength {P}areto evolutionary algorithm for
+  multiobjective optimization.
+\newblock In {\em Eurogen 2001, Evolutionary Methods for Design, Optimisation
+  and Control with Applications to Industrial Problems}, pages 19--26,
+  Barcelona, 2002. CIMNE.
+
+\bibitem{Zitz1999a}
+E.~Zitzler and L.~Thiele.
+\newblock Multiobjective evolutionary algorithms: A comparative case study and
+  the {S}trength {P}areto approach.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 3(4):257--271,
+  November 1999.
+
+\bibitem{LTT_2_048}
+A.S. Zymaris, D.I. Papadimitriou, K.C. Giannakoglou, and C.~Othmer.
+\newblock Adjoint wall functions: {A} new concept for use in aerodynamic shape
+  optimization.
+\newblock {\em Journal of Computational Physics}, 229(13):5228--5245, 2010.
+
+\end{thebibliography}

@@ -1,0 +1,15 @@
+reset
+set term post eps m enhanced
+set output 'Eff.eps'
+set xlabel 'nED'
+set ylabel 'Relative {/Symbol h}'
+set size 0.9,0.9
+set grid xtics ytics mxtics mytics lw 0.5
+set xtics 0.2
+set mxtics 5.
+set mytics 2.
+#set key top left
+set title ''
+p "eff" u 1:2 w lp  lt 1 lw 4 pt 7 ps 1.5 t"Selected design",\
+ "eff2" u 1:2 w lp  lt 2 lw 4 pt 6 ps 1 t"Reference design"
+

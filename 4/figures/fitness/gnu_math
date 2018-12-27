@@ -1,0 +1,108 @@
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+set output 'mathCorr.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set pm3d map 
+set xl "X1"
+set yl "X2"
+set xr [-1:1]
+set yr [-1:1]
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp (x+y)**2 with pm3d  t''
+
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+set palette gray 
+set output 'CaseCorr.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set zr [0:5.5]
+set xr [0:8]
+set yr [0:8]
+set xl 'X1'
+set yl 'X2'
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u (0.5+$1*(8-0.5)):(2+$2*(8-2)):($7/10000) with pm3d  t''
+#sp './new_fit.fit' u 1:2:($7/10000) with pm3d  t''
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+#set palette gray 
+set output 'CaseCorr_F1.eps'
+set title 'F1'
+set size 0.5,0.5
+set pointsize 0.2 
+#set zr [0:5.5]
+set xr [0:8]
+set yr [0:8]
+set xl 'X1'
+set yl 'X2'
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u (0.5+$1*(8-0.5)):(2+$2*(8-2)):($5) with pm3d  t''
+#sp './new_fit.fit' u 1:2:($7/10000) with pm3d  t''
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+#set palette gray 
+set output 'CaseCorr_F2.eps'
+set title 'F2'
+set size 0.5,0.5
+set pointsize 0.2 
+#set zr [0:5.5]
+set xr [0:8]
+set yr [0:8]
+set xl 'X1'
+set yl 'X2'
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u (0.5+$1*(8-0.5)):(2+$2*(8-2)):($6) with pm3d  t''
+#sp './new_fit.fit' u 1:2:($7/10000) with pm3d  t''
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+#set palette gray 
+set output 'CaseCorr_F1_const.eps'
+set title 'F1_const'
+set size 0.5,0.5
+set pointsize 0.2 
+#set zr [0:5.5]
+set xr [0:8]
+set yr [0:8]
+set xl 'X1'
+set yl 'X2'
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u (0.5+$1*(8-0.5)):(2+$2*(8-2)):($3) with pm3d  t''
+reset
+set isosample 40,40
+#set term post eps m enhanced
+set term post eps color
+#set palette gray 
+set output 'CaseCorr_F2_const.eps'
+set title 'F2_const'
+set size 0.5,0.5
+set pointsize 0.2 
+#set zr [0:5.5]
+set xr [0:8]
+set yr [0:8]
+set xl 'X1'
+set yl 'X2'
+set pm3d map 
+set dgrid3d 100,100,40
+set cntrparam levels 20 
+sp './new_fit.fit' u (0.5+$1*(8-0.5)):(2+$2*(8-2)):($4) with pm3d  t''

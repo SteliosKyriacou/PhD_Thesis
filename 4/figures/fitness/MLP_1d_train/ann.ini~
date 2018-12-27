@@ -1,0 +1,12 @@
+data file supporting the use of MULTI LAYER PERCEPTRON
+with FEASY etc.
+100      max_learning_cycles
+0.01     eta (Learning Rate)
+1        MONOFF (1=on-line training/sequential) (2=off-line/batch)
+5        Total number of layers
+0        <0>=no bias, <1>=with bias        
+1      1.d0
+4      1.d0
+6      1.d0
+4      1.d0
+1      0.d0   !  the last biasout is useless (but should be read)

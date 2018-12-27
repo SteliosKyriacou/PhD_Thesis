@@ -1,0 +1,145 @@
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'F1_e2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'e2'  
+set ylabel 'F_1'   
+p 'rot' u 1:3 w p pt 6 ps 1 t 'Training samples'
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'f1_f2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'f1'  
+set ylabel 'f2'   
+p 'norot' u 3:4 w p pt 6 ps 1 t 'Training samples','out_L1.log' u 1:2 w p pt 7 t'Pareto' 
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'x1_x2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+set xtics 0.1
+set ytics 0.1
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'x1'  
+set ylabel 'x2'   
+p 'norot' u 1:2 w p pt 6 ps 1 t 'Training samples','out_L1.log' u (($4-0.2)/(8-0.2)):(($5-0.2)/(8-0.2)) w p pt 7 t'Pareto' 
+
+reset
+reset
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'F2_e2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'e2'  
+set ylabel 'F_2'   
+p 'rot' u 1:4 w p pt 6 ps 1 t 'Training samples'
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'F1_e1.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'e1'  
+set ylabel 'F_1'   
+p 'rot' u 2:3 w p pt 6 ps 1 t 'Training samples'
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'F2_e1.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set xlabel 'e1'  
+set ylabel 'F_2'   
+p 'rot' u 2:4 w p pt 6 ps 1 t 'Training samples'
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'f1_x1.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set ylabel 'F_1'  
+set xlabel 'x1'   
+p 'norot' u 1:3 w p pt 6 ps 1 t 'Training samples'
+
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'f1_x2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set ylabel 'F_1'  
+set xlabel 'x2'   
+p 'norot' u 2:3 w p pt 6 ps 1 t 'Training samples'
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'f2_x1.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set ylabel 'F_2'  
+set xlabel 'x1'   
+p 'norot' u 1:4 w p pt 6 ps 1 t 'Training samples'
+reset
+#set term post eps c enhanced
+set term post eps mono
+set output 'f2_x2.eps'
+set size 0.7,0.7
+#set xr[0:1]
+set grid
+#set mxtics 5.
+#set mytics 10.
+#set key top left
+set ylabel 'F_2'  
+set xlabel 'x2'   
+p 'norot' u 2:4 w p pt 6 ps 1 t 'Training samples'
+
+
+

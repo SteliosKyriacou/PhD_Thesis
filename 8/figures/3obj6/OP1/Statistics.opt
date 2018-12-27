@@ -1,0 +1,16 @@
+Hydraulic height 
+7.62553 hptot  
+7.33518 hMzRot  
+7.35419 hcuRot  
+Kavitation on rotor blade 
+0.001 DeltaA/A 
+-0.671428 sigma_{his} 
+Kavitation on rotor hub 
+0.015 DeltaA/A 
+-0.404974 sigma_{his} 
+Kavitation on rotor shroud 
+0.016 DeltaA/A 
+-0.485257 sigma_{his} 
+-608.777 retValInl  
+610.092 retValOut  
+0.00299765 SUM_ALL_RESIDUALS  

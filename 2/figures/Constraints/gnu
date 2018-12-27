@@ -1,0 +1,24 @@
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'Pareto.eps'
+set size 0.5,0.5
+set grid
+#set title 'OVERALL'
+set xlabel 'F1'
+set ylabel 'F2'
+p "out_L1.log" u 1:2  pt 7 w p t"" 
+
+#HyperVolume
+reset
+set term post eps m enhanced
+set output 'DOFs.eps'
+set size 0.5,0.5
+set grid
+set xr [0.2:8]
+set yr [0.2:8]
+#set title 'OVERALL'
+set xlabel 'X1'
+set ylabel 'X2'
+p "out_L1.log" u 4:5 pt 7  w p t"" 
+

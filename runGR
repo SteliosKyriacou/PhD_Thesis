@@ -1,0 +1,6 @@
+latex  thesisGR.tex
+bibtex thesisGR
+makeindex thesisGR.nlo -s path/nomencl.ist -o thesisGR.nls
+latex  thesisGR.tex
+latex  thesisGR.tex
+dvipdfmx  thesisGR.dvi

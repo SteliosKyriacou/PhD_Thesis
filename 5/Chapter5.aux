@@ -1,0 +1,245 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\FN@pp@footnotehinttrue 
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Optimization of Hydraulic Turbomachines}{79}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces According to the EASY nomenclature, the evaluation of each new candidate solution created during the evolution starts by reading the corresponding values of the design variables from the ``task.dat" file. A series of codes, being I/O compatible, are sequentially used to, finally, create the ``task.res" and ``task.cns" files which include the objective and constraint function values, respectively. The evaluation process is considered to be terminated once the ``task.res" and ``task.cns" files become available to the search engine of EASY. The names of the executable files required for a single evaluation are listed in the script file "task.bat". \relax }}{80}{figure.caption.68}}
+\newlabel{evaltool}{{5.1}{80}{According to the EASY nomenclature, the evaluation of each new candidate solution created during the evolution starts by reading the corresponding values of the design variables from the ``task.dat" file. A series of codes, being I/O compatible, are sequentially used to, finally, create the ``task.res" and ``task.cns" files which include the objective and constraint function values, respectively. The evaluation process is considered to be terminated once the ``task.res" and ``task.cns" files become available to the search engine of EASY. The names of the executable files required for a single evaluation are listed in the script file "task.bat". \relax }{figure.caption.68}{}}
+\citation{dipl_livia,dipl_simon}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Evaluation Procedure}{81}{section.5.1}}
+\newlabel{ParamEval}{{5.1}{81}{Evaluation Procedure}{section.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Parameterization for Turbine Blades}{81}{subsection.5.1.1}}
+\newlabel{Paramt}{{5.1.1}{81}{Parameterization for Turbine Blades}{subsection.5.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Left: Meridional projection of the mean-camber surface of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ blade. Right: The 2D iso-span lines distributed between shroud and hub. Definition of $\rho $ for the leading and trailing edge.\relax }}{81}{figure.caption.69}}
+\newlabel{param1}{{5.2}{81}{Left: Meridional projection of the mean-camber surface of a Hydromatrix$\circledR $ blade. Right: The 2D iso-span lines distributed between shroud and hub. Definition of $\rho $ for the leading and trailing edge.\relax }{figure.caption.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The 3D iso-span lines and their superimposed thickness profiles.\relax }}{82}{figure.caption.70}}
+\newlabel{param3}{{5.3}{82}{The 3D iso-span lines and their superimposed thickness profiles.\relax }{figure.caption.70}{}}
+\newlabel{phi1}{{5.1}{82}{Parameterization for Turbine Blades}{equation.5.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Left: $\beta (\rho )$ distribution. Right: $\theta (\rho )$ distribution.\relax }}{83}{figure.caption.71}}
+\newlabel{param4}{{5.4}{83}{Left: $\beta (\rho )$ distribution. Right: $\theta (\rho )$ distribution.\relax }{figure.caption.71}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Left: $\zeta (\rho )$ distributions for $\zeta _{LE}$ and $\zeta _{TE}$. Right: Iso-span line, in the $(\mu ,\theta )$ coordinate system, and its B\'{e}zier\ control point polygon.\relax }}{83}{figure.caption.72}}
+\newlabel{param7}{{5.5}{83}{Left: $\zeta (\rho )$ distributions for $\zeta _{LE}$ and $\zeta _{TE}$. Right: Iso-span line, in the $(\mu ,\theta )$ coordinate system, and its \Bezier \ control point polygon.\relax }{figure.caption.72}{}}
+\citation{PaulSite}
+\citation{PaulSite}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces B\'{e}zier\ control polygons for the PS and SS.\relax }}{84}{figure.caption.73}}
+\newlabel{param8}{{5.6}{84}{\Bezier \ control polygons for the PS and SS.\relax }{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Left: t($\rho $) distribution. Right: 3D geometry of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ turbine with three blades.\relax }}{84}{figure.caption.74}}
+\newlabel{param10}{{5.7}{84}{Left: t($\rho $) distribution. Right: 3D geometry of a Hydromatrix$\circledR $ turbine with three blades.\relax }{figure.caption.74}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Space Discretization - Grid Generation}{84}{subsection.5.1.2}}
+\newlabel{SpaceDisct}{{5.1.2}{84}{Space Discretization - Grid Generation}{subsection.5.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces The four-block topology of a hydraulic turbine. In the sake of simplicity, this is shown for the blade-to-blade grid at mid-span. Block 0 is of C-type and is used to discretize the area in the vicinity of the blade (airfoil). Blocks 1 to 3 are of H-type and are used to fill the space from pressure side to suction side, between LE and inlet and blade TE and outlet, respectively; from \cite  {PaulSite}.\relax }}{85}{figure.caption.75}}
+\newlabel{grid1}{{5.8}{85}{The four-block topology of a hydraulic turbine. In the sake of simplicity, this is shown for the blade-to-blade grid at mid-span. Block 0 is of C-type and is used to discretize the area in the vicinity of the blade (airfoil). Blocks 1 to 3 are of H-type and are used to fill the space from pressure side to suction side, between LE and inlet and blade TE and outlet, respectively; from \cite {PaulSite}.\relax }{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Iso-span surface grid, presented as a pseudo-2D grid. A user-defined number of the iso-span surface grids (from hub to shroud) is considered in order to generate the 3D grid. Top-Left: the pseudo-2D grid at the mid-span position. Top-Right: the same grid in the 3D space. Bottom-Left: Hub, mid-span and shroud grids. Bottom-Right: Final 3D grid.\relax }}{86}{figure.caption.76}}
+\newlabel{grid4}{{5.9}{86}{Iso-span surface grid, presented as a pseudo-2D grid. A user-defined number of the iso-span surface grids (from hub to shroud) is considered in order to generate the 3D grid. Top-Left: the pseudo-2D grid at the mid-span position. Top-Right: the same grid in the 3D space. Bottom-Left: Hub, mid-span and shroud grids. Bottom-Right: Final 3D grid.\relax }{figure.caption.76}{}}
+\citation{Chorin,Turkel87}
+\citation{Roe81}
+\citation{Peaceman}
+\citation{Chorin,Turkel87}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Flow Solver}{87}{subsection.5.1.3}}
+\newlabel{FlowSolvert}{{5.1.3}{87}{Flow Solver}{subsection.5.1.3}{}}
+\newlabel{Euler1}{{5.2}{87}{Flow Solver}{equation.5.1.2}{}}
+\newlabel{Euler3}{{5.3}{87}{Flow Solver}{equation.5.1.3}{}}
+\citation{thiruvengadam1974handbook,knapp1970cavitation,brennen1995cavitation}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Hydraulic Turbine-Runner Quality Metrics}{88}{section.5.2}}
+\newlabel{metrics}{{5.2}{88}{Hydraulic Turbine-Runner Quality Metrics}{section.5.2}{}}
+\babel@aux{greek}{}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Cavitation Metric}{88}{subsection.5.2.1}}
+\newlabel{cav.metric}{{5.2.1}{88}{Cavitation Metric}{subsection.5.2.1}{}}
+\newlabel{Cavi}{{5.4}{88}{Cavitation Metric}{equation.5.2.4}{}}
+\citation{brennen1995cavitation}
+\newlabel{Cavi2}{{5.5}{89}{Cavitation Metric}{equation.5.2.5}{}}
+\newlabel{Cavi3}{{5.6}{89}{Cavitation Metric}{equation.5.2.6}{}}
+\newlabel{Cavi4}{{5.7}{89}{Cavitation Metric}{equation.5.2.7}{}}
+\newlabel{Cpdef}{{5.8}{89}{Cavitation Metric}{equation.5.2.8}{}}
+\newlabel{Cavi6}{{5.9}{89}{Cavitation Metric}{equation.5.2.9}{}}
+\citation{Schmidl}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Pressure coefficient distribution at the blade mid-span.\relax }}{90}{figure.caption.77}}
+\newlabel{design-cav-cp}{{5.10}{90}{Pressure coefficient distribution at the blade mid-span.\relax }{figure.caption.77}{}}
+\newlabel{Cavi7}{{5.10}{90}{Cavitation Metric}{equation.5.2.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Outlet Velocity Profiles}{90}{subsection.5.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces $p_{Hist}$ computed with three different A values together with $p_{min}$ on the SS of a Francis hydraulic turbine. Increasing A results in increased $p_{Hist}$ and, therefore, reduced $\sigma _i^{Hist}$. The values of A used to plot this figure were artificially set quite different than the ones used in the optimization, in order to present visible iso-areas.\relax }}{91}{figure.caption.78}}
+\newlabel{design-cav-histo}{{5.11}{91}{$p_{Hist}$ computed with three different A values together with $p_{min}$ on the SS of a Francis hydraulic turbine. Increasing A results in increased $p_{Hist}$ and, therefore, reduced $\sigma _i^{Hist}$. The values of A used to plot this figure were artificially set quite different than the ones used in the optimization, in order to present visible iso-areas.\relax }{figure.caption.78}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Blade Loading Quality Metric}{91}{subsection.5.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Outlet velocity distributions (thin lines) and the draft-tube specific target distributions (thick lines). $C_m$ is shown with the dashed lines and $C_u$ with the solid ones. The ``outlet quality" metric stands for the deviation between computed distributions and targets and is marked in grey.\relax }}{92}{figure.caption.79}}
+\newlabel{design-obj2}{{5.12}{92}{Outlet velocity distributions (thin lines) and the draft-tube specific target distributions (thick lines). $C_m$ is shown with the dashed lines and $C_u$ with the solid ones. The ``outlet quality" metric stands for the deviation between computed distributions and targets and is marked in grey.\relax }{figure.caption.79}{}}
+\newlabel{load}{{5.11}{92}{Blade Loading Quality Metric}{equation.5.2.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Left: Load definition. Right: Chord-wise load distributions of the profile presented on the left, as defined before.\relax }}{92}{figure.caption.80}}
+\newlabel{design-obj}{{5.13}{92}{Left: Load definition. Right: Chord-wise load distributions of the profile presented on the left, as defined before.\relax }{figure.caption.80}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Pumping Surface Metric}{93}{subsection.5.2.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Pressure contour, along with streamlines near the shroud region, at part-load operation of a non-regulated hydraulic turbine. Water flow near the shroud region has negative incidence angle and, therefore the aforementioned pumping surface is formed. This surface needs to be minimized. The blade PS is the one on top.\relax }}{93}{figure.caption.81}}
+\newlabel{design-pumpS}{{5.14}{93}{Pressure contour, along with streamlines near the shroud region, at part-load operation of a non-regulated hydraulic turbine. Water flow near the shroud region has negative incidence angle and, therefore the aforementioned pumping surface is formed. This surface needs to be minimized. The blade PS is the one on top.\relax }{figure.caption.81}{}}
+\citation{papanto}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Pressure coefficient ($C_p$) distribution along the blade chordwise direction at part-load operation of a non-regulated hydraulic turbine at three spanwise locations: hub, mid-span and shroud. The pumping area corresponds to the first 10\% of the chord at mid-span and shroud locations\relax }}{94}{figure.caption.82}}
+\newlabel{design-pumpS2}{{5.15}{94}{Pressure coefficient ($C_p$) distribution along the blade chordwise direction at part-load operation of a non-regulated hydraulic turbine at three spanwise locations: hub, mid-span and shroud. The pumping area corresponds to the first 10\% of the chord at mid-span and shroud locations\relax }{figure.caption.82}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Optimization of a Francis Turbine Runner}{94}{section.5.3}}
+\newlabel{Francis-runners}{{5.3}{94}{Optimization of a Francis Turbine Runner}{section.5.3}{}}
+\citation{papanto}
+\citation{papanto}
+\citation{andritz}
+\citation{andritz}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Francis Turbine}{95}{subsection.5.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Range of application for the different turbine types, \cite  {papanto}.\relax }}{95}{figure.caption.83}}
+\newlabel{range}{{5.16}{95}{Range of application for the different turbine types, \cite {papanto}.\relax }{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Francis turbine and its constituent parts, \cite  {andritz}.\relax }}{96}{figure.caption.84}}
+\newlabel{francis1}{{5.17}{96}{Francis turbine and its constituent parts, \cite {andritz}.\relax }{figure.caption.84}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Case Presentation}{96}{subsection.5.3.2}}
+\citation{andritz}
+\citation{andritz}
+\citation{dipl_livia,dipl_simon}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Optimization of a Francis Turbine: An existing runner which is quite similar to the one designed herein, is shown, \cite  {andritz}. \relax }}{97}{figure.caption.85}}
+\newlabel{design-parameterization}{{5.18}{97}{Optimization of a Francis Turbine: An existing runner which is quite similar to the one designed herein, is shown, \cite {andritz}. \relax }{figure.caption.85}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.1}Design Parameterization}{97}{subsubsection.5.3.2.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces  The design variables used to parameterize the Francis runner.\relax }}{98}{table.caption.86}}
+\newlabel{design_vars}{{5.1}{98}{The design variables used to parameterize the Francis runner.\relax }{table.caption.86}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.2}Objectives and Constraints}{98}{subsubsection.5.3.2.2}}
+\newlabel{ObjFrancis}{{5.12}{98}{Objectives and Constraints}{equation.5.3.12}{}}
+\newlabel{ObjFrancis2}{{5.13}{98}{Objectives and Constraints}{equation.5.3.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Optimization of a Francis Turbine: Target non-dimensional velocity profile distributions at the runner outlet.\relax }}{99}{figure.caption.87}}
+\newlabel{design-obj-tar}{{5.19}{99}{Optimization of a Francis Turbine: Target non-dimensional velocity profile distributions at the runner outlet.\relax }{figure.caption.87}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Optimization of a Francis Turbine: Operating point weights.\relax }}{99}{table.caption.88}}
+\newlabel{op-weights}{{5.2}{99}{Optimization of a Francis Turbine: Operating point weights.\relax }{table.caption.88}{}}
+\newlabel{ConstFrancis}{{5.14}{99}{Objectives and Constraints}{equation.5.3.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Optimization of a Francis Turbine: Constraints per operating point.\relax }}{100}{table.caption.89}}
+\newlabel{Cons}{{5.3}{100}{Optimization of a Francis Turbine: Constraints per operating point.\relax }{table.caption.89}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Results}{100}{subsection.5.3.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3.1}Archived Designs}{100}{subsubsection.5.3.3.1}}
+\FN@pp@footnote@aux{16}{100}
+\newlabel{undimFrancis}{{5.15}{100}{Archived Designs}{equation.5.3.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Optimization of a Francis Turbine: The three archived geometries used as basis vectors.\relax }}{101}{figure.caption.90}}
+\newlabel{design-bases}{{5.20}{101}{Optimization of a Francis Turbine: The three archived geometries used as basis vectors.\relax }{figure.caption.90}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Optimization of a Francis Turbine: Quality metrics (objectives and constraints) for the 3 archived designs (B1, B2 and B3) for all operating points (BE, PL and FL). An asterisk (*) next to an inequality means that the corresponding constraint is violated.\relax }}{102}{table.caption.91}}
+\newlabel{reuse}{{5.4}{102}{Optimization of a Francis Turbine: Quality metrics (objectives and constraints) for the 3 archived designs (B1, B2 and B3) for all operating points (BE, PL and FL). An asterisk (*) next to an inequality means that the corresponding constraint is violated.\relax }{table.caption.91}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Optimization of a Francis Turbine: $C_p$ iso-areas for the archived geometry B1, at the BE operating point. The area which is prone to cavitation (region with low $C_p$) is clearly marked at SS, near the TE, between mid-span and shroud.\relax }}{103}{figure.caption.92}}
+\newlabel{Francis-B1-BE}{{5.21}{103}{Optimization of a Francis Turbine: $C_p$ iso-areas for the archived geometry B1, at the BE operating point. The area which is prone to cavitation (region with low $C_p$) is clearly marked at SS, near the TE, between mid-span and shroud.\relax }{figure.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B1, operating at the BE point. Target distributions are plotted with thicker lines.\relax }}{104}{figure.caption.93}}
+\newlabel{Francis-B1-OUT}{{5.22}{104}{Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B1, operating at the BE point. Target distributions are plotted with thicker lines.\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Optimization of a Francis Turbine: $C_p$ profiles hub, mid-span and shroud for the archived design B1, for the BE operating point.\relax }}{104}{figure.caption.94}}
+\newlabel{Francis-B1-LOAD}{{5.23}{104}{Optimization of a Francis Turbine: $C_p$ profiles hub, mid-span and shroud for the archived design B1, for the BE operating point.\relax }{figure.caption.94}{}}
+\FN@pp@footnotehinttrue 
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Optimization of a Francis Turbine: $C_p$ iso-areas for the archived design B2 operating at the BE point. Cavitation occurs on SS, near the TE close to the hub.\relax }}{105}{figure.caption.95}}
+\newlabel{Francis-B2-BE}{{5.24}{105}{Optimization of a Francis Turbine: $C_p$ iso-areas for the archived design B2 operating at the BE point. Cavitation occurs on SS, near the TE close to the hub.\relax }{figure.caption.95}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B2 at the BE operating point. Target distributions are plotted with thicker lines.\relax }}{106}{figure.caption.96}}
+\newlabel{Francis-B2-OUT}{{5.25}{106}{Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B2 at the BE operating point. Target distributions are plotted with thicker lines.\relax }{figure.caption.96}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces Optimization of a Francis Turbine: $C_p$ profiles at hub, mid-span and shroud for archived design B2 at the BE point.\relax }}{107}{figure.caption.97}}
+\newlabel{Francis-B2-LOAD}{{5.26}{107}{Optimization of a Francis Turbine: $C_p$ profiles at hub, mid-span and shroud for archived design B2 at the BE point.\relax }{figure.caption.97}{}}
+\citation{Zitz2007}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.27}{\ignorespaces Optimization of a Francis Turbine: $C_p$ iso-areas for archived design B3 at PL operating point. Cavitation is observed at SS, near the TE.\relax }}{108}{figure.caption.98}}
+\newlabel{Francis-B3-PL}{{5.27}{108}{Optimization of a Francis Turbine: $C_p$ iso-areas for archived design B3 at PL operating point. Cavitation is observed at SS, near the TE.\relax }{figure.caption.98}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B3, at the BE point. For the purpose of comparison, in the same plot, target distributions are plotted with thicker lines.\relax }}{109}{figure.caption.99}}
+\newlabel{Francis-B3-OUT}{{5.28}{109}{Optimization of a Francis Turbine: $C_m$ and $C_u$ profiles for the archived design B3, at the BE point. For the purpose of comparison, in the same plot, target distributions are plotted with thicker lines.\relax }{figure.caption.99}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Optimization of a Francis Turbine: $C_p$ profiles hub, mid-span and shroud, for the archived design B3, at the BE point.\relax }}{109}{figure.caption.100}}
+\newlabel{Francis-B3-LOAD}{{5.29}{109}{Optimization of a Francis Turbine: $C_p$ profiles hub, mid-span and shroud, for the archived design B3, at the BE point.\relax }{figure.caption.100}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces  Optimization of a Francis Turbine: The $6$ Groups defining the $6 \times 3=18$ optimization variables out of the $19$ used in the KBD method.\relax }}{110}{table.caption.101}}
+\newlabel{design_groups}{{5.5}{110}{Optimization of a Francis Turbine: The $6$ Groups defining the $6 \times 3=18$ optimization variables out of the $19$ used in the KBD method.\relax }{table.caption.101}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces Optimization of a Francis Turbine: hypervolume comparison between EA and the proposed KBD-MAEA method.\relax }}{111}{figure.caption.102}}
+\newlabel{Francis-Res}{{5.30}{111}{Optimization of a Francis Turbine: hypervolume comparison between EA and the proposed KBD-MAEA method.\relax }{figure.caption.102}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Optimization of a Francis Turbine: Quality metrics (objectives and constraints) regarding the chosen design A for all operating points (BE, PL $\&$ FL). The design is safe regarding cavitation at all operating points and operates within the desirable range.\relax }}{111}{table.caption.105}}
+\newlabel{Asum}{{5.6}{111}{Optimization of a Francis Turbine: Quality metrics (objectives and constraints) regarding the chosen design A for all operating points (BE, PL $\&$ FL). The design is safe regarding cavitation at all operating points and operates within the desirable range.\relax }{table.caption.105}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces Optimization of a Francis Turbine: Fronts of non-dominated solutions computed at the cost of $1500$ exact evaluations by the EA and KBD-MAEA method. Optimal solution A was selected for further analysis (see figs.\ \ref  {design-bases-a} to \ref  {Francis-A-LOAD}).\relax }}{112}{figure.caption.103}}
+\newlabel{Francis-Res-par}{{5.31}{112}{Optimization of a Francis Turbine: Fronts of non-dominated solutions computed at the cost of $1500$ exact evaluations by the EA and KBD-MAEA method. Optimal solution A was selected for further analysis (see figs.\ \ref {design-bases-a} to \ref {Francis-A-LOAD}).\relax }{figure.caption.103}{}}
+\FN@pp@footnotehinttrue 
+\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces Optimization of a Francis Turbine: Design A and the three archived designs used. The high diversity among the four designs can be observed. The ability of the KBD method to produce designs, highly diversed in comparison with the archived ones is noticeable.\relax }}{113}{figure.caption.104}}
+\newlabel{design-bases-a}{{5.32}{113}{Optimization of a Francis Turbine: Design A and the three archived designs used. The high diversity among the four designs can be observed. The ability of the KBD method to produce designs, highly diversed in comparison with the archived ones is noticeable.\relax }{figure.caption.104}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces Optimization of a Francis Turbine: $C_p$ contour for design A at the BE point. The lowest $C_p$ value is equal to $-0.179$ corresponding to a $\sigma _i$ value of $0.179$, well below the imposed cavitation limit ($0.2$).\relax }}{114}{figure.caption.106}}
+\newlabel{Francis-A-BE}{{5.33}{114}{Optimization of a Francis Turbine: $C_p$ contour for design A at the BE point. The lowest $C_p$ value is equal to $-0.179$ corresponding to a $\sigma _i$ value of $0.179$, well below the imposed cavitation limit ($0.2$).\relax }{figure.caption.106}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces Optimization of a Francis Turbine: $C_p$ contour for design A at the PL point. The lowest $C_p$ value is equal to $-0.192$ which compared to the BE point operation, fig.\ \ref  {Francis-A-BE}, is quite close to the cavitation threshold but still on the safe side.\relax }}{115}{figure.caption.107}}
+\newlabel{Francis-A-PL}{{5.34}{115}{Optimization of a Francis Turbine: $C_p$ contour for design A at the PL point. The lowest $C_p$ value is equal to $-0.192$ which compared to the BE point operation, fig.\ \ref {Francis-A-BE}, is quite close to the cavitation threshold but still on the safe side.\relax }{figure.caption.107}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.35}{\ignorespaces Optimization of a Francis Turbine: $C_p$ contour for design A at the FL point. The lowest $C_p$ value is $-0.182$, which is lower than that for the operation at the BE point. However, this is higher than that of the PL point.\relax }}{116}{figure.caption.108}}
+\newlabel{Francis-A-FL}{{5.35}{116}{Optimization of a Francis Turbine: $C_p$ contour for design A at the FL point. The lowest $C_p$ value is $-0.182$, which is lower than that for the operation at the BE point. However, this is higher than that of the PL point.\relax }{figure.caption.108}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.36}{\ignorespaces Optimization of a Francis Turbine: $C_p$ contour for design A at the FL operating point over SS. Over the SS of the blade operating at FL, there is an additional low $C_p$ zone near the LE, in addition to that existing close to the TE. \relax }}{117}{figure.caption.109}}
+\newlabel{Francis-A-SS}{{5.36}{117}{Optimization of a Francis Turbine: $C_p$ contour for design A at the FL operating point over SS. Over the SS of the blade operating at FL, there is an additional low $C_p$ zone near the LE, in addition to that existing close to the TE. \relax }{figure.caption.109}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.37}{\ignorespaces Optimization of a Francis Turbine: Outlet $C_m$ and $C_u$ profiles for design A at the BE point.\relax }}{118}{figure.caption.110}}
+\newlabel{Francis-A-OUT}{{5.37}{118}{Optimization of a Francis Turbine: Outlet $C_m$ and $C_u$ profiles for design A at the BE point.\relax }{figure.caption.110}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.38}{\ignorespaces Optimization of a Francis Turbine: $C_p$ profiles at hub, mid-span and shroud, for design A at the BE point.\relax }}{118}{figure.caption.111}}
+\newlabel{Francis-A-LOAD}{{5.38}{118}{Optimization of a Francis Turbine: $C_p$ profiles at hub, mid-span and shroud, for design A at the BE point.\relax }{figure.caption.111}{}}
+\citation{matrix,matrix_2}
+\citation{matrix,matrix_2}
+\citation{matrix,matrix_2}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine}{119}{section.5.4}}
+\newlabel{Matrix-case}{{5.4}{119}{Optimization of a Hydromatrix$\circledR $ Turbine}{section.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}The Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine}{119}{subsection.5.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.39}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Hydromatrix turbine module, \cite  {matrix,matrix_2}. \relax }}{119}{figure.caption.112}}
+\newlabel{Matrix_c}{{5.39}{119}{Optimization of a Hydromatrix$\circledR $ Turbine: Hydromatrix turbine module, \cite {matrix,matrix_2}. \relax }{figure.caption.112}{}}
+\citation{matrix,matrix_2}
+\citation{matrix,matrix_2}
+\citation{matrix,matrix_2}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.40}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Left: replacement of a single large turbine by a matrix of smaller ones. Right: Matrix turbines in raised position (in case of flood conditions, inspection or maintenance). From \cite  {matrix,matrix_2}.\relax }}{120}{figure.caption.113}}
+\newlabel{Matrix_a}{{5.40}{120}{Optimization of a Hydromatrix$\circledR $ Turbine: Left: replacement of a single large turbine by a matrix of smaller ones. Right: Matrix turbines in raised position (in case of flood conditions, inspection or maintenance). From \cite {matrix,matrix_2}.\relax }{figure.caption.113}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Case Presentation}{121}{subsection.5.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.1}Case Formulation}{121}{subsubsection.5.4.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.41}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Schematic representation, with red (light dotted) are the free to design parts and with black the fixed (due to construction constraints) ones. \relax }}{121}{figure.caption.114}}
+\newlabel{Matrix_b}{{5.41}{121}{Optimization of a Hydromatrix$\circledR $ Turbine: Schematic representation, with red (light dotted) are the free to design parts and with black the fixed (due to construction constraints) ones. \relax }{figure.caption.114}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.2}Design Parameterization}{121}{subsubsection.5.4.2.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces  The $52$ design variables used to parameterize the Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ runner. This is the array of design variables the EA is dealing with.\relax }}{122}{table.caption.115}}
+\newlabel{design_vars2}{{5.7}{122}{The $52$ design variables used to parameterize the Hydromatrix$\circledR $ runner. This is the array of design variables the EA is dealing with.\relax }{table.caption.115}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.3}Objectives and Constraints}{123}{subsubsection.5.4.2.3}}
+\newlabel{ObjM}{{5.16}{123}{Objectives and Constraints}{equation.5.4.16}{}}
+\newlabel{ObjM}{{5.17}{123}{Objectives and Constraints}{equation.5.4.17}{}}
+\babel@aux{greek}{}
+\babel@aux{english}{}
+\babel@aux{greek}{}
+\babel@aux{english}{}
+\babel@aux{greek}{}
+\babel@aux{english}{}
+\babel@aux{greek}{}
+\babel@aux{english}{}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Weights associated with the quality-metrics. Based on these weights, the quality metrics are grouped into two objective functions $f_1$ and $f_2$.\relax }}{123}{table.caption.116}}
+\newlabel{op-weights-M1}{{5.8}{123}{Optimization of a Hydromatrix$\circledR $ Turbine: Weights associated with the quality-metrics. Based on these weights, the quality metrics are grouped into two objective functions $f_1$ and $f_2$.\relax }{table.caption.116}{}}
+\citation{LTT_2_029}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.42}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Target non-dimensional velocity profile distributions at the runner outlet.\relax }}{124}{figure.caption.117}}
+\newlabel{design-obj-tar-Matrix}{{5.42}{124}{Optimization of a Hydromatrix$\circledR $ Turbine: Target non-dimensional velocity profile distributions at the runner outlet.\relax }{figure.caption.117}{}}
+\newlabel{F12}{{5.17}{124}{Objectives and Constraints}{equation.5.4.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Operating point weights.\relax }}{124}{table.caption.118}}
+\newlabel{weights}{{5.9}{124}{Optimization of a Hydromatrix$\circledR $ Turbine: Operating point weights.\relax }{table.caption.118}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Results}{124}{subsection.5.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.43}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: The evolution of the hypervolume indicator for (a) the MAEA and (b) the MAEA(PCA) implementing the PCA-assisted evolution operators. It is evident that, since the PCA--assisted operators apply at the $5^{th}$ generation, i.e. after about $4\tmspace  -\thinmuskip {.1667em}\times \tmspace  -\thinmuskip {.1667em}90\tmspace  -\thinmuskip {.1667em}=\tmspace  -\thinmuskip {.1667em}360$ evaluations based on the CFD tool, the first parts of the two curves are identical.\relax }}{126}{figure.caption.119}}
+\newlabel{hyp_matrix}{{5.43}{126}{Optimization of a Hydromatrix$\circledR $ Turbine: The evolution of the hypervolume indicator for (a) the MAEA and (b) the MAEA(PCA) implementing the PCA-assisted evolution operators. It is evident that, since the PCA--assisted operators apply at the $5^{th}$ generation, i.e. after about $4\!\times \!90\!=\!360$ evaluations based on the CFD tool, the first parts of the two curves are identical.\relax }{figure.caption.119}{}}
+\FN@pp@footnotehinttrue 
+\@writefile{lof}{\contentsline {figure}{\numberline {5.44}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Comparison of the fronts of non-dominated solutions computed using MAEA and MAEA(PCA), at the cost of $2000$ CFD--based evaluations. Abscissa and ordinate correspond to the two objectives, as defined by eqs.~\ref  {F12}.\relax }}{127}{figure.caption.120}}
+\newlabel{pareto_matrix}{{5.44}{127}{Optimization of a Hydromatrix$\circledR $ Turbine: Comparison of the fronts of non-dominated solutions computed using MAEA and MAEA(PCA), at the cost of $2000$ CFD--based evaluations. Abscissa and ordinate correspond to the two objectives, as defined by eqs.~\ref {F12}.\relax }{figure.caption.120}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.45}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: $C_p$ iso-areas for design A, at the BE point.\relax }}{128}{figure.caption.121}}
+\newlabel{All_press}{{5.45}{128}{Optimization of a Hydromatrix$\circledR $ Turbine: $C_p$ iso-areas for design A, at the BE point.\relax }{figure.caption.121}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.46}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: meridional ($C_m$) and peripheral ($C_u$) outlet velocity profiles for design A, at the BE point.\relax }}{129}{figure.caption.122}}
+\newlabel{out_MAT}{{5.46}{129}{Optimization of a Hydromatrix$\circledR $ Turbine: meridional ($C_m$) and peripheral ($C_u$) outlet velocity profiles for design A, at the BE point.\relax }{figure.caption.122}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.47}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the PL point. The pressure overshooting near the LE, on the SS, due to the negative incidence angle (fig.\ \ref  {design-PL-M}), causes the so-called pumping surface phenomenon.\relax }}{129}{figure.caption.123}}
+\newlabel{LOADPLM}{{5.47}{129}{Optimization of a Hydromatrix$\circledR $ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the PL point. The pressure overshooting near the LE, on the SS, due to the negative incidence angle (fig.\ \ref {design-PL-M}), causes the so-called pumping surface phenomenon.\relax }{figure.caption.123}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.48}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the BE point.\relax }}{130}{figure.caption.124}}
+\newlabel{LOADBEM}{{5.48}{130}{Optimization of a Hydromatrix$\circledR $ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the BE point.\relax }{figure.caption.124}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.49}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the FL operating point. Compared to its operation at the BE point, there is a pronounced undershooting close to the LE which can be explained by observing the flow incidence in fig.\ \ref  {design-FL-M}.\relax }}{130}{figure.caption.125}}
+\newlabel{LOADFLM}{{5.49}{130}{Optimization of a Hydromatrix$\circledR $ Turbine: $C_p$ profiles for the hub, mid-span and shroud airfoils of design A operating at the FL operating point. Compared to its operation at the BE point, there is a pronounced undershooting close to the LE which can be explained by observing the flow incidence in fig.\ \ref {design-FL-M}.\relax }{figure.caption.125}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.50}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Computed iso-bar areas for design A operating at the PL point. The water flow streamlines, near the shroud region, reveal the negative local incidence angle (the flow meets the blade at the SS), which causes the pumping surface phenomenon. \relax }}{131}{figure.caption.126}}
+\newlabel{design-PL-M}{{5.50}{131}{Optimization of a Hydromatrix$\circledR $ Turbine: Computed iso-bar areas for design A operating at the PL point. The water flow streamlines, near the shroud region, reveal the negative local incidence angle (the flow meets the blade at the SS), which causes the pumping surface phenomenon. \relax }{figure.caption.126}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.51}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Computed iso-bar areas for design A operating at the BE point. Water flow streamlines near the shroud region lead to ``better'' flow incidence angle, compared with the PL operation.\relax }}{132}{figure.caption.127}}
+\newlabel{design-BE-M}{{5.51}{132}{Optimization of a Hydromatrix$\circledR $ Turbine: Computed iso-bar areas for design A operating at the BE point. Water flow streamlines near the shroud region lead to ``better'' flow incidence angle, compared with the PL operation.\relax }{figure.caption.127}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.52}{\ignorespaces Optimization of a Hydromatrix$\text  {$\mathsurround \z@ \mathchar "472$}$ Turbine: Computed iso-bar areas for design A operating at the FL point. Water flow streamlines of the reveal a higher incidence angle than the BE, which causes a low pressure region near the LE at the SS, fig.\ \ref  {LOADFLM}. \relax }}{133}{figure.caption.128}}
+\newlabel{design-FL-M}{{5.52}{133}{Optimization of a Hydromatrix$\circledR $ Turbine: Computed iso-bar areas for design A operating at the FL point. Water flow streamlines of the reveal a higher incidence angle than the BE, which causes a low pressure region near the LE at the SS, fig.\ \ref {LOADFLM}. \relax }{figure.caption.128}{}}
+\@setckpt{5/Chapter5}{
+\setcounter{page}{134}
+\setcounter{equation}{17}
+\setcounter{enumi}{7}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{52}
+\setcounter{table}{9}
+\setcounter{ContinuedFloat}{0}
+\setcounter{pp@next@reset}{17}
+\setcounter{@fnserial}{16}
+\setcounter{NAT@ctr}{0}
+\setcounter{Item}{7}
+\setcounter{Hfootnote}{16}
+\setcounter{bookmark@seq@number}{62}
+\setcounter{parentequation}{0}
+\setcounter{section@level}{2}
+}

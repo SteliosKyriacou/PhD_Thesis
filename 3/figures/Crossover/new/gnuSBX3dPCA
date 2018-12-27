@@ -1,0 +1,109 @@
+reset
+#set term post eps color
+set term postscript eps enhanced monochrome
+#set term post eps m enhanced
+set palette gray negative
+set isosample 500,500
+set output 'SBX3dparents2.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set pm3d map
+set title"SBX (n=0)" 
+set dgrid3d 500,500,20
+set cntrparam levels 500 
+set grid
+set parametric
+set samples 500
+set cntrparam levels incremental 0, 0.01, 0.07
+set hidden3d 
+set ticslevel 0.8
+#set table 'SBX3dparents2.dat'
+
+n1=0
+
+x1=-1.
+x2=1.
+y1=-1.
+y2=1.
+#xCor=abs(x2-x1)*abs(y2-y1)/4.
+
+
+set xr [-2:2]
+set yr [-2:2]
+set zr [-1:1]
+set ur [-10:10]
+set vr [-10:10]
+
+f(x) = (x<1)?(abs(0.5*(n1+1)*x**n1)/2):(1)
+fcor(x)= (x<0)?(1):(f(x))
+f2(x) = (x>1)?(abs(0.5*(n1+1)*x**-(n1+2))/2):(1)
+f2cor(x)= (x<0)?(1):(f2(x))
+
+fd(x) = (x>-1)?(abs(0.5*(n1+1)*x**n1)/2):(1)
+fdcor(x)= (x>0)?(1):(fd(x))
+fd2(x) = (x<-1)?(abs(0.5*(n1+1)*x**-(n1+2))/2):(1)
+fd2cor(x)= (x>0)?(1):(fd2(x))
+
+x(x)=(x2-x1)*x/2.0 + (x2+x1)/2.0
+y(x)=(y2-y1)*x/2.0 + (y2+y1)/2.0
+
+xCor=abs(x(-1)-x(1))*abs(y(-1)-y(1))/4.
+
+sp x(u),y(v),(fcor(u))*(f2cor(u))*(fcor(v))*(f2cor(v))*(fdcor(u))*(fd2cor(u))*(fdcor(v))*(fd2cor(v))/xCor with pm3d t"",8,8,0.069 with pm3d t''
+
+
+reset
+#set term post eps m enhanced
+set isosample 500,500
+set term post eps color
+set output 'SBX3dparentsPCA.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set pm3d map
+set title"SBX-PCA (n=0)" 
+set dgrid3d 500,500,20
+set cntrparam levels incremental 0, 0.01, 0.07
+set cntrparam levels 500 
+set grid
+set parametric
+set samples 500
+set table 'SBX3dparents2PCA.dat'
+
+n1=0
+
+x1=1
+x2=3
+y1=7
+y2=4
+
+set xr [0:8]
+set yr [0:8]
+set ur [-10:20]
+set vr [-10:20]
+
+f(x) = (x<1)?(abs(0.5*(n1+1)*x**n1)/2):(1)
+fcor(x)= (x<0)?(1):(f(x))
+f2(x) = (x>1)?(abs(0.5*(n1+1)*x**-(n1+2))/2):(1)
+f2cor(x)= (x<0)?(1):(f2(x))
+
+fd(x) = (x>-1)?(abs(0.5*(n1+1)*x**n1)/2):(1)
+fdcor(x)= (x>0)?(1):(fd(x))
+fd2(x) = (x<-1)?(abs(0.5*(n1+1)*x**-(n1+2))/2):(1)
+fd2cor(x)= (x>0)?(1):(fd2(x))
+
+xrot(x,y)=0.961455*(x-0.2283)+0.274961*(y-0.449131)	 
+yrot(x,y)=-0.274961*(x-0.2283)+0.961455*(y-0.449131)	 
+
+invxrot(x,y)=0.961455*(x)-0.274961*(y)+0.2283	 
+invyrot(x,y)=0.274961*(x)+0.961455*(y)+0.449131	 
+
+x(x)=(xrot(x2,y2)-xrot(x1,y1))*x/2.0 + (xrot(x2,y2)+xrot(x1,y1))/2.0
+y(x)=(yrot(x2,y2)-yrot(x1,y1))*x/2.0 + (yrot(x2,y2)+yrot(x1,y1))/2.0
+
+xCor=abs(x(-1)-x(1))*abs(y(-1)-y(1))/4.
+
+
+sp invxrot(x(u),y(v)),invyrot(x(u),y(v)),(fcor(u))*(f2cor(u))*(fcor(v))*(f2cor(v))*(fdcor(u))*(fd2cor(u))*(fdcor(v))*(fd2cor(v)) with pm3d t""
+#sp x(u),y(v),(fcor(u))*(f2cor(u))*(fcor(v))*(f2cor(v))*(fdcor(u))*(fd2cor(u))*(fdcor(v))*(fd2cor(v)) with pm3d t""
+
+reset

@@ -1,0 +1,221 @@
+reset
+set term post eps c enhanced
+set output '100_30d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=100, n=30'
+p '100/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./100/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+reset
+set term post eps c enhanced
+set output '1000_30d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=1000, n=30'
+p '1000/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./1000/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+reset
+set term post eps c enhanced
+set output '1000_30d_pca.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.5:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=1000, n=30'
+p './1000/nonsep.log' u 25:15 w lp  lt 2 pt 7 lw 4 ps 1t'non-separable','./1000/nonseppca.log' u 25:15 w lp  lt 1 pt 7 lw 4 ps 1t'non-separable (PCA)'
+#p '1000/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./1000/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable','./1000/nonseppca.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable (PCA)'
+
+reset
+set term post eps c enhanced
+set output '1000_10d_pca.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.005:10]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=1000, n=10'
+p './1000_10d/nonsep.log' u 25:15 w lp  lt 2 pt 7 lw 4 ps 1t'non-separable','./1000_10d/nonseppca.log' u 25:15 w lp  lt 1 pt 7 lw 4 ps 1t'non-separable (PCA)'
+#p '1000_10d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./1000_10d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable','./1000_10d/nonseppca.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable (PCA)'
+
+
+reset
+set term post eps c enhanced
+set output '1000_10d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.000001:10]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations' 
+set ylabel 'f'   
+set log y
+set title 'a=1000, n=10'
+p '1000_10d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./1000_10d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+
+reset
+set term post eps c enhanced
+set output '100_10d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.000001:10]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=100, n=10'
+p '100_10d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./100_10d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+
+reset
+set term post eps c enhanced
+set output '10_10d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+set yr[0.000001:10]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=10, n=10'
+p '10_10d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./10_10d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+
+
+reset
+set term post eps c enhanced
+set output '10_30d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+#set yr[0.000001:10]
+set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'a=10, n=30'
+p '10_30d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./10_30d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+reset
+set term post eps c enhanced
+set output '30d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+#set yr[0.000001:10]
+#set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations' 
+set ylabel 'f'   
+set log y
+set title 'n=30'
+p '30d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./30d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+reset
+set term post eps c enhanced
+set output '5d.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+#set yr[0.000001:10]
+#set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'n=5'
+p '5d/sep.log' u 25:15 w lp pt 7 lw 4  ps 1t'separable','./5d/nonsep.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable'
+
+reset
+set term post eps c enhanced
+set output '30d_pca.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+#set yr[0.000001:10]
+#set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'n=30'
+#p '30d/sep.log' u 25:15 w lp lt 2 pt 7 lw 4  ps 1t'separable','./30d/nonsep.log' u 25:15 w lp  lt 1 pt 7 lw 4 ps 1t'non-separable','./30d/nonseppca.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable (PCA)'
+p './30d/nonsep.log' u 25:15 w lp  lt 2 pt 7 lw 4 ps 1t'non-separable','./30d/nonseppca.log' u 25:15 w lp lt 1 pt 7 lw 4 ps 1t'non-separable (PCA)'
+
+reset
+
+reset
+set term post eps c enhanced
+set output '5d_pca.eps'
+set size 0.8,0.8
+set grid xtics ytics mxtics mytics lw 0.5
+#set xr[0:1500]
+#set yr[0.000001:10]
+#set yr[0.01:15]
+set xtics 1000.
+set mxtics 5.
+set mytics 10.
+#set key top left
+set xlabel 'Evaluations'  
+set ylabel 'f'   
+set log y
+set title 'n=5'
+#p '5d/sep.log' u 25:15 w lp lt 2 pt 7 lw 4  ps 1t'separable','./5d/nonsep.log' u 25:15 w lp lt 1 pt 7 lw 4 ps 1t'non-separable','./5d/nonseppca.log' u 25:15 w lp  pt 7 lw 4 ps 1t'non-separable (PCA)'
+p './5d/nonsep.log' u 25:15 w lp lt 2 pt 7 lw 4 ps 1t'non-separable','./5d/nonseppca.log' u 25:15 w lp lt 1 pt 7 lw 4 ps 1t'non-separable (PCA)'
+
+reset

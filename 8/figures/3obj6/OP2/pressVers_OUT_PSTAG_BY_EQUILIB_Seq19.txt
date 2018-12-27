@@ -1,0 +1,1 @@
+-2.2750182185e+04 	mPressVers	0.0000000000e+00	mPStagVers	-5.0042437946e+00	pressStagNow

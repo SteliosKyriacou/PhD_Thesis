@@ -1,0 +1,1145 @@
+\begin{thebibliography}{100}
+
+\bibitem{PaulSite}
+http://acoustic-interfaces.at/sites/aigrid.htm.
+
+\bibitem{andritz}
+http://www.andritz.com/hydro.htm.
+
+\bibitem{matrix}
+http://www.andritz.com/ANONID2C30C9DB22C0E151/hydro-products-and-services-large-hydro-hydromatrix.
+
+\bibitem{matrix_2}
+http://hydromatrix.info/index.htm.
+
+\bibitem{aamond_plaza_1994}
+A.~Aamodt and E.~Plaza.
+\newblock Case-based reasoning: Foundational issues, methodological variations,
+  and system approaches.
+\newblock pages 39--59. AI Communications, 7(i), 1994.
+
+\bibitem{Akerkar:2009:KS:1795845}
+R.~Akerkar and P.~Sajja.
+\newblock {\em Knowledge-Based Systems}.
+\newblock Jones and Bartlett Publishers Inc., 1st edition, 2009.
+
+\bibitem{alba_08}
+E.~Alba and B.~Dorronsoro.
+\newblock {\em Cellular Genetic Algorithms}.
+\newblock Springer-Verlag, 2008.
+
+\bibitem{Alba2001}
+E.~Alba and J.M. Troya.
+\newblock Analyzing synchronous and asynchronous parallel distributed genetic
+  algorithms.
+\newblock {\em Future Generation Computer Systems}, 17(4):451--465, 2001.
+
+\bibitem{Anagno3}
+J.S. Anagnostopoulos and D.~E. Papantonis.
+\newblock Optimal sizing of a run-of-river small hydropower plant.
+\newblock {\em Energy Conversion and Management}, 48:2663–2670, 2007.
+
+\bibitem{Anagno4}
+J.S. Anagnostopoulos and D.E. Papantonis.
+\newblock {F}low {M}odeling and {R}unner {D}esign {O}ptimization in {T}urgo
+  {W}ater {T}urbines.
+\newblock {\em International Journal of Applied Science, Engineering and
+  Technology}, 4(3):136–141, 2007.
+
+\bibitem{Anagno5}
+J.S. Anagnostopoulos and D.E. Papantonis.
+\newblock Pumping station design for a pumped-storage wind-hydro power plant.
+\newblock {\em Energy Conversion and Management}, 48:3009–3017, 2007.
+
+\bibitem{Anagno6}
+J.S. Anagnostopoulos and D.E. Papantonis.
+\newblock Simulation and size optimization of a pumped–storage power plant
+  for the recovery of wind-farms rejected energy.
+\newblock {\em Renewable Energy}, 33:1685–1694, 2008.
+
+\bibitem{anderson:99}
+W.K. Anderson and D.L. Bonhaus.
+\newblock Aerodynamic design on unstructured grids for turbulent flows.
+\newblock {\em AIAA Journal}, 37(2):185--191, 1999.
+
+\bibitem{kn:Ander99}
+W.K. Anderson and V.~Venkatakrishnan.
+\newblock Aerodynamic design optimization on unstructured grids with a
+  continuous adjoint formulation.
+\newblock {\em Computers and Fluids}, 28:443--480, 1999.
+
+\bibitem{phd_Vera}
+V.G. Asouti.
+\newblock {\em \greek{Μέθοδοι αεροδυναμικής
+  ανάλυσης και σχεδιασμού για ροές υψηλών
+  και χαμηλών ταχυτήτων, σε
+  πολυεπεξεργαστικό περιβάλλον}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_040}
+V.G. Asouti and K.C. Giannakoglou.
+\newblock Aerodynamic optimization using a parallel asynchronous evolutionary
+  algorithm controlled by strongly interacting demes.
+\newblock {\em Engineering Optimization}, 41(3):241--257, 2009.
+
+\bibitem{LTT_2_045}
+V.G. Asouti, I.C. Kampolis, and K.C. Giannakoglou.
+\newblock A {G}rid-{E}nabled {A}synchronous {M}etamodel-{A}ssisted
+  {E}volutionary {A}lgorithm for {A}erodynamic {O}ptimization.
+\newblock {\em Genetic Programming and Evolvable Machines (SI:Parallel and
+  Distributed Evolutionary Algorithms, Part One)}, 10(3):373--389, 2009.
+
+\bibitem{Axler_1997}
+S.~Axler.
+\newblock {\em Linear Algebra Done Right}.
+\newblock Springer Verlag, 1997.
+
+\bibitem{Back1996}
+T.~Back.
+\newblock In {\em {E}volutionary {A}lgorithms in {T}heory and {P}ractice,
+  evolution strategies, evolutionary programming, genetic algorithms}. {O}xford
+  {U}niversity {P}ress, 1996.
+
+\bibitem{BenArc02}
+N.~Benoudjit, C.~Archambeau, A.~Lendasse, J.~Lee, and M.~Verleysen.
+\newblock Width optimization of the {G}aussian kernels in radial basis function
+  networks.
+\newblock In {\em European Symposium on Artificial Neural Networks -- ESANN
+  2002}, pages 425--432, Bruges, 2002.
+
+\bibitem{Box57a}
+G.E.P. Box.
+\newblock {Evolutionary Operation: A method for increasing industrial
+  productivity}.
+\newblock {\em Applied Statistics}, 6(2):81--101, June 1957.
+
+\bibitem{BoDr98a}
+G.E.P. Box and N.R. Draper.
+\newblock {\em {Evolutionary Operation: A Statistical Method for Process
+  Improvement}}.
+\newblock Wiley, New York, 1969.
+
+\bibitem{Bremermann_62}
+H.J. Bremermann.
+\newblock {\em Optimization through evolution and recombination}.
+\newblock Spartan Books, 1962.
+
+\bibitem{brennen1995cavitation}
+C.E. Brennen.
+\newblock {\em Cavitation and Bubble Dynamics}.
+\newblock Oxford Engineering Science Series. Oxford University Press, 1995.
+
+\bibitem{chav:95}
+P.~Chaviaropoulos, V.~Dedoussis, and K.D. Papailiou.
+\newblock On the {3D} inverse potential target pressure problem. {P}art 1.
+  {T}heoretical aspects and method formulation.
+\newblock {\em Journal of Fluid Mechanics}, 282:131--146, 1995.
+
+\bibitem{Chorin}
+A.~Chorin.
+\newblock A numerical method for solving incompressible viscous flow problems.
+\newblock {\em Journal of Computational Physics}, 2(1):12--26, 1967.
+
+\bibitem{CoCo99}
+C.A. Coello~Coello.
+\newblock An updated survey of evolutionary multiobjective optimization
+  techniques: State of the art and future trends.
+\newblock volume~1, pages 3--13, Washington, 1999.
+
+\bibitem{coello2000use}
+C.A. Coello~Coello.
+\newblock Use of a self-adaptive penalty approach for engineering optimization
+  problems.
+\newblock {\em Computers in Industry}, 41(2):113--127, 2000.
+
+\bibitem{coello02}
+C.A. Coello~Coello.
+\newblock Theoretical and numerical constraint handling techniques used with
+  evolutionary algorithms: A survey of the state of the art.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  191(11-12):1245--1287, 2002.
+
+\bibitem{coe02}
+C.A. Coello~Coello, D.A. Van~Veldhuizen, and G.B. Lamont.
+\newblock {\em Evolutionary algorithms for solving multi-objective problems}.
+\newblock Kluwer Academic Publishers, 2002.
+
+\bibitem{corne00}
+D.~Corne, J.~Knowles, and M.~Oates.
+\newblock The {P}areto envelope-based selection algorithm for multiobjective
+  optimization.
+\newblock In {\em Parallel Problem Solving from Nature VI Conference -- PPSN
+  VI}, pages 839--848. Springer, 2000.
+
+\bibitem{cramer85}
+N.L. Cramer.
+\newblock A representation for the adaptive generation of simple sequential
+  programs.
+\newblock In J.J. Grefenstette, editor, {\em International Conference on
+  Genetic Algorithms and the Applications}, pages 183--187, 1985.
+
+\bibitem{Darwin}
+C.~Darwin.
+\newblock {\em On the origin of species by means of natural selection.}
+\newblock Murray, London, 1859.
+
+\bibitem{Deb00}
+K.~Deb.
+\newblock An efficient constraint handling method for genetic algorithms.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  186(2-4):311--338, 2000.
+
+\bibitem{SBX1}
+K.~Deb and R.B. Agrawal.
+\newblock Simulated binary crossover for continuous search space.
+\newblock Technical report, IITK/ME/SMD-94027, Kanpur Genetic Algorithms
+  Laboratory, 1994.
+
+\bibitem{Deb00a}
+K.~Deb, S.~Agrawal, A.~Pratap, and T.~Meyarivan.
+\newblock A fast elitist non-dominated sorting genetic algorithm for
+  multi-objective optimization: {NSGA-II}.
+\newblock In {\em Parallel Problem Solving from Nature -- PPSN VI}, Paris,
+  2000.
+
+\bibitem{ded:95}
+V.~Dedoussis, P.~Chaviaropoulos, and K.D. Papailiou.
+\newblock On the {3D} inverse potential target pressure problem. {P}art 2.
+  {N}umerical aspects and application to duct design.
+\newblock {\em Journal of Fluid Mechanics}, 282:147--162, 1995.
+
+\bibitem{dennis:99}
+B.H. Dennis, G.~Dulikravich, and Z.-X. Han.
+\newblock Constrained shape optimization of airfoil cascades using a
+  {N}avier--{S}tokes solver and a genetic/{SQP} algorithm.
+\newblock In {\em ASME IGTI' 99}, Indianapolis, 2002.
+\newblock \mbox{ASME Paper 98-GT-441}.
+
+\bibitem{Desid2003}
+J.A. D\'{e}sid\'{e}ri and A.~Janka.
+\newblock Hierarchical parametrization for multilevel evolutionary shape
+  optimization with application to aerodynamics.
+\newblock In {\em EUROGEN 2003, Evolutionary Methods for Design, Optimisation
+  and Control with Applications to Industrial Problems}, Barcelona, 2003.
+
+\bibitem{kn:Door1997}
+D.J. Doorly and J.~Peir\'o.
+\newblock Supervised parallel genetic algorithms in aerodynamic optimisation.
+\newblock In {\em 13th AIAA Computational Fluid Dynamics Conference}, Snowmass
+  Village, CO, 1997.
+\newblock \mbox{AIAA-1997-1852}.
+
+\bibitem{phd_doukelis}
+A.F. Doukelis.
+\newblock {\em Study of the flowfield in the tip clearance region of compressor
+  bladings}.
+\newblock PhD thesis, Cranfield University, 1998.
+
+\bibitem{Drel1987}
+M.~Drela and M.B. Giles.
+\newblock Viscous-inviscid analysis of transonic and low {R}eynolds number
+  airfoils.
+\newblock {\em AIAA Journal}, 25(10):1347--1355, 1987.
+
+\bibitem{drtina1999hydraulic}
+P.~Drtina and M.~Sallaberger.
+\newblock Hydraulic turbines—basic principles and state-of-the-art
+  computational fluid dynamics applications.
+\newblock {\em Proceedings of the Institution of Mechanical Engineers, Part C:
+  Journal of Mechanical Engineering Science}, 213(1):85--102, 1999.
+
+\bibitem{kn:Eby1998}
+D.~Eby, R.~C. Averill, W.~F. Punch~III, and E.~D. Goodman.
+\newblock Evaluation of injection island {GA} performance on flywheel design
+  optimization.
+\newblock In {\em 3rd Conference on Adaptive Computing in Design and
+  Manufacturing}, pages 121--136, Plymouth, 1998. Springer-Verlag.
+
+\bibitem{EBNK}
+M.A. El-Beltagy, P.B. Nair, and A.J. Keane.
+\newblock Metamodeling techniques for evolutionary optimization of
+  computationally expensive problems: Promises and limitations.
+\newblock In {\em Genetic and Evolutionary Computation Conference -- {GECCO}},
+  pages 196--203, San Fransisco, 1999.
+
+\bibitem{kn:Elliott96}
+J.~Elliott and J.~Peraire.
+\newblock Aerodynamic design using unstructured meshes.
+\newblock AIAA Paper 96-1941, 1996.
+
+\bibitem{LTT_2_027}
+M.~Emmerich, K.C. Giannakoglou, and B.~Naujoks.
+\newblock Single- and multi-objective evolutionary optimization assisted by
+  {G}aussian random field metamodels.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 10(4):421--439,
+  2006.
+
+\bibitem{kn:Emm2002}
+M.~Emmerich, A.~Giotis, M.~\"{O}zdemir, T.~B\"{a}ck, and K.~Giannakoglou.
+\newblock Metamodel-assisted evolution strategies.
+\newblock In {\em 7th International Conference on Parallel Problem Solving from
+  Nature --- PPSN VII}, volume 2439 of {\em Lecture Notes in Computer Science},
+  pages 361--370. Springer-Verlag, 2002.
+
+\bibitem{kn:Emm2004}
+M.~Emmerich and B.~Naujoks.
+\newblock Metamodel-assisted multiobjective optimization with implicit
+  constraints and its application in airfoil design.
+\newblock In {\em ERCOFTAC Design Optimization: Methods \& Applications ---
+  International Conference \& Advanced Course Program}, Athens, 2004.
+
+\bibitem{Fodor_2002}
+I.K. Fodor.
+\newblock A survey of dimension reduction techniques.
+\newblock Technical report, Center for Applied Scientific Computing, Lawrence
+  Livermore National Laboratory, 2002.
+
+\bibitem{fogel62}
+L.~J. Fogel.
+\newblock Autonomous automata.
+\newblock {\em Industrial Research Magazine}, 4(2):14--19, 1962.
+
+\bibitem{fogel64}
+L.~J. Fogel.
+\newblock {\em On The Organization of Intellect}.
+\newblock PhD thesis, University of California, 1964.
+
+\bibitem{fogel66}
+L.~J. Fogel, Owens A., and M.~Walsh.
+\newblock {\em Artificial Intelligence through Simulated Evolution}.
+\newblock John Wiley \& Sons, New York, 1966.
+
+\bibitem{fogel95}
+L.J. Fogel, P.J. Angeline, and D.B. Fogel.
+\newblock An evolutionary programming approach to self-adaptation on finite
+  state machines.
+\newblock In {\em Proceedings of the 4th Annual Conference on Evolutionary
+  Programming}, pages 355--365. MIT Press, 1995.
+
+\bibitem{Fon93}
+C.M. Fonseca and P.J. Fleming.
+\newblock Genetic algorithms for multiobjective optimization: Formulation,
+  discussion and generalization.
+\newblock In {\em 5th International Conference on Genetic Algorithms}, pages
+  416--423, San Mateo, CA, 1993. Morgan Kaufmann Publishers.
+
+\bibitem{kn:Fost97}
+N.~Foster and G.~Dulikravich.
+\newblock Three-dimensional aerodynamic shape optimisation using genetic and
+  gradient search algorithms.
+\newblock {\em J. Spacecraft and Rockets}, 34(1), 1997.
+
+\bibitem{Friedberg:1958:LMP:1662346.1662347}
+R.M. Friedberg.
+\newblock A learning machine: {P}art {I}.
+\newblock {\em IBM J. Research and Development.}, 2(1):2--13, January 1958.
+
+\bibitem{Friedberg:1959:LMP:1661923.1661930}
+R.M. Friedberg, B.~Dunham, and J.H. North.
+\newblock A learning machine: {P}art {I}{I}.
+\newblock {\em IBM J. Research and Development.}, 3(3):282--287, July 1959.
+
+\bibitem{Fri94a}
+B.~Fritzke.
+\newblock Fast learning with incremental {RBF} {N}etworks.
+\newblock {\em Neural Processing Letters}, 1(1):2--5, 1994.
+
+\bibitem{kn:Gala96}
+M.~Galan, G.~Winter, G.~Montero, D.~Greiner, J.~Periaux, and B.~Mantel.
+\newblock A transonic flow shape optimization using genetic algorithms.
+\newblock ECCOMAS 96, John Wiley \& Sons, Paris, 1996.
+
+\bibitem{genter_1983}
+D.~Gentner.
+\newblock Structure-mapping: A theoretical framework for analogy.
+\newblock {\em Cognitive Science}, 7(2):155 -- 170, 1983.
+
+\bibitem{Georg2011}
+K.~Georg, V.~Christian, and N.~Eberhard.
+\newblock Theory and application of axisymmetric endwall contouring for
+  compressors.
+\newblock In {\em ASME Turbo Expo}, Vancouver, 2011.
+\newblock \mbox{ASME Paper T2011-45624}.
+
+\bibitem{phd_Chara}
+C.~A. Georgopoulou.
+\newblock {\em \greek{Τεχνικές Βελτιστοποίησης για
+  τον προγραμματισμό λειτουργίας
+  Αεριο/Ατμοστροβιλικών μονάδων και το
+  σχεδιασμό συνιστωσών τους}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_043}
+C.A. Georgopoulou and K.C. Giannakoglou.
+\newblock A multi-objective metamodel-assisted memetic algorithm with
+  strength-based local refinement.
+\newblock {\em Engineering Optimization}, 41(10):909--923, 2009.
+
+\bibitem{LTT_4_04}
+C.A. Georgopoulou and K.C. Giannakoglou.
+\newblock {\em Multiobjective Metamodel-Assisted Memetic Algorithms}.
+\newblock Springer Series, 2009.
+
+\bibitem{LTT_3_094}
+C.A. Georgopoulou, S.A. Kyriacou, K.C. Giannakoglou, P.~Grafenberger, and
+  E.~Parkinson.
+\newblock Constrained multi-objective design optimization of hydraulic
+  components using a hierarchical metamodel-assisted evolutionary algorithm.
+  {P}art 1: {T}heory.
+\newblock In {\em 24th IAHR, Symposium on Hydraulic Machinery and Systems}, Foz
+  do Iguassu, October 2008.
+
+\bibitem{Ghisu_2010}
+T.~Ghisu, T.~Parks, D.~Jaeggi, J.~Jarrett, and P.~Clarkson.
+\newblock The benefits of adaptive parametrization in multi-objective tabu
+  search optimization.
+\newblock {\em Engineering Optimization}, 42(12):959--981, 2010.
+
+\bibitem{kn:Gian1999}
+K.C. Giannakoglou.
+\newblock Designing turbomachinery blades using evolutionary methods.
+\newblock In {\em ASME Turbo Expo '99}, Indianapolis, 1999.
+\newblock \mbox{ASME Paper 99-GT-181}.
+
+\bibitem{LTT_2_020}
+K.C. Giannakoglou.
+\newblock Design of optimal aerodynamic shapes using stochastic optimization
+  methods and computational intelligence.
+\newblock {\em Progress in Aerospace Sciences}, 38(1):43--76, 2002.
+
+\bibitem{EASYsite}
+K.C. Giannakoglou.
+\newblock The \mbox{EASY} ({E}volutionary {A}lgorithms {SY}stem) software,
+  \mbox{http://velos0.ltt.mech.ntua.gr/EASY}, 2008.
+
+\bibitem{LTT_2_018}
+K.C. Giannakoglou, A.P. Giotis, and M.K. Karakasis.
+\newblock Low-cost genetic optimization based on inexact pre-evaluations and
+  the sensitivity analysis of design parameters.
+\newblock {\em Inverse Problems in Engineering}, 9:389--412, 2001.
+
+\bibitem{LTT_4_05}
+K.C. Giannakoglou and I.C. Kampolis.
+\newblock {\em Multilevel Optimization Algorithms based on Metamodel- and
+  Fitness Inheritance-Assisted Evolutionary Algorithms.}
+\newblock Springer-Verlag Series in Evolutionary Learning and Optimization,
+  2009.
+
+\bibitem{ParCFD}
+K.C. Giannakoglou, I.C. Kampolis, P.I.K. Liakopoulos, M.K. Karakasis, D.I.
+  Papadimitriou, V.G. Asouti, and T.~Zervogiannis.
+\newblock Aerodynamic shape optimization methods on multiprocessor platforms.
+\newblock {\em ParCFD 2007}, Antalya, May 21-24, 2007.
+
+\bibitem{phd_Giotis}
+A.P. Giotis.
+\newblock {\em \greek{Χρήση Εξελικτικών τεχνικών,
+  υπολογιστικής ευφυίας και μεθόδων
+  υπολογιστικής ρευστομηχανικής στη
+  βελτιστοποίηση - αντίστροφη σχεδίαση
+  πτερυγώσεων στροβιλομηχανών, μέσω
+  παράλληλης επεξεργασίας}}.
+\newblock PhD thesis, National Technical University of Athens, 2003.
+
+\bibitem{kn:Gio99}
+A.P. Giotis and K.C. Giannakoglou.
+\newblock Single- and multi-objective airfoil design using genetic algorithms
+  and artificial intelligence.
+\newblock EUROGEN 99, Evolutionary Algorithms in Engineering and Computer
+  Science, Miettinen K. et al (Eds.), John Wiley \& Sons, Jyvaskyla, 1999.
+
+\bibitem{Gold89}
+D.E. Goldberg.
+\newblock {\em Genetic Algorithms in search, optimization \& machine learning}.
+\newblock Addison-Wesley, 1989.
+
+\bibitem{goldberg1991}
+D.E. Goldberg and K.~Deb.
+\newblock {A Comparative Analysis of Selection Schemes Used in Genetic
+  Algorithms}.
+\newblock In {\em Foundations of Genetic Algorithms}, pages 69--93, 1991.
+
+\bibitem{Kyriacou2010}
+P.~Grafenberger, E.~Parkinson, C.A. Georgopoulou, S.A. Kyriacou, and K.C.
+  Giannakoglou.
+\newblock Optimization of hydraulic machinery by exploiting previous successful
+  designs.
+\newblock In {\em 25th IAHR, Symposium on Hydraulic Machinery and Systems},
+  Timisoara, September 2010.
+
+\bibitem{hansen2003ecj}
+N.~Hansen, S.D. Muller, and P.~Koumoutsakos.
+\newblock Reducing the time complexity of the derandomized evolution strategy
+  with covariance matrix adaptation ({CMA-ES}).
+\newblock {\em Evolutionary Computation}, 11(1):1--18, 2003.
+
+\bibitem{hansen1997ecj}
+N.~Hansen and A.~Ostermeier.
+\newblock Convergence properties of evolution strategies with the derandomized
+  covariance matrix adaptation: The ($\mu/\mu i, \lambda$)-{E}{S}.
+\newblock {\em EUFIT'97}, pages 650--654, 1997.
+
+\bibitem{hansen2001ecj}
+N.~Hansen and A.~Ostermeier.
+\newblock Completely derandomized self-adaptation in evolution strategies.
+\newblock {\em Evolutionary Computation}, 9(2):159--195, 2001.
+
+\bibitem{Hayk1999}
+S.~Haykin.
+\newblock {\em Neural Networks: A Comprehensive Foundation}.
+\newblock Prentice Hall, New Jersey, 2nd edition, 1999.
+
+\bibitem{Herr1999}
+F.~Herrera, M.~Lozano, and C.~Moraga.
+\newblock Hierarchical distributed genetic algorithms.
+\newblock {\em International Journal of Intelligent Systems}, 14(9):1099--1121,
+  1999.
+
+\bibitem{holland_1975}
+J.~Holland.
+\newblock In {\em Adaptation In Natural and Artificial Systems}. The University
+  of Michigan Press, Ann Arbour, 1975.
+
+\bibitem{Holland:1962:OLT:321127.321128}
+J.H. Holland.
+\newblock Outline for a logical theory of adaptive systems.
+\newblock {\em J. ACM}, 9(3):297--314, July 1962.
+
+\bibitem{horn94}
+J.~Horn, N.~Nafpliotis, and D.~E. Goldberg.
+\newblock A niched {P}areto genetic algorithm for multiobjective optimization.
+\newblock In {\em First IEEE Conference on Evolutionary Computation, 1994},
+  volume~1, pages 82--87 vol.1, 1994.
+
+\bibitem{kn:Jame95}
+A.~Jameson.
+\newblock Optimum aerodynamic design using {CFD} and control theory.
+\newblock AIAA Paper 95-1729-CP, 1995.
+
+\bibitem{kn:Jame88}
+A.~Jameson.
+\newblock Aerodynamic design via control theory.
+\newblock {\em Journal of Scientific Computation}, 3:33--260, 1988.
+
+\bibitem{kn:Jame94}
+A.~Jameson and J.~Reuther.
+\newblock Control theory based airfoil design using the {E}uler equations.
+\newblock AIAA Paper 94-4272-CP, 1994.
+
+\bibitem{Jin2002}
+Y.~Jin, M.~Olhofer, and B.~Sendhoff.
+\newblock A framework for evolutionary optimization with approximate fitness
+  functions.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 6(5):481--494,
+  October 2002.
+
+\bibitem{Jolliffe_2002}
+I.T. Jolliffe.
+\newblock In {\em Principal Component Analysis, Springer Series in Statistics,
+  2nd ed.} Springer, N.Y., 2002.
+
+\bibitem{phd_Kampolis}
+I.~C. Kampolis.
+\newblock {\em \greek{Πολυεπίπεδοι,
+  Πολυεπεξεργαστικοί Αλγόριθμοι
+  Αεροδυναμικής Βελτιστοποίησης στις
+  Στροβιλομηχανές}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_036}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock A multilevel approach to single- and multiobjective aerodynamic
+  optimization.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  197(33-40):2963--2975, 2008.
+
+\bibitem{LTT_2_044}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock Distributed evolutionary algorithms with hierarchical evaluation.
+\newblock {\em Engineering Optimization}, 41(11):1037--1049, 2009.
+
+\bibitem{LTT_2_048}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock Synergetic use of different evaluation, parameterization and search
+  tools within a multilevel optimization platform.
+\newblock {\em Applied Soft Computing}, 11(1):645--651, 2011.
+
+\bibitem{LTT_2_026}
+I.C. Kampolis, D.I. Papadimitriou, and K.C. Giannakoglou.
+\newblock Evolutionary optimization using a new radial basis function network
+  and the adjoint formulation.
+\newblock {\em Inverse Problems in Science and Engineering}, 14(4):397--410,
+  2006.
+
+\bibitem{LTT_3_092}
+I.C. Kampolis, A.S. Zymaris, V.G. Asouti, and K.C. Giannakoglou.
+\newblock Multilevel optimization strategies based on metamodel-assisted
+  evolutionary algorithms, for computationally expensive problems.
+\newblock In {\em 2007 Congress on Evolutionary Computation -- CEC '07},
+  Singapore, September 2007.
+
+\bibitem{phd_Karakasis}
+M.K. Karakasis.
+\newblock {\em \greek{Ιεραρχικοί, κατανεμημένοι
+  εξελικτικοί αλγόριθμοι και υπολογιστική
+  ευφυία στη σχεδίαση βέλτιστων
+  αεροδυναμικών μορφών, σε περιβάλλον
+  πολυεπεξεργασίας}}.
+\newblock PhD thesis, National Technical University of Athens, 2006.
+
+\bibitem{LTT_2_029}
+M.K. Karakasis and K.C. Giannakoglou.
+\newblock On the use of metamodel-assisted, multi-objective evolutionary
+  algorithms.
+\newblock {\em Engineering Optimization}, 38(8):941--957, 2006.
+
+\bibitem{LTT_2_023}
+M.K. Karakasis, A.P. Giotis, and K.C. Giannakoglou.
+\newblock Inexact information aided, low-cost, distributed genetic algorithms
+  for aerodynamic shape optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  43(10-11):1149--1166, 2003.
+
+\bibitem{LTT_2_031}
+M.K. Karakasis, D.G. Koubogiannis, and K.C. Giannakoglou.
+\newblock Hierarchical distributed evolutionary algorithms in shape
+  optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  53(3):455--469, 2007.
+
+\bibitem{Karay1997}
+N.B. Karayiannis and G.W. Mi.
+\newblock Growing radial basis neural networks: Merging supervised and
+  unsupervised learning with network growth techniques.
+\newblock {\em IEEE Transactions on Neural Networks}, 8(6):1492--1506, 1997.
+
+\bibitem{KEANEbook}
+A.~Keane and B.~Nair.
+\newblock {\em Computational Approaches to Aerospace Design}.
+\newblock John Wiley \& Sons, Chichester UK, 2nd edition, 2005.
+
+\bibitem{Kevin2011}
+P.~Kevin, G.T. Mark, S.~Kiran, and D.~Soumitr.
+\newblock Optimization of a 3-stage booster {P}art 1: the axisymmetric
+  multi-diciplinary approach to compressor design.
+\newblock In {\em ASME Turbo Expo}, Vancouver, 2011.
+\newblock \mbox{ASME Paper GT2011-46569}.
+
+\bibitem{Kiemele}
+M.~Kiemele, S.~Schmidt, and R.~Berdine.
+\newblock {\em Basic Statistics, tools for continuous improvement}.
+\newblock Air Academy Press \& Associates, Colorado Springs, 1996.
+
+\bibitem{knapp1970cavitation}
+R.T. Knapp, J.W. Daily, and F.G. Hammitt.
+\newblock {\em Cavitation}.
+\newblock Engineering {S}ocieties {M}onographs. McGraw-Hill, 1970.
+
+\bibitem{knowles99}
+J.~Knowles and D.~Corne.
+\newblock The {P}areto archived evolution strategy: {A} new baseline algorithm
+  for {P}areto multiobjective optimisation.
+\newblock In {\em 1999 Congress on Evolutionary Computation -- {CEC} 1999},
+  volume~1, pages 98--105. IEEE Press, 1999.
+
+\bibitem{knowles00mpaes_x41}
+J.~Knowles and D.~Corne.
+\newblock {M}-{PAES}: {A} memetic algorithm for multiobjective optimization.
+\newblock In {\em 2000 Congress on Evolutionary Computation -- {CEC} 2000},
+  pages 325--332. IEEE Press, 2000.
+
+\bibitem{dipl_livia}
+L.~Koch.
+\newblock {Flächenrückführung für Turbinenschaufeln}.
+\newblock Diploma thesis, Johannes Kepler University Linz, 2004.
+
+\bibitem{kolodner_1983a}
+J.~Kolodner.
+\newblock Maintaining organization in a dynamic long-term memory.
+\newblock {\em Cognitive Science, 7(iv)}, pages 243--80, 1983.
+
+\bibitem{kolodner_1983b}
+J.~Kolodner.
+\newblock Reconstructive memory: A computer model.
+\newblock {\em Cognitive Science, 7(iv)}, pages 281--28, 1983.
+
+\bibitem{ashley_1988}
+J.~Kolodner.
+\newblock Arguing by {A}nalogy in {L}aw: {A} {C}ase-{B}ased {M}odel. in
+  {D}.{H}. {H}elman ({E}d.), {A}nalogical {R}easoning: {P}erspectives of
+  {A}rtificial {I}ntelligence.
+\newblock {\em Cognitive Science, and Philosophy}, 1988.
+
+\bibitem{kolodner_1991}
+J.~Kolodner.
+\newblock Improving human decision making through case-based decision aiding.
+\newblock {\em AI Magazine}, 12(2):52--68, 1991.
+
+\bibitem{kolodner_1993}
+J.~Kolodner.
+\newblock In {\em Case-Based Reasoning}. Morgan Kaufmann Puplication, San
+  Mateo, CA, 1993.
+
+\bibitem{phd_eugene}
+E.A. Kontoleontos.
+\newblock {\em \greek{Συμβολή στο σχεδιασμό
+  θερμo-ρευστoδυναμικών διατάξεων με χρήση
+  αιτιοκρατικών και εξελικτικών μεθόδων
+  βελτιστοποίησης}}.
+\newblock PhD thesis, National Technical University of Athens, 2012.
+
+\bibitem{LTT_2_053}
+E.A. Kontoleontos, V.G. Asouti, and K.C. Giannakoglou.
+\newblock An asynchronous metamodel-assisted memetic algorithm for
+  \mbox{CFD}-based shape optimization.
+\newblock {\em Engineering Optimization}, 44(2):157--173, 2011.
+
+\bibitem{Koz94}
+J.~Koza.
+\newblock Genetic {P}rogramming {I}{I}: {A}utomatic {D}iscovery of {R}eusable
+  {P}rogramms.
+\newblock MIT Press, 1994.
+
+\bibitem{Krans2005}
+N.~Krasnogor and J.~Smith.
+\newblock A tutorial for competent memetic algorithms: model, taxonomy, and
+  design issues.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 9(5):474--488,
+  2005.
+
+\bibitem{lefoll}
+J.~Le~Foll.
+\newblock A theory of representation of the properties of boundary-layers on a
+  plane.
+\newblock In {\em Seminar on Advanced Problems in Turbomachinery}. VKI,
+  Rhodes--Saint Gen\'ese, 1965.
+
+\bibitem{kn:LeeH96}
+J.~Lee and P.~Hajela.
+\newblock Parallel genetic algorithm implementation in multidisciplinary rotor
+  blade design.
+\newblock {\em J. Aircraft}, 33(5):962--969, 1996.
+
+\bibitem{phd_Liakopoulos}
+P.I.K. Liakopoulos.
+\newblock {\em \greek{Γένεση μη-δομημένων πλεγμάτων
+  και διαχείρισή τους σε μεθόδους ανάλυσης
+  και βελτιστοποίησης συνιστωσών
+  στροβιλομηχανών και εφαρμογές,
+  αξιοποιώντας τεχνολογίες πλέγματος } (Grid
+  Computing)}.
+\newblock PhD thesis, National Technical University of Athens, 2008.
+
+\bibitem{Lim2007}
+D.~Lim, Y.-S. Ong, Y.~Jin, B.~Sendhoff, and B.-S. Lee.
+\newblock Efficient hierarchical parallel genetic algorithms using grid
+  computing.
+\newblock {\em Future Generation Computer Systems}, 23(4):658--670, 2007.
+
+\bibitem{Marcel2011}
+A.~Marcel and S.~Ulrich.
+\newblock High-dimensional constrained multiobjective optimization of a fan
+  stage.
+\newblock In {\em ASME Turbo Expo}, Vancouver, 2011.
+\newblock \mbox{ASME Paper GT2011-45618}.
+
+\bibitem{kn:Mar97}
+T.J. Martin and G.~S. Dulikravich.
+\newblock Aero-thermal analysis and optimization of internally cooled turbine
+  airfoils.
+\newblock ISABE 97-7165, 1997.
+
+\bibitem{mathiou97}
+K.~Mathioudakis, K.D. Papailiou, N.~Neris, C.~Bonhommet, G.~Albrand, and
+  U.~Wenger.
+\newblock An annular cascade facility for studying tip clearance effects in
+  high speed flows.
+\newblock In {\em XIII ISABE Conference}, Chattanooga, Tennessee, 1997.
+
+\bibitem{HowToSolveIt}
+Z.~Michalewicz and D.B. Fogel.
+\newblock {\em How to solve it: Modern Heuristics.}
+\newblock Springer-Verlag, 2000.
+
+\bibitem{mich96}
+Z.~Michalewicz and M.~Schoenauer.
+\newblock Evolutionary algorithms for constrained parameter optimization
+  problems.
+\newblock {\em Evolutionary Computation}, 4:1--32, 1996.
+
+\bibitem{mich94}
+Z.~Michalewizc and N.~Attia.
+\newblock Evolutionary optimization of constrained problems.
+\newblock In {\em 3rd Annual Conference on Evolutionary Programming}, pages
+  98--109. World Scientific Publishing, 1994.
+
+\bibitem{Miett99}
+K.~Miettinen.
+\newblock {\em Nonlinear multiobjective optimization}.
+\newblock Kluwer Academic Publishers, Boston, 1999.
+
+\bibitem{moore_1994}
+C.~Moore, M.~Lehane, and C.~Proce.
+\newblock Case-based reasoning for decision support in engineering design.
+\newblock Proc. IEE Colloquium on Case-Based Reasoning: Prospects for
+  Applications, Digest No: 1994/057, 1994.
+
+\bibitem{morales98}
+A.K. Morales and C.V. Quezada.
+\newblock A universal eclectic genetic algorithm for constrained optimization.
+\newblock In {\em 6th European Congress on Intelligent Techniques \& Soft
+  Computing, EUFIT'98}, pages 518--522. Verlag Mainz, 1998.
+
+\bibitem{Nebro:2009p48}
+A.~Nebro, J.~Durillo, F.~Luna, B.~Dorronsoro, and E.~Alba.
+\newblock {MOC}ell: A cellular genetic algorithm for multiobjective
+  optimization.
+\newblock {\em Int. J. Intell. Syst.}, 24(7):726--746, 2009.
+
+\bibitem{Ong2004}
+Y.S. Ong and A.J. Keane.
+\newblock Meta-lamarckian learning in memetic algorithms.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 8(2):99--110,
+  2004.
+
+\bibitem{Ong2006}
+Y.S. Ong, M.H. Lim, N.~Zhu, and K.W. Wong.
+\newblock Classification of adaptive memetic algorithms: a comparative study.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics - Part B},
+  36(1):141--152, 2006.
+
+\bibitem{phd:papadim}
+D.I. Papadimitriou.
+\newblock {\em \greek{Συζυγείς~\english{(Adjoint)}
+  διατυπώσεις για την ανάλυση - σχεδίαση
+  πτερυγώσεων στροβιλομηχανών και τη
+  βέλτιστη προσαρμογή πλέγματος με \english{a
+  posteriori} εκτίμηση σφάλματος}}.
+\newblock PhD thesis, National Technical University of Athens, 2006.
+
+\bibitem{LTT_2_032}
+D.I. Papadimitriou and K.C. Giannakoglou.
+\newblock Total pressure loss minimization in turbomachinery cascades using a
+  new continuous adjoint formulation.
+\newblock {\em Proceedings of the Institution of Mechanical Engineers, Part A:
+  Journal of Power and Energy}, 221(6):865--872, 2007.
+
+\bibitem{pap69}
+K.D. Papailiou.
+\newblock Optimization d’ aubage de compresseur \'a forte charge sur la base
+  des th\'eories de couches limites.
+\newblock Th\'ese de Doctorat en Sciences Appliqu\'ees, University de Li\'ege,
+  1969.
+
+\bibitem{pap81}
+K.D. Papailiou.
+\newblock Le {F}oll’s method and the calculation of attached and separated
+  two-dimensional boundary layers.
+\newblock In {\em Separated Flows in Turbomachinery Components}, volume~2. VKI,
+  Rhodes--Saint Gen\'ese, 1981.
+
+\bibitem{pap70}
+K.D. Papailiou, F.~Nurzia, and A.~Satta.
+\newblock The inclusion of surface curvature effects in the calculation of the
+  turbulent boundary layer with integral methods.
+\newblock Internal Note 37, VKI, 1970.
+
+\bibitem{papanto}
+E.D. Papantonis.
+\newblock {\em \greek{Μικρά Υδροηλεκρικά Έργα}}.
+\newblock \greek{Συμεών}, Athens, 2008.
+
+\bibitem{Peaceman}
+D.~W. Peaceman and H.~H. Rachford.
+\newblock {The numerical solution of parabolic and elliptic differential
+  equations}.
+\newblock {\em J. Soc. Indust. Appl. Math.}, 3:28--41, 1955.
+
+\bibitem{per:95}
+J.~P\'eriaux, M.~Sefrioui, B.~Stoufflet, B.~Mantel, and E.~Laporte.
+\newblock Robust genetic algorithms for optimization problems in aerodynamic
+  design.
+\newblock In {\em Genetic Algorithms in Engineering and Computer Science},
+  pages 371--369. John Wiley \& Sons, 1995.
+
+\bibitem{piron:84}
+O.~Pironneau.
+\newblock {\em Optimal shape design for elliptic systems}.
+\newblock Springer-Verlag, New York, 1984.
+
+\bibitem{Pog1990}
+T.~Poggio and F.~Girosi.
+\newblock Networks for approximation and learning.
+\newblock {\em Proceedings of the IEEE}, 78(9):1481--1497, 1990.
+
+\bibitem{politis98a}
+E.S. Politis, K.C. Giannakoglou, and K.D. Papailiou.
+\newblock High--speed flow in an annular cascade with tip clearance: Numerical
+  investigation.
+\newblock In {\em ASME Gas Turbine \& Aeroengine Congress and Exhibition},
+  Stockholm, 1998.
+\newblock \mbox{ASME Paper 98-GT-247}.
+
+\bibitem{Popa2010}
+R.~Popa, F.~Popa, Popa B., and D~Zachia-Zlatea.
+\newblock Optimization of the weekly operation of a multipurpose hydroelectric
+  development, including a pumped storage plant.
+\newblock In {\em 25th IAHR, Symposium on Hydraulic Machinery and Systems},
+  Timisoara, September 2010.
+
+\bibitem{powell93}
+D.~Powell and M.M. Skolnick.
+\newblock Using genetic algorithms in engineering design optimization with
+  non-linear constraints.
+\newblock In {\em 5th International Conference on Genetic Algorithms}, pages
+  424--431. Morgan Kaufmann Publishers Inc., 1993.
+
+\bibitem{kn:Quag95}
+D.~Quagliarella and A.D. Cioppa.
+\newblock Genetic algorithms applied to the aerodynamic design of transonic
+  airfoils.
+\newblock {\em J. Aircraft}, 32(4):889--891, 1995.
+
+\bibitem{Raimunda2010}
+R.G. Raimunda~da Silva, E. Ramirez~Camacho and N~Manzanares~Filho.
+\newblock Global optimization based on metamodel construction app lied to
+  design axial turbomachinery cascades using cfd.
+\newblock In {\em 25th IAHR, Symposium on Hydraulic Machinery and Systems},
+  Timisoara, September 2010.
+
+\bibitem{kn:Ratl98}
+A.~Ratle.
+\newblock Accelerating the convergence of evolutionary algorithms by fitness
+  landscape approximation.
+\newblock PPSN $V$, Lecture Notes in Computer Science 1498, pp. 87-96,
+  Springer-Verlag, 1998.
+
+\bibitem{Rechenberg_1965}
+I.~Rechenberg.
+\newblock Cybernetic solution path of an experimental problem.
+\newblock {\em Library Translation 1122, Royal Aircraft Establishment,
+  Farnborough}, 1965.
+
+\bibitem{Rechenberg71}
+I.~Rechenberg.
+\newblock {\em Evolutionsstrategie: Optimierung technischer Systeme nach
+  Prinzipien der biologischen Evolution}.
+\newblock PhD thesis, Technical University of Berlin, 1971.
+
+\bibitem{riesbeck_1989}
+C.~Riesbeck and R.~Schank.
+\newblock In {\em Inside Case-Based Reasoning.} Lawrence Erlbaum Associates,
+  Cambridge, MA, 1989.
+
+\bibitem{rissland_skalak_1989}
+E.~Rissland and D.~Skala.
+\newblock Combining case-based and rule-based reasoning: A heuristic approach.
+\newblock 11th International Joint Conference on Artificial Intelligence,
+  IJCAI-89: pp. 524-30. Detroit, Michigan, 1989.
+
+\bibitem{Roe81}
+P.~Roe.
+\newblock Approximate {R}iemann solvers, parameter vectors and difference
+  schemes.
+\newblock {\em {J}ournal of {C}omputational {P}hysics}, 43(2):357--372, 1981.
+
+\bibitem{Roy_2002a}
+R.~Roy and A.~Tiwari.
+\newblock Generalised regression \mbox{GA} for handling inseparable function
+  integration: Algorithm and application.
+\newblock {\em Parallel Problem Solving from Nature - PPSN VII, Lecture Notes
+  in Computer Science}, 2439:452--461, 2002.
+
+\bibitem{Roy_2002b}
+R.~Roy and A.~Tiwari.
+\newblock Variable dependence interaction and multi-objective optimizations.
+\newblock {\em Genetic and Evolutionary Computation Conference, New York},
+  2002.
+
+\bibitem{Salomon}
+R.~Salomon.
+\newblock Re-evaluating genetic algorithm performance under coordinate rotation
+  of benchmark functions. a survey of some theoretical and practical aspects of
+  genetic algorithms.
+\newblock {\em BioSystems}, 39:263--278, 1996.
+
+\bibitem{Schaffer91}
+J.D. Schaffer and L.J. Eshelman.
+\newblock On crossover as an evolutionary viable strategy.
+\newblock {\em 4th International Conference on Genetic Algorithms, San Diego},
+  pages 61--68, 1991.
+
+\bibitem{Schaffer87}
+J.D. Schaffer and A.~Morishima.
+\newblock An adaptive crossover distribution mechanism for genetic algorithms.
+\newblock {\em Second International Conference on Genetic Algorithms}, pages
+  36--40, 1987.
+
+\bibitem{Schank_1982}
+R.~Schank.
+\newblock In {\em Dynamic memory: a theory of reminding and learning in
+  computers and people.} Cambridge University Press, Cambridge, 1982.
+
+\bibitem{Schank_Abelson_1977}
+R.~Schank and R.~Abelson.
+\newblock In {\em Scripts, Plans, Goals and Understanding.} Erlbaum, Hillsdale,
+  New Jersey, 1977.
+
+\bibitem{Schmidl}
+R.~Schmidl.
+\newblock {\em Contribution to the cavitation optimization of Kaplan blades by
+  numerical flow simulation and evolutionary strategies}.
+\newblock PhD thesis, Graz Univercity of Technology, 2007.
+
+\bibitem{Schwefel75}
+H.~P. Schwefel.
+\newblock {\em Evolutionsstrategie und numerische Optimierung}.
+\newblock PhD thesis, Technical University of Berlin, 1975.
+
+\bibitem{kn:SefrThes}
+M.~Sefrioui.
+\newblock {\em Algorithmes Evolutionnaires pour le Calcul Scientifique.
+  Application '{a} l' electromagnetisme et '{a} la Mecanique des Fluides
+  Numeriques}.
+\newblock PhD. thesis, University of Paris 6, 1998.
+
+\bibitem{kn:Sef2000}
+M.~Sefrioui and J.~P\'{e}riaux.
+\newblock A hierarchical genetic algorithm using multiple models for
+  optimization.
+\newblock In {\em 6\textsuperscript{th} International Conference on Parallel
+  Problem Solving from Nature -- PPSN VI}, volume 1917 of {\em Lecture Notes in
+  Computer Science}, pages 879--888, Paris, 2000. Springer.
+
+\bibitem{slade_1991}
+S.~Slade.
+\newblock Case-based reasoning: A research paradigm.
+\newblock {\em AI Magazine}, 12(1):42--55, 1991.
+
+\bibitem{smith_1978}
+N.~Smith and D.~Schorr.
+\newblock Fact retrieval and the paradox of interference.
+\newblock pages 438--464. Cognitive Psychology, 10, 1978.
+
+\bibitem{Navy92crossoveror}
+W.M. Spears.
+\newblock Crossover or mutation?
+\newblock In {\em Foundations of Genetic Algorithms 2}, pages 221--237. Morgan
+  Kaufmann, 1992.
+
+\bibitem{Sri1995}
+N.~Srinivas and K.~Deb.
+\newblock Multiobjective optimization using nondominated sorting in genetic
+  algorithms.
+\newblock {\em Evolutionary Computation}, 2(3):221--248, 1995.
+
+\bibitem{surry97}
+P.D. Surry and N.J. Radcliffe.
+\newblock The {COMOGA} method: {C}onstrained optimisation by multiobjective
+  genetic algorithms.
+\newblock {\em Control and Cybernetics}, 26:391--412, 1997.
+
+\bibitem{surry95}
+P.D. Surry, N.J. Radcliffe, and I.D. Boyd.
+\newblock A multi-objective approach to constrained optimisation of gas supply
+  networks : {T}he {COMOGA} method.
+\newblock In {\em Evolutionary Computing. AISB Workshop. Selected Papers,
+  Lecture Notes in Computer Science}, pages 166--180. Springer-Verlag, 1995.
+
+\bibitem{IEC}
+IEC TC/SC.
+\newblock {\em CEI/IEC 60193: Hydraulic turbines, storage pumps and
+  pump-turbines – Model acceptance tests}.
+\newblock ANSI, 1999.
+
+\bibitem{thiruvengadam1974handbook}
+A.~Thiruvengadam.
+\newblock {\em Handbook of cavitation erosion}.
+\newblock Hydronautics, inc., 1974.
+
+\bibitem{Tik76}
+A.N. Tikhonov and V.~Ars\'{e}nine.
+\newblock {\em M\'{e}thodes de R\'{e}solution de probl\`{e}mes mal pos\'{e}s.}
+\newblock Editions MIR, Moscou, 1976.
+
+\bibitem{Tik95}
+A.N. Tikhonov, A.V. Goncharsky, V.V. Stepanov, and A.G. Yagola.
+\newblock {\em Numerical Methods for the Solution of Ill-Posed Problems}.
+\newblock Kluwer Academic Publishers, 1995.
+
+\bibitem{tulving_1977}
+E.~Tulving.
+\newblock Episodic and semantic memory. in, organisation of memory.
+\newblock pages 381--403. Academic Press, 1977.
+
+\bibitem{Turkel87}
+E.~Turkel.
+\newblock Preconditioned methods for solving the incompressible and low speed
+  compressible equations.
+\newblock {\em Journal of Computational Physics}, 72:277--298, 1987.
+
+\bibitem{valbada:82}
+G.D. van Albada, B.~van Leer, and W.W. Roberts.
+\newblock A comparative study of computational methods in cosmic gas dynamics.
+\newblock {\em Astronomy and Astrophysics}, 108:76--84, 1982.
+
+\bibitem{vleer:muscl}
+B.~van Leer.
+\newblock Towards the ultimate conservative difference scheme, \mbox{V}. {A}
+  second-order sequel to \mbox{G}odunov's method.
+\newblock {\em Computational Physics}, 32:101--136, 1979.
+
+\bibitem{whatson_abdullah_1994}
+I.~Watson and S.~Abdullah.
+\newblock Developing case-based reasoning systems: A case study in diagnosing
+  building defects.
+\newblock pages 1/1--1/3. Proc. IEE Colloquium on Case-Based Reasoning:
+  Prospects for Applications, Digest No: 1994/057, 1994.
+
+\bibitem{dipl_simon}
+S.~Weißenberger.
+\newblock {Effiziente numerische Simulation der inkompressiblen
+  Euler-Gleichungen mit Anwendungen im Turbinenbau}.
+\newblock Diploma thesis, Johannes Kepler University Linz, 2005.
+
+\bibitem{wittgestein_1953}
+L.~Wittgentstein.
+\newblock Philosophical investigations.
+\newblock Blackwell, 1953.
+
+\bibitem{LTT_2_049}
+T.~Zervogiannis, D.I. Papadimitriou, and K.C. Giannakoglou.
+\newblock Total pressure losses minimization in turbomachinery cascades using
+  the exact {H}essian.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  199(41-44):2697--2708, 2010.
+
+\bibitem{Zitz2007}
+E.~Zitzler, D.~Brockhoff, and L.~Thiele.
+\newblock The hypervolume indicator revisited: On the design of
+  {P}areto-compliant indicators via weighted integration.
+\newblock In {\em Conference on Evolutionary Multi-Criterion Optimization --
+  {EMO}}, 2007.
+
+\bibitem{Zitzler2000}
+E.~Zitzler, K.~Deb, and L.~Thiele.
+\newblock Comparison of multiobjective evolutionary algorithms: Empirical
+  results.
+\newblock {\em Evolutionary Computation}, 8:173--195, June 2000.
+
+\bibitem{Zitz02}
+E.~Zitzler, M.~Laumans, and L.~Thiele.
+\newblock {SPEA2}: Improving the strength {P}areto evolutionary algorithm for
+  multiobjective optimization.
+\newblock In {\em EUROGEN 2001, Evolutionary Methods for Design, Optimisation
+  and Control with Applications to Industrial Problems}, Barcelona, 2002.
+  CIMNE.
+
+\bibitem{ZiTh98}
+E.~Zitzler and L.~Thiele.
+\newblock An evolutionary algorithm for multiobjective optimization: The
+  strength \mbox{Pareto} approach.
+\newblock TIK-Report No. 43, Computer Engineering and Communication Networks
+  Lab, ETH Zurich, 1998.
+
+\end{thebibliography}

@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<HydroFaces>
+<HydroBladeRow Name='Stator' MaxBlocks='4' isCylindric='1' Pitch='0.571199'>
+<BlocksOfBladeRow><Block Index='0'/>
+<Block Index='1'/>
+<Block Index='2'/>
+<Block Index='3'/>
+</BlocksOfBladeRow><Boundary Name='WestEnd' MaxAreas ='1'>
+<Area Dim1='12' Dim2='8' BlockNo='2' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</Boundary>
+<Boundary Name='EastEnd' MaxAreas ='1'>
+<Area Dim1='16' Dim2='8' BlockNo='3' StI='8' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+</Boundary>
+<Boundary Name='SolidWall' MaxAreas ='1'>
+<Area Dim1='40' Dim2='8' BlockNo='0' StI='1' StJ='4' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+</Boundary>
+<Boundary Name='SolidWall' MaxAreas ='1'>
+<Area Dim1='4' Dim2='8' BlockNo='3' StI='1' StJ='5' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</Boundary>
+<BlockBoundary Name='InletToC' Dim1='8' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='2' StI='16' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='0' StI='24' StJ='1' StK='1' Dep1='-i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='InletToChannel' Dim1='4' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='2' StI='16' StJ='9' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='1' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='CToChannel' Dim1='16' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='0' StI='16' StJ='1' StK='1' Dep1='-i' Dep2='+k' Out='-j'/>
+<AreaBlockBound BlockNo='1' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='CToOutletNorth' Dim1='4' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='0' StI='40' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='3' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='CToOutletSouth' Dim1='4' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='0' StI='1' StJ='4' StK='1' Dep1='-j' Dep2='+k' Out='-i'/>
+<AreaBlockBound BlockNo='3' StI='1' StJ='9' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='ChannelToOutlet' Dim1='4' Dim2='8'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='1' StI='16' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='3' StI='1' StJ='13' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='InletPitchInlet' Dim1='16' Dim2='8'  PhiPitch='-0.571199'>
+<AreaBlockBound BlockNo='2' StI='1' StJ='12' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='2' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='ChannelPitchC' Dim1='16' Dim2='8'  PhiPitch='-0.571199'>
+<AreaBlockBound BlockNo='1' StI='1' StJ='4' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='0' StI='25' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='OutletPitchOutlet' Dim1='8' Dim2='8'  PhiPitch='-0.571199'>
+<AreaBlockBound BlockNo='3' StI='1' StJ='16' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='3' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<Boundary Name='SolidWallHub' MaxAreas ='4'>
+<Area Dim1='40' Dim2='4' BlockNo='0' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='16' Dim2='4' BlockNo='1' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='16' Dim2='12' BlockNo='2' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='8' Dim2='16' BlockNo='3' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+</Boundary>
+<Boundary Name='SolidWallShroud' MaxAreas ='4'>
+<Area Dim1='40' Dim2='4' BlockNo='0' StI='1' StJ='1' StK='8' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='16' Dim2='4' BlockNo='1' StI='1' StJ='1' StK='8' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='16' Dim2='12' BlockNo='2' StI='1' StJ='1' StK='8' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='8' Dim2='16' BlockNo='3' StI='1' StJ='1' StK='8' Dep1='+i' Dep2='+j' Out='+k'/>
+</Boundary>
+</HydroBladeRow>
+<HydroBladeRow Name='Rotor' MaxBlocks='4' isCylindric='1' Pitch='1.5708'>
+<BlocksOfBladeRow><Block Index='4'/>
+<Block Index='5'/>
+<Block Index='6'/>
+<Block Index='7'/>
+</BlocksOfBladeRow><Boundary Name='WestEnd' MaxAreas ='1'>
+<Area Dim1='44' Dim2='12' BlockNo='6' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</Boundary>
+<Boundary Name='EastEnd' MaxAreas ='1'>
+<Area Dim1='44' Dim2='12' BlockNo='7' StI='16' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+</Boundary>
+<Boundary Name='SolidWall' MaxAreas ='1'>
+<Area Dim1='44' Dim2='12' BlockNo='4' StI='1' StJ='4' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+</Boundary>
+<Boundary Name='SolidWall' MaxAreas ='1'>
+<Area Dim1='4' Dim2='12' BlockNo='7' StI='1' StJ='5' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</Boundary>
+<BlockBoundary Name='InletToC' Dim1='12' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='6' StI='8' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='4' StI='28' StJ='1' StK='1' Dep1='-i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='InletToChannel' Dim1='32' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='6' StI='8' StJ='13' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='5' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='CToChannel' Dim1='16' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='4' StI='16' StJ='1' StK='1' Dep1='-i' Dep2='+k' Out='-j'/>
+<AreaBlockBound BlockNo='5' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='CToOutletNorth' Dim1='4' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='4' StI='44' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='7' StI='1' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='CToOutletSouth' Dim1='4' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='4' StI='1' StJ='4' StK='1' Dep1='-j' Dep2='+k' Out='-i'/>
+<AreaBlockBound BlockNo='7' StI='1' StJ='9' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='ChannelToOutlet' Dim1='32' Dim2='12'  PhiPitch='-0'>
+<AreaBlockBound BlockNo='5' StI='16' StJ='1' StK='1' Dep1='+j' Dep2='+k' Out='+i'/>
+<AreaBlockBound BlockNo='7' StI='1' StJ='13' StK='1' Dep1='+j' Dep2='+k' Out='-i'/>
+</BlockBoundary>
+<BlockBoundary Name='InletPitchInlet' Dim1='8' Dim2='12'  PhiPitch='-1.5708'>
+<AreaBlockBound BlockNo='6' StI='1' StJ='44' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='6' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='ChannelPitchC' Dim1='16' Dim2='12'  PhiPitch='-1.5708'>
+<AreaBlockBound BlockNo='5' StI='1' StJ='32' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='4' StI='29' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<BlockBoundary Name='OutletPitchOutlet' Dim1='16' Dim2='12'  PhiPitch='-1.5708'>
+<AreaBlockBound BlockNo='7' StI='1' StJ='44' StK='1' Dep1='+i' Dep2='+k' Out='+j'/>
+<AreaBlockBound BlockNo='7' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+k' Out='-j'/>
+</BlockBoundary>
+<Boundary Name='SolidWallHub' MaxAreas ='4'>
+<Area Dim1='44' Dim2='4' BlockNo='4' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='16' Dim2='32' BlockNo='5' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='8' Dim2='44' BlockNo='6' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+<Area Dim1='16' Dim2='44' BlockNo='7' StI='1' StJ='1' StK='1' Dep1='+i' Dep2='+j' Out='-k'/>
+</Boundary>
+<Boundary Name='SolidWallShroud' MaxAreas ='4'>
+<Area Dim1='44' Dim2='4' BlockNo='4' StI='1' StJ='1' StK='12' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='16' Dim2='32' BlockNo='5' StI='1' StJ='1' StK='12' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='8' Dim2='44' BlockNo='6' StI='1' StJ='1' StK='12' Dep1='+i' Dep2='+j' Out='+k'/>
+<Area Dim1='16' Dim2='44' BlockNo='7' StI='1' StJ='1' StK='12' Dep1='+i' Dep2='+j' Out='+k'/>
+</Boundary>
+</HydroBladeRow>
+</HydroFaces>

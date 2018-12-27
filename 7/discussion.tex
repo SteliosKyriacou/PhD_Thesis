@@ -1,0 +1,103 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+\chapter{Conclusions - Future Work} % top level followed by section, subsection
+
+
+% ----------------------- paths to graphics ------------------------
+
+% change according to folder and file names
+\ifpdf
+    \graphicspath{{7/figures/PNG/}{7/figures/PDF/}{7/figures/}}
+\else
+    \graphicspath{{7/figures/EPS/}{7/figures/}}
+\fi
+
+
+This PhD thesis aimed at proposing, developing, applying and validating new methods for upgrading Evolutionary Algorithms into design-optimization tools with reasonable computing cost, capable to undertake large-scale industrial optimization problems in the fields of thermal and hydraulic turbomachines. Throughout this PhD thesis, the proposed methods have been validated, in some low-cost mathematical optimization benchmarks, 2D compressor cascade designs and, finally, to the design of industrial 3D hydraulic turbines and a 3D compressor cascade with tip-clearance installed at LTT/NTUA. 
+
+The contribution of the thesis can be summarized in the three innovative methods listed below:
+
+\begin{itemize}
+
+\item[\textbf{(a)}] The Knowledge-Based Design (KBD) method. KBD is a new design method able to fully exploit a small number of available archived designs with good performance in ``similar” conditions.  Combining ideas from the theory of Knowledge-Based Systems (KBS) and EAs, KBD reduces significantly the optimization turn-around time. This is achieved by replacing the standard shape parameterization techniques, which often introduces a great number of design variables,  using the available archived designs as design space basis vectors.  In fact, KBD can be seen as a way to use the information residing into a small number of archived designs, made available from similar previous successful projects, so as to speed-up the optimization process. 
+ 
+\item[\textbf{(b)}] The use of the Principal Component Analysis (PCA) of promising/top individuals, dynamically updated in each generation, in order to identify directions in the design space which are used to redefine the optimization variables resulting in  ``better-posed'' optimization problems.  Here, the redefinition of the optimization variables takes place by aligning each design vector with the so-called Principal Directions (PDs) computed by PCA.  Then, the evolution operators are applied to the transformed optimization variables resulting in a more efficient search mechanism able to deal with initially ``ill-posed'' problems. 
+ 
+\item[\textbf{(c)}] The use of PCA to make the use of metamodels in high-dimensional ill-posed optimization problems profitable. This is a way to further improve the MAEA efficiency by using the PCA of a small number of promising/top individuals in order to associate each design variable (or design space coordinate) with a degree of importance. It has been shown that MAEAs  benefit a lot from the importance-based ranking of the design space coordinates, in order to overcome a well-known problem caused by the curse of dimensionality. This problem is related to the fact that for the ANNs used to approximate the cost of each new individual, any increase in the number of their sensory units makes the use of more training patterns mandatory and increases the training cost.  Since the training patterns are selected among the previously evaluated individuals during the EA, the need for more training patterns means that the start of the IPE phase must be delayed. Additionally, each training becomes more costly, therefore, the gain from replacing the CFD code by metamodels is expected to be lower or almost zero. The proposed method is based on the selective truncation of the ANN sensory nodes, by maintaining only the most important ones according to the results of the PCA. 
+  
+
+\end{itemize}
+
+Using the proposed  methods, the use of EAs to solve large-scale industrial applications (with a great number of design variables and non-separable objective functions) in acceptable by industry turn-around times became possible. In example, the overall design time (not only the optimization procedure) of a hydraulic turbine was reduced more than $50\%$, namely from about $120$ to $140$ days to only $50$. This, in turn, reduced significantly the overall cost of the design procedure and, therefore, deemed the use of the designed models in sites with even lower hydraulic height, $H=2,..,5m$, and volume flow rates lower than the previously possible $60m^3/s$ economically feasible. The availability of sites with the aforementioned characteristics in Europe alone is approximately $6000GWh/year$\footnote{According to ``European Commission, Joint Research Centre, Institute for Energy, Energy Systems Evaluation Unit,  Petten, 13 of June 2007'' in  ``Report on the Workshop on Hydropower and Ocean Energy – Part II: Hydropower''.}.
+
+The developed software is currently in use by Andritz-Hydro, one of the largest worldwide companies in the field of hydroelectric power plants. The company uses the developed software in a regular basis for the design of a wide range of rotating parts of hydraulic machines including runners for Francis, Kaplan, Bulb, Pump and Pump-Turbines. The developed software is also used by the same company for the design of static parts, such as draft tubes and distributors. A number of hydraulic machines, the design of which was based (among others) on the methods proposed in this thesis are currently installed or are ready to be installed,  in various locations worldwide.         
+
+
+\section{Future Work}
+
+Future research topics that could be considered as a sequel to this PhD thesis are:
+
+\begin{itemize}
+\item Investigation regarding the presence of non-linear variable correlations in ill-posed problems and ways to deal with them. 
+
+\item The use of distributed EAs, based on clustering of the elite set and the computation of different set of PDs per deme according to its elite set. 
+
+\item EAs for solving optimization problems that suffer from high fatality \footnote{Problems where a great portion of the design space accommodates infeasible solutions.}. Different sets of evolution operators could be used during the first stages of evolution in order to overcome this problem.
+
+\item Hybridization of EAs and gradient-based methods for use in the design of hydraulic turbines. This could take place through hierarchical search schemes using the adjoint variable method to compute  the required gradients.
+
+\item Use ANNs in order to predict differences regarding the quality metrics between lower and higher levels of a hierarchical evaluation scheme and use them to appropriately update the target distributions of the lower level.       
+
+\item The use of EAs with adaptive populations size would offer additional advantages. The population could be varied in order to keep quantities such as population-diversity constant.  
+
+\end{itemize}
+
+
+
+\section{Publications - Conference Presentations}
+Publications or conference presentations that took place during this PhD thesis are listed below:
+ 
+\begin{itemize}
+
+\item[] S. Erne, M. Lenarcic, \underline{S.A. Kyriacou}.
+Shape Optimization of a Flows Around Circular Diffuser in a Turbulent Incompressible Flow. ECCOMAS 2012 Congress,
+Vienna, Austria, September 10-14.
+
+
+\item[] K.C.Giannakoglou, V.G. Asouti, \underline{S.A. Kyriacou}, X.S. Trompoukis: ‘Hierarchical, Metamodel–Assisted Evolutionary Algorithms, with
+Industrial Applications’, von Karman Institute Lectures Series on ‘Introduction to Optimization and Multidisciplinary Design in
+Aeronautics and Turbomachinery’, May 7-11, 2012.
+
+
+\item[] \underline{S.A. Kyriacou}, S. Weissenberger and K.C. Giannakoglou.
+Design of a matrix hydraulic turbine using a metamodel-assisted evolutionary algorithm with PCA-driven evolution
+operators. International Journal of Mathematical Modelling and Numerical Optimization, SI: Simulation-Based
+Optimization Techniques for Computationally Expensive Engineering Design Problems, 3(2):45–63, 2012.
+
+
+\item[] I.A. Skouteropoulou, \underline{S.A. Kyriacou}, V.G Asouti, K.C. Giannakoglou, S. Weissenberger, P. Grafenberger.
+Design of a Hydromatrix turbine runner using an Asynchronous Algorithm on a Multi-Processor Platform. 7th GRACM
+International Congress on Computational Mechanics, Athens, 30 June-2 July, 2011.
+
+
+\item[] \underline{S.A. Kyriacou}, S. Weissenberger, P. Grafenberger, K.C. Giannakoglou.
+Optimization of hydraulic machinery by exploiting previous successful designs. 25th IAHR Symposium on Hydraulic
+Machinery and Systems, Timisoara, Romania, September 20-24, 2010.
+
+
+\item[] H.A. Georgopoulou, \underline{S.A. Kyriacou}, K.C. Giannakoglou, P. Grafenberger and E. Parkinson.
+Constrained multi-objective design optimization of hydraulic components using a hierarchical metamodel assisted
+evolutionary algorithm. Part 1: Theory. 24th IAHR Symposium on Hydraulic Machinery and Systems, Foz do Iguassu,
+Brazil, October 27-31, 2008.
+
+
+\item[] P. Grafenberger, E. Parkinson, H.A. Georgopoulou, \underline{S.A. Kyriacou} and K.C. Giannakoglou.
+Constrained multi-objective design optimization of hydraulic components using a hierarchical metamodel assisted
+evolutionary algorithm. Part 2: Applications. 24th IAHR Symposium on Hydraulic Machinery and Systems, Foz do
+Iguassu, Brazil, October 27-31, 2008.
+
+
+\end{itemize}
+% ---------------------------------------------------------------------------
+% ----------------------- end of thesis sub-document 

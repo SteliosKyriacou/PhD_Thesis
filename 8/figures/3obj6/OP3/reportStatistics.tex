@@ -1,0 +1,118 @@
+{\huge Stage hydraulic data}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|l|l|l|}
+\multicolumn{6}{l}{Stage performance} \\ 
+\hline
+& Dim & Inlet& IfaStat & IfaRot  & Outlet \\ 
+\hline
+$\dot m $ & $\frac{kg}{s}$ & 844.718 & 840.908 & 844.425 & 846.644 \\ 
+\hline
+$\dot q$ & $\frac{m^3}{s}$ & 0.846241 & 0.842425 & 0.845948 & 0.848171 \\ 
+\hline
+$p_{tot}$ & $Pa$ & 74670 & 73227.2 & 74707.9 & -13.5218 \\ 
+\hline
+$rc_u$ & $\frac{m^2}{s}$ & 2.15931e-08 & 0.429935 & 0.429877 & 0.110147 \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|l|}
+\multicolumn{4}{l}{Blade} \\ 
+\hline
+& & Stator & Rotor\\ 
+\hline
+$M_z$ &$Nm$ & -360.289& 268.986\\ 
+\hline
+$\omega$ & $\frac{rad}{s}$ & 0& 218.961\\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Hydraulic height} \\ 
+\hline
+$H_{p_{tot}}$ &$\frac{\Delta p^{in,out}_{tot}}{\rho g}$ & 7.62673 \\ 
+\hline
+$H_{M_z}$ &$\frac{M_z^{Rot} \omega}{g \dot m_{ifa,rot}}$ & 7.10995 \\ 
+\hline
+$H_{c_u}$ &$\frac{\omega \Delta(r c_u)_{Rot} }{g}$ & 7.13643 \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Reference values} \\ 
+\hline
+$\rho$ &$\frac{kg}{m^3}$ & 998.2 \\ 
+\hline
+$g$ &$\frac{m}{s^2}$ & 9.81 \\ 
+\hline
+\multicolumn{3}{|l|}{Reference by Input} \\ 
+\hline
+$p_{tot,suc}$ &$Pa$ & 0 \\ 
+\hline
+$\Delta p_{ref}$ &$Pa$ & 108696 \\ 
+\hline
+$H_{ref}$ &$m$ & 11.1001 \\ 
+\hline
+\multicolumn{3}{|l|}{$\sigma = press(\sigma) = \frac{p-p_{tot,suc}}{\rho g H_{ref}}$} \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Numerical error} \\ 
+\hline
+$f_{swirl}^{Rot}$ &$1-\frac{H_{M_z}}{H_{c_u}}$ & 0.00371137 \\ 
+\hline
+$f_{swirl}^{Stat}$ &$1-\frac{{M_z}^{Stat}}{\dot m_{in}\Delta(rc_u)_{Stat}}$ & 0.00794409 \\ 
+\hline
+$f_{\dot m}^{Stat}$ &$1-\frac{\dot m_{in}}{\dot m_{ifa,stat}}$ & -0.00453063 \\ 
+\hline
+$f_{\dot m}^{ifa}$ &$1-\frac{\dot m_{ifa,stat}}{\dot m_{ifa,rot}}$ & 0.00416496 \\ 
+\hline
+$f_{\dot m}^{Rot}$ &$1-\frac{\dot m_{ifa,rot}}{\dot m_{out}}$ & 0.00262115 \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Numerical efficiency} \\ 
+\hline
+$\eta^{Tu}_{num}$ &$\frac{H_{M_z}}{H_{p_{tot,Rot}}}$ & 0.931768 \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|l|l|}
+\multicolumn{5}{l}{Kavitation on rotor blade} \\ 
+\hline
+$\frac{\Delta A}{A}$ & $0.001$& $0.005$& $0.01$& $0.02$  \\ 
+\hline
+$p \ [Pa]$ & $-163264$& $-116726$& $-114946$& $-113682$  \\ 
+\hline
+$NPSH_{his}$ & $-16.6726$& $-11.9202$& $-11.7384$& $-11.6093$  \\ 
+\hline
+$\sigma_{his}$ & $-1.50202$& $-1.07388$& $-1.0575$& $-1.04587$  \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Kavitation on rotor hub} \\ 
+\hline
+$\frac{\Delta A}{A}$ & $0.015$& $0.025$  \\ 
+\hline
+$p \ [Pa]$ & $-81487$& $-77995.1$  \\ 
+\hline
+$NPSH_{his}$ & $-8.3215$& $-7.96491$  \\ 
+\hline
+$\sigma_{his}$ & $-0.749678$& $-0.717553$  \\ 
+\hline
+\end{tabular}
+\vspace{20pt}\newline
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{Kavitation on rotor shroud} \\ 
+\hline
+$\frac{\Delta A}{A}$ & $0.016$& $0.026$  \\ 
+\hline
+$p \ [Pa]$ & $-97326.4$& $-92592.9$  \\ 
+\hline
+$NPSH_{his}$ & $-9.93903$& $-9.45564$  \\ 
+\hline
+$\sigma_{his}$ & $-0.8954$& $-0.851852$  \\ 
+\hline
+\end{tabular}

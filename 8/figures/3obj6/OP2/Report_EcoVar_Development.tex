@@ -1,0 +1,83 @@
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[dvips]{epsfig}
+\usepackage{graphicx}
+\oddsidemargin  0 mm
+\evensidemargin  0 mm
+\voffset -13 mm
+\textwidth 160 mm
+\textheight 240 mm
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{VA-Tech Hydro, Solver Report}
+\rfoot{Eco-Var}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+\author{VA-Tech Hydro}
+\title{Report of HydroSolver}
+\date{\today}
+\maketitle
+{\huge \begin{verbatim}Eco-Var\end{verbatim}}
+
+This is the template version of the hydro report\\
+\epsfig{file=MeridCont.eps,width=450\unitlength}
+\newpage
+\include{reportStatistics}
+\newpage
+{\huge Kc} \\
+Remark: $kcm = \sqrt{kcr^2+kcax^2}$\\
+Inlet: \\
+\epsfig{file=InletKC.eps,width=400\unitlength}\\
+Interface: \\
+\epsfig{file=InterfaceKC.eps,width=400\unitlength}\\
+Outlet: \\
+\epsfig{file=OutletKC.eps,width=400\unitlength}\\
+\newpage
+{\huge All overview}\\ press ($\sigma$) \\
+\epsfig{file=AllPress.eps,width=450\unitlength}
+\newpage
+{\huge Bladeload for Stator}\\ press ($\sigma$) \\
+\epsfig{file=BladeLoadStator.eps,width=450\unitlength}
+\newpage
+{\huge Bladeload for Rotor}\\ press ($\sigma$) \\
+\epsfig{file=BladeLoadRotor.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Stator}\\ rel. velocity ($k_c$), 0.000 span \\
+\epsfig{file=ConfMapStator0.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Stator}\\ rel. velocity ($k_c$), 0.500 span \\
+\epsfig{file=ConfMapStator1.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Stator}\\ rel. velocity ($k_c$), 1.000 span \\
+\epsfig{file=ConfMapStator2.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Rotor}\\ rel. velocity ($k_c$), 0.000 span \\
+\epsfig{file=ConfMapRotor0.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Rotor}\\ rel. velocity ($k_c$), 0.500 span \\
+\epsfig{file=ConfMapRotor1.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Rotor}\\ rel. velocity ($k_c$), 0.750 span \\
+\epsfig{file=ConfMapRotor2.eps,width=450\unitlength}
+\newpage
+{\huge Conformal map for Rotor}\\ rel. velocity ($k_c$), 1.000 span \\
+\epsfig{file=ConfMapRotor3.eps,width=450\unitlength}
+\newpage
+{\huge Blade of Stator, side 1}\\ press ($\sigma$) and rel. velocity ($k_c$)\\
+\epsfig{file=BladeZylStator1.eps,width=450\unitlength}
+\newpage
+{\huge Blade of Stator, side 2}\\ press ($\sigma$)  and rel. velocity ($k_c$)\\
+\epsfig{file=BladeZylStator2.eps,width=450\unitlength}
+\newpage
+{\huge Blade of Rotor, side 1}\\ press ($\sigma$) and rel. velocity ($k_c$)\\
+\epsfig{file=BladeZylRotor1.eps,width=450\unitlength}
+\newpage
+{\huge Blade of Rotor, side 2}\\ press ($\sigma$)  and rel. velocity ($k_c$)\\
+\epsfig{file=BladeZylRotor2.eps,width=450\unitlength}
+
+\end{document}
+

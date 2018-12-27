@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+
+<HydroControlFile Content='Control File for hydro flow-solver'>
+    <BasicParameters TimeIterations='1' MaxTimeIterations='500' ResidiumLimit='3.00E-03' reload='1' moduloReadControl='200' moduloWriteConsVar='200'/>
+    <CFL_TVD cflOnFinest='15' cflOnCoarser='7' TVDonFinest='1' TVDonCoarser='0'/>
+    <Initialization Press='50000' IsGridVel='1' BinaryGrid='0'/>
+    <SolverSettings nMultiGrid='3' nPreIterationsCoarse='400' UnderRelaxParam='0.35' NewtonIterations='1' ReferenceVel='30.0' BetaDimless='1'/>
+    <Output>
+        <Gr2 moduloStep='0'>
+            <FileName val='defGr2.txt'/>
+        </Gr2>
+        <Grf moduloStep='200'>
+            <FileName val='grfParam.xml'/>
+        </Grf>
+        <TecPlot moduloStep='0'>
+            <FileName val='defTecPlot.txt'/>
+        </TecPlot>
+        <TascFlowUserOutput moduloStep='200'>
+            <FileName val='tascFlow.out'/>
+        </TascFlowUserOutput>
+        <ZrEvaluation moduloStep='200'>
+            <FileName val='zrEvalPositions.xml'/>
+        </ZrEvaluation>
+        <BoundaryStatistic moduloStep='200'/>
+        <FileName moduloStep='2'/>
+    </Output>
+</HydroControlFile>

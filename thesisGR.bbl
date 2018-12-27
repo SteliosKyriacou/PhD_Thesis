@@ -1,0 +1,351 @@
+\begin{thebibliography}{10}
+
+\bibitem{Anagno3}
+J.S. Anagnostopoulos and D.~E. Papantonis.
+\newblock Optimal sizing of a run-of-river small hydropower plant.
+\newblock {\em Energy Conversion and Management}, 48:2663–2670, 2007.
+
+\bibitem{Anagno4}
+J.S. Anagnostopoulos and D.E. Papantonis.
+\newblock {F}low {M}odeling and {R}unner {D}esign {O}ptimization in {T}urgo
+  {W}ater {T}urbines.
+\newblock {\em International Journal of Applied Science, Engineering and
+  Technology}, 4(3):136–141, 2007.
+
+\bibitem{Anagno5}
+J.S. Anagnostopoulos and D.E. Papantonis.
+\newblock Pumping station design for a pumped-storage wind-hydro power plant.
+\newblock {\em Energy Conversion and Management}, 48:3009–3017, 2007.
+
+\bibitem{phd_Vera}
+V.G. Asouti.
+\newblock {\em \greek{Μέθοδοι αεροδυναμικής
+  ανάλυσης και σχεδιασμού για ροές υψηλών
+  και χαμηλών ταχυτήτων, σε
+  πολυεπεξεργαστικό περιβάλλον}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_040}
+V.G. Asouti and K.C. Giannakoglou.
+\newblock Aerodynamic optimization using a parallel asynchronous evolutionary
+  algorithm controlled by strongly interacting demes.
+\newblock {\em Engineering Optimization}, 41(3):241--257, 2009.
+
+\bibitem{LTT_2_045}
+V.G. Asouti, I.C. Kampolis, and K.C. Giannakoglou.
+\newblock A {G}rid-{E}nabled {A}synchronous {M}etamodel-{A}ssisted
+  {E}volutionary {A}lgorithm for {A}erodynamic {O}ptimization.
+\newblock {\em Genetic Programming and Evolvable Machines (SI:Parallel and
+  Distributed Evolutionary Algorithms, Part One)}, 10(3):373--389, 2009.
+
+\bibitem{Axler_1997}
+S.~Axler.
+\newblock {\em Linear Algebra Done Right}.
+\newblock Springer Verlag, 1997.
+
+\bibitem{Box57a}
+G.E.P. Box.
+\newblock {Evolutionary Operation: A method for increasing industrial
+  productivity}.
+\newblock {\em Applied Statistics}, 6(2):81--101, June 1957.
+
+\bibitem{Bremermann_62}
+H.J. Bremermann.
+\newblock {\em Optimization through evolution and recombination}.
+\newblock Spartan Books, 1962.
+
+\bibitem{Darwin}
+C.~Darwin.
+\newblock {\em On the origin of species by means of natural selection.}
+\newblock Murray, London, 1859.
+
+\bibitem{Deb00}
+K.~Deb.
+\newblock An efficient constraint handling method for genetic algorithms.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  186(2-4):311--338, 2000.
+
+\bibitem{Drel1987}
+M.~Drela and M.B. Giles.
+\newblock Viscous-inviscid analysis of transonic and low {R}eynolds number
+  airfoils.
+\newblock {\em AIAA Journal}, 25(10):1347--1355, 1987.
+
+\bibitem{LTT_2_027}
+M.~Emmerich, K.C. Giannakoglou, and B.~Naujoks.
+\newblock Single- and multi-objective evolutionary optimization assisted by
+  {G}aussian random field metamodels.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 10(4):421--439,
+  2006.
+
+\bibitem{Fodor_2002}
+I.K. Fodor.
+\newblock A survey of dimension reduction techniques.
+\newblock Technical report, Center for Applied Scientific Computing, Lawrence
+  Livermore National Laboratory, 2002.
+
+\bibitem{fogel62}
+L.~J. Fogel.
+\newblock Autonomous automata.
+\newblock {\em Industrial Research Magazine}, 4(2):14--19, 1962.
+
+\bibitem{Friedberg:1958:LMP:1662346.1662347}
+R.M. Friedberg.
+\newblock A learning machine: {P}art {I}.
+\newblock {\em IBM J. Research and Development.}, 2(1):2--13, January 1958.
+
+\bibitem{Friedberg:1959:LMP:1661923.1661930}
+R.M. Friedberg, B.~Dunham, and J.H. North.
+\newblock A learning machine: {P}art {I}{I}.
+\newblock {\em IBM J. Research and Development.}, 3(3):282--287, July 1959.
+
+\bibitem{phd_Chara}
+C.~A. Georgopoulou.
+\newblock {\em \greek{Τεχνικές Βελτιστοποίησης για
+  τον προγραμματισμό λειτουργίας
+  Αεριο/Ατμοστροβιλικών μονάδων και το
+  σχεδιασμό συνιστωσών τους}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_043}
+C.A. Georgopoulou and K.C. Giannakoglou.
+\newblock A multi-objective metamodel-assisted memetic algorithm with
+  strength-based local refinement.
+\newblock {\em Engineering Optimization}, 41(10):909--923, 2009.
+
+\bibitem{LTT_3_094}
+C.A. Georgopoulou, S.A. Kyriacou, K.C. Giannakoglou, P.~Grafenberger, and
+  E.~Parkinson.
+\newblock Constrained multi-objective design optimization of hydraulic
+  components using a hierarchical metamodel-assisted evolutionary algorithm.
+  {P}art 1: {T}heory.
+\newblock In {\em 24th IAHR, Symposium on Hydraulic Machinery and Systems}, Foz
+  do Iguassu, October 2008.
+
+\bibitem{Ghisu_2010}
+T.~Ghisu, T.~Parks, D.~Jaeggi, J.~Jarrett, and P.~Clarkson.
+\newblock The benefits of adaptive parametrization in multi-objective tabu
+  search optimization.
+\newblock {\em Engineering Optimization}, 42(12):959--981, 2010.
+
+\bibitem{LTT_2_020}
+K.C. Giannakoglou.
+\newblock Design of optimal aerodynamic shapes using stochastic optimization
+  methods and computational intelligence.
+\newblock {\em Progress in Aerospace Sciences}, 38(1):43--76, 2002.
+
+\bibitem{EASYsite}
+K.C. Giannakoglou.
+\newblock The \mbox{EASY} ({E}volutionary {A}lgorithms {SY}stem) software,
+  \mbox{http://velos0.ltt.mech.ntua.gr/EASY}, 2008.
+
+\bibitem{LTT_2_018}
+K.C. Giannakoglou, A.P. Giotis, and M.K. Karakasis.
+\newblock Low-cost genetic optimization based on inexact pre-evaluations and
+  the sensitivity analysis of design parameters.
+\newblock {\em Inverse Problems in Engineering}, 9:389--412, 2001.
+
+\bibitem{phd_Giotis}
+A.P. Giotis.
+\newblock {\em \greek{Χρήση Εξελικτικών τεχνικών,
+  υπολογιστικής ευφυίας και μεθόδων
+  υπολογιστικής ρευστομηχανικής στη
+  βελτιστοποίηση - αντίστροφη σχεδίαση
+  πτερυγώσεων στροβιλομηχανών, μέσω
+  παράλληλης επεξεργασίας}}.
+\newblock PhD thesis, National Technical University of Athens, 2003.
+
+\bibitem{Gold89}
+D.E. Goldberg.
+\newblock {\em Genetic Algorithms in search, optimization \& machine learning}.
+\newblock Addison-Wesley, 1989.
+
+\bibitem{LTT_3_095}
+P.~Grafenberger, E.~Parkinson, C.A. Georgopoulou, S.A. Kyriacou, and K.C.
+  Giannakoglou.
+\newblock Constrained multi-objective design optimization of hydraulic
+  components using a hierarchical metamodel-assisted evolutionary algorithm.
+  {P}art 2: {A}pplications.
+\newblock In {\em 24th IAHR, Symposium on Hydraulic Machinery and Systems}, Foz
+  do Iguassu, October 2008.
+
+\bibitem{Kyriacou2010}
+P.~Grafenberger, E.~Parkinson, C.A. Georgopoulou, S.A. Kyriacou, and K.C.
+  Giannakoglou.
+\newblock Optimization of hydraulic machinery by exploiting previous successful
+  designs.
+\newblock In {\em 25th IAHR, Symposium on Hydraulic Machinery and Systems},
+  Timisoara, September 2010.
+
+\bibitem{Haykin}
+S.~Haykin.
+\newblock Neural networks: A comprehensive foundation.
+\newblock {\em Pearson Education}, 2001.
+
+\bibitem{Holland:1962:OLT:321127.321128}
+J.H. Holland.
+\newblock Outline for a logical theory of adaptive systems.
+\newblock {\em J. ACM}, 9(3):297--314, July 1962.
+
+\bibitem{Jolliffe_2002}
+I.T. Jolliffe.
+\newblock In {\em Principal Component Analysis, Springer Series in Statistics,
+  2nd ed.} Springer, N.Y., 2002.
+
+\bibitem{phd_Kampolis}
+I.~C. Kampolis.
+\newblock {\em \greek{Πολυεπίπεδοι,
+  Πολυεπεξεργαστικοί Αλγόριθμοι
+  Αεροδυναμικής Βελτιστοποίησης στις
+  Στροβιλομηχανές}}.
+\newblock PhD thesis, National Technical University of Athens, 2009.
+
+\bibitem{LTT_2_044}
+I.C. Kampolis and K.C. Giannakoglou.
+\newblock Distributed evolutionary algorithms with hierarchical evaluation.
+\newblock {\em Engineering Optimization}, 41(11):1037--1049, 2009.
+
+\bibitem{LTT_2_026}
+I.C. Kampolis, D.I. Papadimitriou, and K.C. Giannakoglou.
+\newblock Evolutionary optimization using a new radial basis function network
+  and the adjoint formulation.
+\newblock {\em Inverse Problems in Science and Engineering}, 14(4):397--410,
+  2006.
+
+\bibitem{LTT_3_092}
+I.C. Kampolis, A.S. Zymaris, V.G. Asouti, and K.C. Giannakoglou.
+\newblock Multilevel optimization strategies based on metamodel-assisted
+  evolutionary algorithms, for computationally expensive problems.
+\newblock In {\em 2007 Congress on Evolutionary Computation -- CEC '07},
+  Singapore, September 2007.
+
+\bibitem{phd_Karakasis}
+M.K. Karakasis.
+\newblock {\em \greek{Ιεραρχικοί, κατανεμημένοι
+  εξελικτικοί αλγόριθμοι και υπολογιστική
+  ευφυία στη σχεδίαση βέλτιστων
+  αεροδυναμικών μορφών, σε περιβάλλον
+  πολυεπεξεργασίας}}.
+\newblock PhD thesis, National Technical University of Athens, 2006.
+
+\bibitem{LTT_2_029}
+M.K. Karakasis and K.C. Giannakoglou.
+\newblock On the use of metamodel-assisted, multi-objective evolutionary
+  algorithms.
+\newblock {\em Engineering Optimization}, 38(8):941--957, 2006.
+
+\bibitem{LTT_2_023}
+M.K. Karakasis, A.P. Giotis, and K.C. Giannakoglou.
+\newblock Inexact information aided, low-cost, distributed genetic algorithms
+  for aerodynamic shape optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  43(10-11):1149--1166, 2003.
+
+\bibitem{LTT_2_031}
+M.K. Karakasis, D.G. Koubogiannis, and K.C. Giannakoglou.
+\newblock Hierarchical distributed evolutionary algorithms in shape
+  optimization.
+\newblock {\em International Journal for Numerical Methods in Fluids},
+  53(3):455--469, 2007.
+
+\bibitem{Kiemele}
+M.~Kiemele, S.~Schmidt, and R.~Berdine.
+\newblock {\em Basic Statistics, tools for continuous improvement}.
+\newblock Air Academy Press \& Associates, Colorado Springs, 1996.
+
+\bibitem{kolodner_1991}
+J.~Kolodner.
+\newblock Improving human decision making through case-based decision aiding.
+\newblock {\em AI Magazine}, 12(2):52--68, 1991.
+
+\bibitem{phd_eugene}
+E.A. Kontoleontos.
+\newblock {\em \greek{Συμβολή στο σχεδιασμό
+  θερμo-ρευστoδυναμικών διατάξεων με χρήση
+  αιτιοκρατικών και εξελικτικών μεθόδων
+  βελτιστοποίησης}}.
+\newblock PhD thesis, National Technical University of Athens, 2012.
+
+\bibitem{LTT_2_053}
+E.A. Kontoleontos, V.G. Asouti, and K.C. Giannakoglou.
+\newblock An asynchronous metamodel-assisted memetic algorithm for
+  \mbox{CFD}-based shape optimization.
+\newblock {\em Engineering Optimization}, 44(2):157--173, 2011.
+
+\bibitem{LTT_2_054}
+S.A. Kyriacou, S.~Weissenberger, and K.C. Giannakoglou.
+\newblock Design of a matrix hydraulic turbine using a metamodel-assisted
+  evolutionary algorithm with pca-driven evolution operators.
+\newblock {\em International Journal of Mathematical Modelling and Numerical
+  Optimization (SI:Simulation-Based Optimization Techniques for Computationally
+  Expensive Engineering Design Problems)}, 3(2):45--63, 2012.
+
+\bibitem{phd_Liakopoulos}
+P.I.K. Liakopoulos.
+\newblock {\em \greek{Γένεση μη-δομημένων πλεγμάτων
+  και διαχείρισή τους σε μεθόδους ανάλυσης
+  και βελτιστοποίησης συνιστωσών
+  στροβιλομηχανών και εφαρμογές,
+  αξιοποιώντας τεχνολογίες πλέγματος } (Grid
+  Computing)}.
+\newblock PhD thesis, National Technical University of Athens, 2008.
+
+\bibitem{morales98}
+A.K. Morales and C.V. Quezada.
+\newblock A universal eclectic genetic algorithm for constrained optimization.
+\newblock In {\em 6th European Congress on Intelligent Techniques \& Soft
+  Computing, EUFIT'98}, pages 518--522. Verlag Mainz, 1998.
+
+\bibitem{rech65}
+I.~Rechenberg.
+\newblock Cybernetic solution path of an experimental problem.
+\newblock Royal Aircraft Establishment, Library Translation No. 1122,
+  Farnborough, 1965.
+
+\bibitem{riesbeck_1989}
+C.~Riesbeck and R.~Schank.
+\newblock In {\em Inside Case-Based Reasoning.} Lawrence Erlbaum Associates,
+  Cambridge, MA, 1989.
+
+\bibitem{Roy_2002a}
+R.~Roy and A.~Tiwari.
+\newblock Generalised regression \mbox{GA} for handling inseparable function
+  integration: Algorithm and application.
+\newblock {\em Parallel Problem Solving from Nature - PPSN VII, Lecture Notes
+  in Computer Science}, 2439:452--461, 2002.
+
+\bibitem{Salomon}
+R.~Salomon.
+\newblock Re-evaluating genetic algorithm performance under coordinate rotation
+  of benchmark functions. a survey of some theoretical and practical aspects of
+  genetic algorithms.
+\newblock {\em BioSystems}, 39:263--278, 1996.
+
+\bibitem{slade_1991}
+S.~Slade.
+\newblock Case-based reasoning: A research paradigm.
+\newblock {\em AI Magazine}, 12(1):42--55, 1991.
+
+\bibitem{Zitz2007}
+E.~Zitzler, D.~Brockhoff, and L.~Thiele.
+\newblock The hypervolume indicator revisited: On the design of
+  {P}areto-compliant indicators via weighted integration.
+\newblock In {\em Conference on Evolutionary Multi-Criterion Optimization --
+  {EMO}}, 2007.
+
+\bibitem{Zitz01}
+E.~Zitzler, M.~Laumans, and L.~Thiele.
+\newblock {SPEA2}: Improving the strength {P}areto evolutionary algorithm.
+\newblock Technical Report 103, Swiss Federal Institute of Technology (ETH),
+  Computer Engineering and Communication Networks Lab.\ (TIK), Zurich,
+  Switzerland, 2001.
+
+\bibitem{Zitz02}
+E.~Zitzler, M.~Laumans, and L.~Thiele.
+\newblock {SPEA2}: Improving the strength {P}areto evolutionary algorithm for
+  multiobjective optimization.
+\newblock In {\em EUROGEN 2001, Evolutionary Methods for Design, Optimisation
+  and Control with Applications to Industrial Problems}, Barcelona, 2002.
+  CIMNE.
+
+\end{thebibliography}

@@ -1,0 +1,634 @@
+% change according to folder and file names
+\ifpdf
+    \graphicspath{{4/figures/PNG/}{4/figures/PDF/}{3/figures/}}
+\else
+    \graphicspath{{4/figures/EPS/}{4/figures/}}
+\fi
+
+%: ----------------------- contents from here ------------------------
+\chapter{EAs and MAEAs assisted by Principal Component Analysis} % top level followed by section, subsection
+\label{VarCorrChapter}
+%\begin{flushright}
+%Any intelligent fool can make things  
+%\linebreak
+%bigger, more complex, and more violent. 
+%\linebreak
+%It takes a touch of genius, and a lot of  
+%\linebreak
+%courage, to move in the opposite direction.
+%\linebreak
+%Albert Einstein
+%\end{flushright}
+
+This chapter investigates the reasons for efficiency degradation of EAs or MAEAs used to solve ill-posed optimization problems \cite{Salomon,Roy_2002a,Ghisu_2010} and proposes techniques to avoid it. Any deterioration in the EA or MAEA efficiency reflects upon the number of evaluations (on the CFD software, for instance) required to reach the optimal solution(s). Increasing the number of evaluations leads to longer optimization turn around rimes and this seriously hinders the routine application of EA-based optimization for large-scale industrial applications. The proposed methods can be used either with EAs (by adapting the application of the evolution operators accordingly) or MAEAs (by training more dependable metamodels on patterns of properly reduced dimension). Regarding MAEAs, it is evident that both methods can optimally be combined, aiming at even better efficiency. 
+
+Modern industrial-scale optimization problems typically have several objectives and/or constraints  and a complex parameterization, with great number N of design variables. The former is determined by the application under consideration whereas the latter could be ``inherited'' from the way experienced designers used to accomplish the same task in the past, without resorting to ``sophisticated'' optimization methods. From the practical point of view, a smooth transition to the EA-based optimization is necessary. Problems with enough objectives and/or constraints and, practically, a great number N can easily become ill-posed as discussed in section \ref{illpost}. Since the objectives and the constraints are strictly defined by the application, remedies to the ill-posedness of the optimization problem must rely on the smart handling of the parameterization alone. 
+
+Changing the parameterization, though, may have a number of negative effects. First among them is that, in any industrial environment, a valuable amount of experience is embodied into the existing parameterization, in the sense that an experienced designer practically knows exactly what to change in order to achieve a given goal; this will be lost by altering the paremeterization scheme. On top of that there is no guarantee that the parameterization which must be build in correlation with the objectives so as to give a well-posed optimization problem, includes design variables with a clear meaning (being, for instance, the coordinates of Bezier control points etc.), in fact is highly unlikeable. The new parameterization, lacking a clear interpretation of the design variables, will make it even more difficult for new experience to be accumulated based upon it. Furthermore, for a specific project, the best parameterization depends on its correlation with the corresponding  objectives and constraints. Therefore, a different parameterization would be necessary for any new design-optimization procedure, based on its objectives. To make things even worse the best parameterization cannot be known in advance, since one should have the Pareto front available in order to know the shape of the scalar cost function in the design space and use it for extracting the most appropriate parameterization. All the above are overcome by implementing the techniques proposed in this chapter.                 
+
+
+The fact that a standard GA can find the global optimum of a number of widely used in literature test functions was not due to the efficiency of the recombination operator and the regular distribution of local minima, but because the optimization was decomposable into n independent one-dimensional subproblemd was presented in \citep{Salomon}. Although  this study was made regarding GA, its outcomes can be generalized for the entire EA family. In \cite{Roy_2002a,Roy_2002b},  it was stated that ``real-life'' engineering design optimisation problems, as opposed to the widely used mathematical test cases, suffer, among multiple objectives, constraints and qualitative issues, also involve interaction among design variables. Thus the notions of ``Inseparable Function Interaction'' and ``Variable Dependence'' were introduced. 
+These variable dependence pose a number of challenges for multiobjective optimisation algorithms since the design variables cannot be varied independently of each other.
+Also, as it is stated in \cite{Roy_2002b}, depending upon the nature of variable dependency, additional features (such as bias (non-linearity), multi-modality, deception and discontinuity) may also be introduced in the problem and cause efficiency degradation of the optimization algorithm. Additionally stating that ``There is currently a lack of systematic research in the field of variable dependence''. This Thesis comes to fill this gap. 
+
+
+
+%  In \cite{Ghisu_2010}, the merits of adaptive parameterization in MOO with taboo search.
+
+
+
+%In the same context with ill-posed optimization problems but with different phrasing significant work has been done by Ralf Salomon, Rajkumar Roy and Tiziano Ghisu. 
+%Ralf Salomon presented, in \cite{Salomon}, the efficiency degradation of GAs if the same optimization problem was posed in a ``non-decomposable'' way. Later, Rajkumar Roy presented the, in \cite{Roy_2002a}, the notions of ``Inseparable Function Interaction'' and ``Variable Dependence''. Tiziano Ghisu, in \cite{Ghisu_2010}, presented the merits of adaptive parameterization in MOO with taboo search. 
+
+ 
+
+\section{Ill-posed optimization problems}
+\label{illpost}
+The two main reasons for increasing the number of calls to the evaluation software  required by an EA or MAEA in order to locate the optimal solution(s) are; a) the high number of design variables, $N\!>>$ and b) the fact that an ill-posed optimization problem is to be solved. Needless to say that a high-dimensional ill-posed optimization problem is the worst case for an EA or MAEA.  Unfortunately, in practice, most engineering optimization problems share both the aforementioned features. 
+
+The high number of design variables (N) in EAs causes efficiency deterioration, since it increases computational cost, in the best case (well-posed problem) linearly with N. In MAEAs, the presence of $N\!>>$ design variables, apart from the way the optimal solution is approached (direct effect), also affects the use of metamodels for which both the training time and prediction error increase noticeably. The loss in efficiency due to the ``less-accurate'' metamodel predictions (indirect effect) is, practically, superimposed to the performance degradation due to the slow evolution.  As a remedy to the class of optimization problems with $N\!>>$, a method (abbreviated to KBD) that reduces,  to a certain degree, the problem dimension by exploiting the knowledge embodied into a small number of available archived designs has already been presented and validated in chapter 3.             
+
+On the other hand, ill-posed optimization problems are those dealing with; a) anisotropic and b)  non-separable objective function f. Let us note that the former is a prerequisite for the latter. The definitions of anisotropic and non-separable functions f follow in section \ref{IllCon} and \ref{Nonsep} respectively. Ill-posed problems in combination with $N\!>>$ give rise to the so called ``curse of dimensionality''. The ``curse of dimensionality'' stands for the situation in which the cost for solving the optimization problem to increases, no more linearly but, superlinearly with N. 
+% Thus an ill-post optimization problem, when solved with EAs, is magnifying the negative effects of big N. 
+
+%Herein the definitions of a) anisotropic objective function and b) non-separable objective function that characterize the objective function of an ill-posed problem are presented. Later, an investigation regarding the effects of ill-posed optimization problems on EA efficiency is carried out.  
+
+\subsection{Anisotropic objective function}
+\label{IllCon}
+%The term anisotropic objective function refers to the condition were the contribution to the objective function value is largely anisotropic for the different design variables or ,more precisely, directions in search space.
+Objective function $f(\vec{x})$, $\vec{x}=(x_1,...,x_N)$  is anisotropic with respect to $\vec{x}$ if this is differently affected by the same changes in the different components of $\vec{x}$. Though, in this thesis, we are dealing with non-gradient-based optimization methods, the anisotropy of f can be quantified by the variation in $\frac{\partial f}{\partial x_i}$ close to the optimal solution. 
+
+%This variation, and thus the magnitude of anisotropy, can be quantified via the condition number (a) of the Hessian matrix (H).
+
+
+For instance for  the convex-quadratic function;
+\begin{eqnarray}
+   f(\vec{x}) = \frac{1}{2}\vec{x}^TH\vec{x}
+   \label{conv.1}
+\end{eqnarray}
+where $H$ is a symmetric positive definite $N \times N$ matrix. 
+
+The variation in $\frac{\partial f}{\partial x_i}$ for the equation \ref{conv.1} is quantified via the condition number (a) of the Hessian matrix (H). Where the condition number ($a$) of $H$ is defined as the ratio between its largest and smallest eigenvalue. 
+The aforementioned eigenvalues correspond to the squared relative lengths of the principal axes of the ellipsoid $\vec{x}^TH\vec{x} = 1$. For points located on the principal axes, the gradient aligns with the corresponding axis direction, and the axis length determines the magnitude of movement required to achieve a certain change in f. Therefore f, is said to be isotropic if the condition number of $H$ is $a=1$ (corresponding to a sphere or hyper-sphere, see figure \ref{illc}) and anisotropic is $a>>>1$ (corresponding to a ellipse, see figure \ref{illc}).
+
+  
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1.0\linewidth}
+ \centering
+ \resizebox*{15cm}{!}{\includegraphics{ellipseA.eps}}
+\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7.5cm}{!}{\includegraphics{ellipseA.eps}}
+%\end{minipage}
+\caption{Iso-values of an isotropic objective function with two design variables (left); the contribution of both $x_1$ and $x_2$ are the same. Anisotropic objective function; variable $x_2$ has higher contribution on the objective function than $x_1$ (right).} 
+\label{illc}
+\end{figure}
+
+In practice, EAs are capable of efficiently dealing with anisotropic objective functions without damaging their efficiency. If, however, the objective function is anisotropic and non-separable (see definition in section \ref{Nonsep}), the EA or MAEA is expected to worsen its efficiency, unless a particular treatment is employed; such a treatment is proposed in this thesis.  
+
+Furthermore, the anisotropy of f leads to the notion of more and less important design variables (or, in the case of non-separable f, more and less important directions in the design space). This piece of information can be used to reduce N, via truncation of the less important variables, either during the optimization procedure (which is not the case in this thesis and could be a proposal for future work) or during the metamodel training phase so as to increase its prediction ability.       
+
+
+\subsection{Non-separabile objective function}     
+\label{Nonsep}
+Separability of an objective function $f:\vec{x}\mapsto f(\vec{x})$ is a condition characterizing separately for each and every variable $x_i \in \vec{x}$. An objective function is said to be separable with respect to $x_i$ if the optimal value of $x_i$ does not depend on the value  any other design variable takes on. A function $f$ is said to be separable if and only if it is separable with respect to all components of $\vec{x}$.
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{14cm}{!}{\includegraphics{ellipseB.eps}}
+\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{9cm}{!}{\includegraphics{ellipseturn.eps}}
+%\end{minipage}
+\caption{Left: Separable objective function. Right: Non-separable objective function.} 
+\label{nonsep}
+\end{figure}
+
+As mentioned above an ill-posed optimization problem suffers from the curse of dimensionality, the computational cost to solve it scales superlinearly with the number of design variables (N). This results from the presence of a non-separable objective function (which is possible due to the anisotropy of f). To understand this, let us first examine a separable objective function. The cost for solving an optimization problem with a separable objective function increases linearly with N, since the global optimum could be located by minimizing $N$ objective functions with a single design variable each (separately minimise $f_i(x_i),~ \forall x_i \in \vec{x}$). Thus, the cost to solve a separable $N$-dimensional optimization problem is approximately $N$ times the cost to solve the equivalent 1D optimization problem. On the other hand, this is not possible for an ill-posed optimization problem, since, for at least one design variable, its optimal value depends on the value that the rest take. Furthermore, regarding the ill-posed problem, the search space increases exponentially with N and therefore the cost of solving the ill-posed optimization problem increases superlinearly with N.   
+ 
+\subsection{Investigation of ill-posed optimization problems on EA efficiency}
+\label{Inv2}
+
+In order to Investigate the effects of ill-posed optimization problems on EA efficiency two analytical test cases have been solved, for a range of design space dimensions, both in their separable (well-posed) and non-separable (ill-posed) form. All the result that will be presented furthermore during this section are concerning the mean values over $10$ runs that took place with different random number generator seeds. 
+
+The first analytical test case to me examined is a multidimensional ellipsoid (a 2d version of it can be seen in fig. \ref{nonsep}) described, in it separable form, by:   
+
+
+\begin{eqnarray}
+   f(\vec{x})=\sum^{n}_{i=1}=a^{\frac{i-1}{n-1}}x_i^2
+   \label{ellipse} 
+\end{eqnarray}
+where $a$ is the so called condition number which quantifies the anisotropy of the objective function as described above. Large values of $a$ lead to increasingly anisotropic objective functions.
+
+and in its non-separable form by:
+
+\begin{eqnarray}
+   f(\vec{x})=\sum^{n}_{i=1}=a^{\frac{i-1}{n-1}}y_i^2
+   \label{ellipse} 
+\end{eqnarray}
+where $\vec{y}=B\vec{x}$ and $B$ a $n\times n$ orthogonal, rotation, matrix.
+
+In order to investigate both the effects of the design space dimension ($N$) and the condition number ($a$) four different optimization problems will be solved. A ten dimensional ($N=10$) optimizations problem is solved for $a=10$ and $a=100$, see fig. \ref{ellipse_t1}, and a $n=30$ problem is solved for $a=100$ and $a=1000$, see fig. \ref{ellipse_t2}. 
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.5cm}{!}{\includegraphics{10_10d.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.5cm}{!}{\includegraphics{100_10d.eps}}
+\end{minipage}
+\caption{Ten dimensional ellipsoid. Left: Condition number ($a=10$).  Right: Condition number ($a=100$). Increasing of $a$ for $10$ to $100$ causes additional losses and increases the performance gap between separable and non-separable optimization problem.} 
+\label{ellipse_t1}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.5cm}{!}{\includegraphics{100_30d.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.5cm}{!}{\includegraphics{1000_30d.eps}}
+\end{minipage}
+\caption{30 dimensional ellipsoid. Left: Condition number ($a=100$).  Right: Condition number ($a=1000$). Increasing of $a$ for $100$ to $1000$, as in the 10D case, causes additional losses and increases the performance gap between separable and non-separable optimization problem.} 
+
+\label{ellipse_t2}
+\end{figure}
+
+Observing figures \ref{ellipse_t1} and \ref{ellipse_t2} one can identify both the effects of increased condition number and dimension. Bigger condition number leads to greater performance gab between separable and non-separable cases, for both the $N=10$ and $N=30$ cases. Bigger dimension also increases the gab between the two. Focusing on the $a=100$ case for both the $N=10$ and $N=30$ example once can observe that the difference of objective function values $\Delta(F)$, for the same computational cost of $9000$ evaluations, differ. For the $N=10$ case $\Delta(F)=F(non-separable)-F(separable) \approx  1e^{-4}$ on the other hand for the $n=30$ case $\Delta(F)=F(non-separable)-F(separable) \approx  0.9$. This difference of $\Delta(F)$ for the 10D and 30D case denotes a significant increase of the efficiency gab between separable and non-separable cases when the dimension is increased.      
+
+The second analytical test case to be examined here is a multidimensional multi-modal objective function described by:  
+
+\begin{eqnarray}
+   f(\vec{x})=10*n+(\sum^{n}_{i=1}x_i)^2 - 10*n*cos(\pi * \sum^{n}_{i=1}x_i)
+   \label{mm} 
+\end{eqnarray}
+
+A two dimentional example of it can be found in fig. \ref{multimod}. The above problem, in the eq. \ref{mm} form, is non-separable as shown in fig. \ref{multimod}. It can though easily be transformed to a separable one if $\vec{x}$ is transformed into $\vec{y}$ through the operation $\vec{y}=B\vec{x}$ where $B$ the appropriate rotation matrix ($45^o$ rotation $\forall$ directions).  This objective function can also be classified as extremely anisotropic since only one of the separable directions has contribution in the objective faction value and all the rest became irrelevant therefore $a$ equals practically to $\infty$. This is an important class of objective functions since it resembles MOO problems as we will see further on (section \ref{VCMM}).    
+
+In order to investigate the effects of non-separability as a function of the problems dimension two optimization problems where solved a $5$ and a $30$ dimensional one.  
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{14cm}{!}{\includegraphics{multimodnomap.eps}}
+\end{minipage}
+%\begin{minipage}[b]{1\linewidth}
+ %\centering
+ %\resizebox*{11cm}{!}{\includegraphics{multimodnomap.eps}}
+%\end{minipage}
+\caption{Minimization of eq. \ref{mm}, with  two degrees of freedom. The optimal value of $x_1$  depends on the choice of $x_2$ and vice-versa thus this objective function is non-separable. Nevertheless, if one of the two design variables was aligned to the $x_1=x_2$ axis, the problem becomes separable.} 
+
+\label{multimod}
+\end{figure}
+
+Observing figure \ref{multimodres} one can notice that both for the 5D and 30D problems, the case with separable objective function outperforms the case with the non-separable one. Furthermore one may observe that the increased dimension caused an increase in the efficiency gain, between separable and non-separable function cases. This conclusion is similar to the one made for the ellispoid test case. 
+
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{5d.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{30d.eps}}
+\end{minipage}
+\caption{Left: 5 dimensional optimization problem eq.\ref{mm}. Right: 30 dimensional optimization problem eq.\ref{mm}. The amount of efficiency losses in problems with extremely anisotropic objective functions increases significantly with the dimension of the design space.} 
+\label{multimodres}
+\end{figure}
+
+Through the preformed investigations  (figs. \ref{ellipse_t1}, \ref{ellipse_t2} and \ref{multimodres}) it is proven that a significant amount of EA effitiency can be lost when they are dealing with ill-posed optimization problems. The severity of efficiency deterioration is analogous to three main quantities;
+
+\begin{description}
+  \item[a)] The anisotropy magnitude. Increasing anisotropy increases loss of EA efficiency (fig. \ref{ellipse_t1} and \ref{ellipse_t2}).    
+  \item[b)] Function separability. Optimization problems with objective functions separable with respect to their design variables can be solved significantly faster using EAs, as it is shown in figs. \ref{ellipse_t1}, \ref{ellipse_t2} and \ref{multimodres}.  
+  \item[c)] The number of design variables $N$. Though it is obvious that by increasing the number of design variables any EA requires more computational resources to locate the optimal solution. Additionally, if combined with b), the great value of $N$ van lead to the so-called curse of dimensionality (fig. \ref{multimodres}).  
+\end{description}
+
+\section{Ill-posed MOO problems and variable correlations}
+\label{VCMM}
+Regarding ill-posed MOO problems one should observe the shape of the scalar cost function $\Phi$, since $\Phi$ is the quantity that drives the evolution operators, and not each and every objective function separately. In MOO, ill-posed optimization problem are typically in the form of non-separable extremely anisotropic state. This results from the fact that a Pareto front of optimal non-dominated solutions is sought. If the $\Phi$ assignment technique is based on Pareto dominance all members of the current front of non-dominated solutions have $\Phi=0$ (or very small values compared to the dominated members of the population) thus;
+\begin{eqnarray}
+   \mbox{Pareto front} \Rightarrow 	\Phi(\vec{f})=0  
+   \label{Corr-Par} 
+\end{eqnarray}
+because $\vec{f}=\vec{f}(\vec{x})$,
+\begin{eqnarray}
+	\Phi(\vec{f}(\vec{x}))=0 \Rightarrow \Phi^*(\vec{x})=0
+    \label{Corr-Par2}
+\end{eqnarray}
+where $\Phi^*$ is the direction in design space with the bigger variance. This direction is a separable direction in the design space or, as will be called herein a direction that describes the variable correlation.   
+
+An analytical form of $\Phi^*$ is, in the general case, very difficult to calculate due mainly to the non analytical form of $\Phi$ (eq.\ref{SPEAIIeq}) and the complex mapping form objective space to design variable space. In this thesis a method that can estimate, with increasing accuracy as the evolution proceeds, the variable correlations without calculating the analytical form of $\Phi^*$ is proposed. Further more new evolution operators are proposed to utilize this information in an EA frame.  
+
+%\begin{figure}[h!]
+%\begin{minipage}[b]{1\linewidth}
+% \centering
+% \resizebox*{10cm}{!}{\includegraphics{CaseCorr.eps}}
+%\end{minipage}
+%\caption{Example $\Phi'$ plot for} 
+%\label{phi1}
+%\end{figure}
+
+\section{Variable correlation estimation}
+Since the current front of non-dominated solutions "elite-set" ($\Phi=0$) is the best so far approximation of the actual Pareto front it can be used to estimate the variable correlations or separable directions in the design space. This estimations are as close to the real correlations as close as the current elite-set is to the actual Pareto front. Therefore dynamically updated variable correlations estimation as the elite-set increases in quality is proposed. To extract the internal structure of the elite-set in the design variable space without computing an analytical formula and in a way which best explains the variance principal component analysis (PCA) is used. 
+ 
+PCA is an eigenvector--based multivariate analysis, performed on a data--set, that transforms possibly correlated variable sets into uncorrelated ones known as principal components. The latter are the direction vectors that best represent the variance in the data--set, \cite{Haykin,Jolliffe_2002}.
+ 
+By assuming the current elite set to be a standardized data-set ($X$), the empirical covariance matrix, \cite{Fodor_2002, Jolliffe_2002} can be calculated as,
+
+\begin{equation} 
+   P_{N\times N}= \frac{1}{e}XX^T
+   \label{Cov_Mat} 
+\end{equation}
+where $e$ is the size of the elite set, we can use the spectral decomposition theorem, \cite{Axler_1997, Fodor_2002}, to write $P$ as
+
+\begin{equation} 
+   P_{N\times N}= U\Lambda U^T
+   \label{spectral}
+\end{equation}
+where $\Lambda\!=\!diag(\lambda_1 , . . . , \lambda_n )$ is the diagonal matrix with the eigenvalues of $P$ and $U$ is a $N\!\times\!N$ matrix containing the eigenvectors also known as principal components or directions. 
+
+In this PhD thesis it is proposed that the principal directions, as they are computed via PCA on the elite-set in order to best represent the variance in it, are also the directions in the search space that have the biggest degree of separability as far as the optimization problem in hand is concerned 
+
+To better demonstrate the variable correlation estimation in MOO problems  the welded beam test case is used (fig. \ref{case}).  The minimization of both the cost ($K$) and the deflection ($\Delta$) of a welded beam subject to a force $P$ (fig. \ref{case}) is desired. There are two design variables: the welding length ($X_1$)  and the side length of the square cross section ($X_2$) (fig. \ref{case}). The design is subject to constraints of shear stress ($\tau$), bending stress ($\sigma$) and buckling load ($P_c$).    
+
+\begin{figure}
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{5cm}{!}{\includegraphics{case.eps}}
+\end{minipage}
+\caption{In the examined case, design variables are square cross section side-length ($X_2 = t$) and welding length ($X_1 = l$) are the design variables.} 
+\label{case}
+\end{figure}
+
+%\figuremacroW{case}{Welded beam case - Problem definition.}{In the examined case, design variables are square cross section side-length ($X_2 = t$) and welding length ($X_1 = l$) are the design variables.}{0.4}
+
+The problem is formulated formulated as,
+
+Minimize Cost,
+%\begin{equation} 
+\begin{eqnarray}\nonumber
+   K = 1.10471h^2l+0.04811t^2(14.0+l) \\
+   = 1.10471h^2X_1+0.04811X_2^2(14.0+X_1)
+   \label{Cost} 
+\end{eqnarray}
+and minimize Deflection,
+%\end{equation}
+\begin{eqnarray}
+   \Delta = \frac{4PL^3}{Et^4} = \frac{4PL^3}{EX_2^4}
+   \label{Deflection} 
+\end{eqnarray}
+
+Subject to:
+
+
+Constraint concerning the shear stress applied on the welding in order to ensure the structural integrity of the welding. Maximum shear stress depends on the type and quality of the welding. 
+\begin{eqnarray}
+   \tau = \sqrt{\tau_1^2 + \frac{\tau_1 \tau_2 l}{R} +\tau_2^2} \\
+   \nonumber \tau \leq 13,600 psi \\
+   \nonumber where:~~~~~~~~~~~~~~~~~~~~~~.\\
+   \nonumber \tau_1 = \frac{P}{\sqrt{2}hl} \\
+   \nonumber \tau_2 = \frac{MR}{J} \\   
+   \nonumber M = P(L+\frac{l}{2}) \\ 
+   \nonumber R = \sqrt{\frac{l^2}{4} + (\frac{h+t}{2})^2} \\
+   \nonumber J = 2\left( \sqrt{2}hl\left( \frac{l^2}{12} + \left(\frac{h+t}{2}\right)^2 \right) \right)
+   \label{shear} 
+\end{eqnarray}
+
+concerning the bending stress applied on the beam, to ensure structural integrity of the beam. Maximum bending stress depends on the beam material.
+\begin{eqnarray}
+   \sigma = \frac{6PL}{t^3} \leq 30,000 psi
+   \label{bend} 
+\end{eqnarray}
+
+and concerning the buckling load, to avoid buckling phenomena.  
+\begin{eqnarray}
+   P_c = \frac{4.013E\sqrt{\frac{t^8}{36}}}{L^2}\left( 1- \frac{t}{2L}\sqrt{\frac{E}{4G}} \right) \\
+   \nonumber  P - P_c \leq 0 
+   \label{back} 
+\end{eqnarray}
+where welding hight is $h = 0.6 in$, beam reach is $L = 14 in$, the extend of the force is $P = 6000 lb$, Young’s modulus is $E = 30 \times 10^6 psi$, and shear modulus is $G = 12 \times 10^6 psi$.  
+
+Apart from the structural, constraints are also enforced on the objectives to bound the Pareto front within logical values, thus:
+
+\begin{eqnarray}
+   K \leq 50 \\
+   \Delta \leq 0.25 
+   \label{obj} 
+\end{eqnarray}
+
+
+\begin{figure}[h!]
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7cm}{!}{\includegraphics{Const_sx.eps}}
+%\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7.5cm}{!}{\includegraphics{Const_tx.eps}}
+%\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7.5cm}{!}{\includegraphics{Const_P.eps}}
+%\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7.5cm}{!}{\includegraphics{Const_Price.eps}}
+%\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+% \resizebox*{7.5cm}{!}{\includegraphics{Const_Dx.eps}}
+%\end{minipage}
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{12cm}{!}{\includegraphics{Const_ALL.eps}}
+\end{minipage}
+
+\caption{Investigation of the feasibility of the design $(X_1,X_2)$ plane. The overall feasible design space is presented in the lower right figure with white squares.} 
+\label{x1x2}
+\end{figure}
+
+%This case was deliberately chosen as a demonstration case due to the clear physical meaning of the relations that appear between its design variables. By carefully examining the objectives it is clear that in order to decrease deflection $X_1$ must be increased(eq. \ref{Deflection}). However any increase in $X_1$ will lead to higher cost (eq. \ref{Cost} ). In order to keep cost stable $X_2$ must simultaneously decrease, this of-course is bounded by the structural constraints (eq. \ref{shear},\ref{bend} and \ref{back}). 
+ 
+Observing the shape of $\Phi$ in figure \ref{reco1}-left it is evident that the problem in hand is, both, extremely anisotropic and non-separable as expected. Using, the proposed in this PhD thesis, variable correlation estimation procedure via applying PCA on the elite-set (fig. \ref{reco1} -right) it is obvious that the principal directions, as they are computed from PCA, are pointing out the separable directions in the design space. The direction with the biggest eigenvalue $e_1$ is the direction that describes the Pareto front, walks along $\Phi=0$. On the other hand the principal direction with the smallest eigenvalue $e_2$ is the direction in the design space that yields the biggest change in $\Phi$ values. Smaller eigenvalue means smaller variance in this direction thus the EA, through its evolution operators, restricted the values of this direction within a small band of values denoting the importance regarding $\Phi$ for the this direction. 
+
+Looking at the physical meaning of the correlations between the design variables in the welded beam case; $e_1$ suggest that if one desires to move along the  $\Phi=0$ front he should either increase $X1$ (welding length) and decrease $X2$ (cross section) or vise vesra. In other words one can move from, say, expensive designs with small deflection to cheap designs with bigger deflection (fig.\ref{Pareto1}) by reducing the cross section but in order to keep respecting the various stress constraints (fig.\ref{x1x2}) one should simultaneously increase the welding length. On the other hand $e_2$ suggest that if one wants to move on the direction that would cause the biggest difference in $\Phi$ he should either increase or decrease both $X1$ \& $X2$ simultaneously.          
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{!}{4.5 cm}{\includegraphics{DOFs.eps}}
+\end{minipage}
+%\begin{minipage}[b]{0.5\linewidth}
+% \centering
+%\resizebox*{8cm}{!}{\includegraphics{CaseCorr.eps}}
+%\end{minipage}
+\caption{Left. $\Phi$ plot over the design space of the welded beam test case. Elite-set plotted on the design space and computed principal directions $e_1$ and $e_2$.} 
+\label{reco1}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{!}{6 cm}{\includegraphics{Pareto.eps}}
+\end{minipage}
+\caption{Elite-set of fig.\ref{reco1} plotted on the objective space. F1 = cost and F2 = deflection.} 
+\label{Pareto1}
+\end{figure}
+
+
+\section{PCA-driven evolution operators} 
+%The PCA driven evolution operators to better ``drive'' evolution by utilising the information about the design variable correlations are proposed here as a method to deal with ill-posed optimization problems. To be more specific, PCA is used to identify the relations in the form of direction in the design space. The design space is, then, temporarily aligned with these directions, the necessary evolution operators apply to the so--rotated space and, finally, the generated offspring are transformed back to the original design space. Any sort of dimensionality reduction or rotation of the design space occurs just before (and after) the application of the evolution operators. To initiate PCA, a small number of representative solutions to the problem must be available; this set is dynamically updated during the evolution. In MOO applications, this comprises the members of the current front of non--dominated solutions. In SOO problems, in which there is no set of non--dominated solutions, the principal components can be found by processing a user--defined number of top individuals in the current offspring population. It is evident that, as the evolution proceeds, and the current front of non--dominated solutions converges to the Pareto front, the principal components approach those of the Pareto front. 
+In EA-based optimization the application of the evolution operators may benefit a lot from the outcome of the PCA, so as to lead to lower computational cost for the same quality of solutions. To be more specific, PCA is used to identify the directions in the design space that, if used as optimization variables, would lead to an optimization problem with separable objective function. The design space is, then, temporarily aligned with the principal directions and the evolution operators apply to the so--rotated space and, finally, the generated offspring are transformed back to the original design space. The rotation of the design space occurs just before and after the application of the evolution operators and could be combined with truncation, i.e. dimentionality reduction, although this is beyond the scope of this thesis. To perform PCA, a small number of representative solutions to the problem must be available, herein this are the member of the current elite set; this set is dynamically updated during the evolution. In MOO applications, the elite set comprises the members of the current front of non--dominated solutions. In SOO problems, in which there is no set of non--dominated solutions, the principal components can be found by processing a user--defined number of top individuals in the current offspring population. It is evident that, as the evolution proceeds, and the current front of non--dominated solutions converges to the Pareto front, the principal components approach those of the Pareto front. 
+
+Let the aligned with the principal components design vectors \(\vec{x}_i\) be represented by \(\vec{x}^*_i\). The alignment is performed as follows
+\begin{equation} 
+   \vec{x}^*_i=U(\vec{x}_i-\mu_{X})
+   \label{align} %http://users.ics.tkk.fi/jhollmen/dippa/node30.html
+\end{equation}
+where $\mu_{X}$ is the vector of mean (over the elite set) design variables.
+The inverse transformation, from $\vec{x}^*_i$ to $\vec{x}_i$, is given by
+\begin{equation} 
+   \vec{x}_i=U^{-1}\vec{x}^*_i+\mu_{X}
+	\label{re-align}
+\end{equation}
+It is important to note that the CPU cost to compute \(U^{-1}\) is negligible since U is an orthogonal matrix and, thus, \(U^{-1} = U^T\). 
+
+The two main PCA driven evolution operators, recombination and mutation, are presented below.  
+
+\paragraph{}
+\subsection{PCA driven recombination}
+In PCA driven recombination, the recombination operator is applied on a continuously updated design space which is sought to be as separable as possible. This, as can be seen in fig.\ref{reco2}, changes the probability of the offspring appearance on the design space in a way that  
+yields higher probability to individuals that respect the aforementioned correlations between the design variables (fig.\ref{reco1}). 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{SBX3dparents2a.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7cm}{!}{\includegraphics{SBX3dparentsPCAa.eps}}
+\end{minipage}
+\caption{Offspring appearance probability of the welded beam case, parents are the tow black dots. Left: SBX recombination (section \ref{RecombinationLabel}). Right: PCA driven SBX recombination. The variable correlations (separable directions) for the welded beam case are shown in fig.\ref{reco1}.} 
+\label{reco2}
+\end{figure}
+
+Observing fig.\ref{reco1} together with fig.\ref{reco2}, it is evident that the proposed method assigns higher probability to the regions near $\Phi=0$ which is the region that accommodates the currently best (elite) individuals. Therefore PCA-driven recombination better achieves its goal of mixing according to the building block hypothesis \cite{Gold89}. Mixing is the process where recombination combines building blocks (low order schemata of high fitness) to form new potentially fit schemata of higher order. The proposed method, simply, increases the probability of the resulting from recombination individuals to be fit.   
+
+%\begin{figure}[h!]
+%\begin{minipage}[b]{1\linewidth}
+% \centering
+% \resizebox*{10cm}{!}{\includegraphics{ellipseturn_eig.eps}}
+%\end{minipage}
+%\caption{Example $\Phi'$ plot for} 
+%\label{phi1}
+%\end{figure}
+
+
+\subsection{PCA driven mutation}
+Mutation is also applied on the aligned with principal directions design space. Furthermore the mutation probability on each principal direction is dynamically updated based on the variance ($\vec{V}$) among the members of the elite population on the aforementioned direction ($V(i)$) eq.\ref{alignMut}. This is done in such a way that overall mutation probability per individual is kept constant (and equal to a user defined value) but the way the mutation probability is distributed among the design variable (or, to be more precise, the direction in the design space) is analogous to their importance regarding $\Phi$. As shown through the welded beam case, the importance of each principal direction regarding $\Phi$ is inversely proportional to its eigenvalue/variance therefore the principal direction with higher eigenvalues receive a smaller portion of the overall mutation probability as opposing to the directions with lower eigenvalues that receive a bigger portion of it.        
+
+\begin{equation} 
+   P_m^{i}=0.1 P_m + \frac{0.9 P_m N}{P_m^{gl}} (1-\frac{(V(i)-min(\vec{V}))}{(max(\vec{V})-min(\vec{V}))}),~~~~i=1,N 
+   \label{alignMut} %http://users.ics.tkk.fi/jhollmen/dippa/node30.html
+\end{equation}
+where $P_m$ is the user-defined mutation probability, N the number of design variables and 
+\begin{equation} 
+   P_m^{gl}=\sum^{N}_{i=1} 1-\frac{(V(i)-min(\vec{V}))}{(max(\vec{V})-min(\vec{V}))}
+   \label{alignMut2} %http://users.ics.tkk.fi/jhollmen/dippa/node30.html
+\end{equation}
+
+
+The PCA--driven MAEA or MAEA(PCA) (fig.\ref{MAEAPCA2}) algorithm is presented below. 
+Let us denote the generation counter by $g$, the number of current entries into the DB by $k_{DB}$ and the minimum number of entries needed to initiate the use of the metamodel--based pre--evaluation phase by $k_{min}$. Then, the steps of the PCA--driven MAEA can be described as follows:
+\begin{description}
+  \item[Step 1:] For the current offspring population $S^{g}_\lambda$, set $\lambda^*\!=\!\lambda$ (if $k_{DB}\!<\!k_{min}$) or  $\lambda^*\!=\!\lambda_{ex}$ (else). 
+  \item[Step 2:] If $k_{DB}\!\ge\!k_{min}$, train $\lambda$ RBF networks on paired input--output patterns selected from the DB, in the vicinity of each offspring. Pre--evaluate the $\lambda$ population members on the so--trained metamodels. Select the $\lambda_{ex}$ top of them, based on dominality and proximity criteria.
+  \item[Step 3:] Evaluate the $\lambda_{ex}$ offspring on the problem--specific evaluation software. Update $S^{g}_e$.
+  \item[Step 4:] Compute the current set of principal components based on the updated elite set $S^{g}_e$ (eqs. \ref{Cov_Mat} and \ref{spectral}).
+  \item[Step 5:] Align the design space to so--computed principal components (eq. \ref{align}). 
+  \item[Step 6:] Create the new offspring population $S^{g+1}_\lambda$ through the application of the evolution operator on the aligned individuals. Re--align the generated offspring to the original design space coordinate system,(eq.~\ref{re-align}).
+  \item[Step 7:] Set $g\!\leftarrow\!g\!+\!1$; go to step 1.
+\end{description}
+The above algorithm can readily be transformed to EA(PCA) by eliminating the use of metamodels or by setting $k_{min}$ to a practically infinite number.  
+%\figuremacroW{MAEAPCA2}{MAEA-PCA}{Schematic representation of the PCA-driven MAEA algorithm.}{1.0}
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{14cm}{!}{\includegraphics{MAEAPCA2.eps}}
+\end{minipage}
+\caption{Schematic representation of the PCA-driven MAEA algorithm.} 
+\label{MAEAPCA2}
+\end{figure}
+
+
+%\figuremacroW{HypervolumeComparison}{Hypervolume Comparison}{Hypervolume comparison between EA and EA(PCA), metamodels where not used due to the fast evaluation time of the welded beam case. EA(PCA) outperforms traditional EA even though the dimensionality of the problem in hand is very low.}{0.9}
+
+\subsection{Investigation of the effects of the use of PCA-driven evolution operator in ill-posed optimization problems}
+
+In order to demonstrate the possible performance gain from the use of the PCA-driven EA ten runs for the aforementioned (Welded beam) case and the two mathematical test cases presented in section \ref{Inv2} were performed with different random number generator seeding. The results fo them are presented below. 
+
+Regarding the welded beam test case the average hypervolume indicator in respect to evaluations, over the ten runs, is presented in fig. \ref{HypervolumeComparison}. 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{10cm}{!}{\includegraphics{HypervolumeComparison.eps}}
+\end{minipage}
+\caption{Hypervolume comparison between EA and EA(PCA), metamodels where not used due to the fast evaluation time of the welded beam case. EA(PCA) outperforms traditional EA even though the dimensionality of the problem in hand is very low.} 
+\label{HypervolumeComparison}
+\end{figure}
+
+In figure \ref{HypervolumeComparison} one can observe that, even though, the dimension of the problem was deliberately set very low ($N=2$), for observability reasons, something that as shown in section \ref{Inv2} decreases the expected gain from the use of the proposed method. Nevertheless, though, the proposed method still outperforms the traditional EA.  
+
+The comparison between traditional evolution operators and PCA-driven one of the 30D non-separable ellpsoid with $a=1000$ (eq. \ref{ellipse})is presented in fig. \ref{Ellt3}. The plots refer to the mean objective function values of the aforementioned $10$ runs. 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{10cm}{!}{\includegraphics{1000_30d_pca.eps}}
+\end{minipage}
+\caption{Convergence comparison between for the 30D ellipsoid case (eq. \ref{ellipse}) with condition number ($a = 1000$). The proposed PCA-driven evolution operators significantly outperform the traditional ones.} 
+\label{Ellt3}
+\end{figure}
+
+In figure \ref{Ellt3} one can observe the significant gain from the use of the proposed method in comparison with a traditional EA in the 30D ellipsoid case.
+
+Regarding the multidimensional and multi-modal test case of eq.\ref{mm}, comparison between PCA-driven and traditional evolution operators are presented in the 30D version in fig.\ref{mmt3}.  
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{10cm}{!}{\includegraphics{30d_pca.eps}}
+\end{minipage}
+\caption{Convergence comparison between for the 30D multi-modal case (eq. \ref{mm}). The proposed PCA-driven evolution operators significantly outperform the traditional ones.} 
+\label{mmt3}
+\end{figure}
+
+In figure \ref{mmt3} one can observe that the use of PCA-driven evolution operators significantly enhances the EA efficiency.
+
+\FloatBarrier
+\section{EAs assisted by PCA-assisted metamodels}
+The inexact pre-evaluation (IPE), in which appropriately trained artificial neural networks are used as metamodels, suffers a lot from the curse of dimensionality. By increasing the problem dimension, the prediction accuracy of ANNs decreases and the their training time increases. In this thesis, a method which is capable of, appropriately, reducing the number of the ANNs sensory nodes is proposed. As mentioned above the eigenvectors extracted via PCA performed on the members of the elite population denote the directions that, if used as design variables, would lead to a separable objective function. The eigenvalues computed by the same PCA denote the variance of the elite set on the corresponding direction. If a direction has high variance it means that the members of the elite population are considerably scattered and that this direction is of low importance for the optimization problem in hand. On the other hand, if a direction has small variance this means that the members of the elite population are concentrated in a small region thus the direction is of greater importance for the optimization.  The proposed method takes advantage of this fact and cuts of the ANNs sensory nodes that are dedicated to the less important directions of the design space and thus train a ANN of lower dimension. It is important to node that this truncation takes place only during the ANN training phase and not during the evolution, the EA is free to vary any of the complete set of the design variables and its not limited to a subset of them.        
+
+
+To this end, first, all the selected training patterns have to be rotated/aligned with the eigenvectors and then, the less important (higher eigenvalues) components of them are cut of.    
+
+For the purpose of demonstration, the proposed method is applied to the welded beam problem since this problem has two degrees of freedom. The use of the IPE technique, in its standard form, would require the use of RBF networks with two sensory nodes each. They must be trained on neighbouring to the candidate solution, already evaluated stored individuals as shown in figure \ref{2dann}. 
+    
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{15cm}{!}{\includegraphics{2dANN.eps}}
+\end{minipage}
+\caption{Welded beam test problem: ANN with two sensory node used as metamodel in the standard IPE form. The ANN prediction is plotted as a surface grid and the training patterns used for its training as dots.} 
+\label{2dann}
+\end{figure}
+
+The proposed method suggests RBF networks with only a single sensory node to be trained on the most significant direction with respect to $\Phi$, paired with the output (fig.\ref{1dann}-right). This is the direction with the smallest eigenvalue resulting from the use of PCA on the current elite-set. In figures \ref{reco1} and \ref{2dann} the principal directions (eigenvectors) are shown, $\lambda_1$ denoted the principal direction with the largest eigenvalue and $\lambda_2$ the one with the smallest eigenvalue.   
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.0cm}{!}{\includegraphics{1dANN_e1.eps}}
+\end{minipage}
+\begin{minipage}[b]{0.5\linewidth}
+ \centering
+ \resizebox*{7.0cm}{!}{\includegraphics{1dANN_e2.eps}}
+\end{minipage}
+\caption{Welded beam test problem: Training patters projected on the ($\Phi,\lambda_1$) plane (left).  Training patterns projected on the ($\Phi,\lambda_2$) plane. The proposed method suggest RBF networks (used as metamodel by the IPE technique) to be trained only on the ($\Phi,\lambda_2$) plane. Training RBF networks on the ($\Phi,\lambda_1$) plane, as it is shown in the left figure here, would be of no use since a) the prediction quality of the network would be bad due to the scattering of the training patterns and b) the $\lambda_1$ direction is of lower importance with respect to $\Phi$ thus it holds less information on the quality of the to-be-evaluated design.} 
+\label{1dann}
+\end{figure}
+
+From figure \ref{1dann}, one may see that the ``shape'' of the $\Phi$ distribution over the design space (in the vicinity the candidate solution) can be captured by considering only the $\lambda_2$ direction on the other hand the $\lambda_1$ direction in much less important. In fact, in this MOO case direction $\lambda_1$ points tangential to the current Pareto front approximation and goes through designs of about  same $\Phi$ value. The aforementioned technique is expected to enhance the MAEA efficiency in high-dimensional problems by reducing the minimum amount of DB entries being necessary before the IPE phase starts, reducing the metamodel training time and leading to more dependable objective function predictions by the metamodel.     
+
+%stelios 
+\subsection{Investigation of the effects of the use of PCA assisted metamodels in ill-posed optimization problems}
+
+To demonstrate the possible performance gain from the use of the proposed PCA assisted metamodels 10 runs for the two mathematical test cases presented in section \ref{Inv2} were performed with different random number generator seeding. The results of them are presented below. 
+
+Regarding comparison between traditional metamodels using PCA only to drive the evolution operators (MAEA(PCA)) and PCA assisted metamodels  or M(PCA)AEA(PCA) of the 30D non-separable ellpsoid with $a=1000$ (eq. \ref{ellipse}) is presented in fig. \ref{Ellt3-m}. The plots refer to the mean objective function values of the aforementioned $10$ runs. IPE phase for MAEA(PCA) initiated after $300$ individuals where stored in the database and $25$ to $29$ training patterns, in the $\Re^{30}$ space, where used to train the RBF networked employed as metamodel. Regarding the M(PCA)AEA(PCA), IPE phase started after only $100$ individuals where stored in the database since only $4$ to $8$ training patterns, in the truncated  $\Re^{10}$  space, where required for the RBF network training. The $\Re^{10}$ is comprised by the $10$ most important directions in the design space according to method proposed above. 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{10cm}{!}{\includegraphics{1000_30d_pca_ipe.eps}}
+\end{minipage}
+\caption{Convergence comparison between for the 30D ellipsoid case (eq. \ref{ellipse}) with condition number ($a = 1000$). The proposed M(PCA)AEA(PCA) method outperform the MAEA(PCA) one.} 
+\label{Ellt3-m}
+\end{figure}
+
+
+Regarding the multidimensional and multi-modal test case of eq.\ref{mm}, comparison between MAEA(PCA) and M(PCA)AEA(PCA) are presented for the 30D version in fig.\ref{mmt3m}. Regarding MAEA(PCA)  IPE phase initiated after $300$ individuals where stored in the date base and $15$ to $19$ training patterns, in the $\Re^{30}$ space, where used to train the  metamodel. As far at the M(PCA)AEA(PCA) is concerned, the training pattern dimension was truncated from $30$ to the $10$ most important regarding $f$. That allowed for the  IPE phase to start after only $100$ individuals where stored in the database since only $5$ to $9$ training patterns where required for the RBF network training.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{30d_pca_ipe.eps}}
+\end{minipage}
+\caption{Convergence comparison between for the 30D multi-modal case (eq. \ref{mm}).The proposed M(PCA)AEA(PCA) method outperform the MAEA(PCA) one.} 
+\label{mmt3m}
+\end{figure}
+
+In figures \ref{Ellt3-m} and \ref{mmt3m} one can observe that the use of PCA assisted metamodels further enhances the MAEA efficiency.
+
+%stelios
+
+\section{Design of a compressor cascade using the proposed M(PCA)AEA(PCA) method}
+
+
+The design of a two dimensional compressor cascade operating at $M_1=0.54$, $a_1=44^o$ and $Re=4\times10^5$ for minimum total pressure losses ($\omega$) eq.\ref{omegaLosses} is sought. 
+
+The blade airfoil is designed subject to a number of aerodynamic and geometrical constraints: the optimal airfoil must turn the flow by more than $30^o$ and ensure that its thickness at three chord-wise positions ($0.3c$, $0.6c$ \& $0.9c$) must be greater that ($0.10c$, $0.08c$ \& $0.01c$)  respectively.     
+
+The airfoil shape is parameterized based on a mean-camber line and thickness distributions scheme as presented in section \ref{Drela1}, a parameterization that yields $27$ design variables.
+
+The merits of the proposed M(PCA)AEA(PCA) method will be examined through the comparison of a traditional MAEA against a M(PCA)AEA(PCA) where PCA is used both to drive the evolution operators and also during the IPE phase to reduce the metamodel dimension. The populations for both MAEAs are $\mu=20$, $\lambda=60$ and $\lambda_e=6$. Both cases use local RBF networks as metamodels trained on a small number of automatically selected training patterns. The MAEA uses a number of  $20$ to $30$ training patterns in the $\Re^{27}$ space. IPE phase for MAEA starts after $400$ individuals are stores in the database. Regarding M(PCA)AEA(PCA) the RBF networks used as metamodels are trained with $5$ to $8$ training patterns in the reduced as presented above $\Re^{10}$ space. The reduced dimension makes possible the use of metamodels significantly earlier, the IPE phase for M(PCA)AEA(PCA) starts after only $200$ individuals are stored in the database. 
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{11cm}{!}{\includegraphics{CompPCA.eps}}
+\end{minipage}
+\caption{Convergence comparison between MAEA and M(PCA)AEA(PCA) methods.} 
+\label{PCADrelaRes}
+\end{figure}
+
+Figure \ref{PCADrelaRes} shows the convergence of both methods. M(PCA)AEA(PCA) outperforms the traditional MAEA during all but the initial steps of the optimization procedure. 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{16cm}{!}{\includegraphics{ResD.eps}}
+\end{minipage}
+\caption{The optimal airfoil resulting form M(PCA)AEA(PCA). Left: mean camper line and thickness distribution together with their control polygons. Right: The final airfoil after superimposing thickness distribution on the mean camper line and turned accordingly with the stagger angle.} 
+\label{PCADrelaRes}
+\end{figure}
+
+The optimal airfoil resulting form M(PCA)AEA(PCA) (fig. \ref{PCADrelaRes}) has total pressure losses $\omega=0.01803$ and respects both the thickness and flow turning constraints.  Flow turning of the blade in hand is $\Delta a=30^o$
+
+\begin{figure}[h!]
+\begin{minipage}[b]{1\linewidth}
+ \centering
+ \resizebox*{12cm}{!}{\includegraphics{Best_CP_PCA.eps}}
+\end{minipage}
+\caption{Pressure coefficient $C_p$ of the optimal airfoil fig.\ref{CBRDrelaRes}.} 
+\label{PCADrelaRes_cp}
+\end{figure}
+
+% ---------------------------------------------------------------------------
+% ----------------------- end of thesis sub-document ------------------------
+% ---------------------------------------------------------------------------

@@ -1,0 +1,58 @@
+##############################
+reset
+#set term post eps monochrome solid 24
+set term post eps enhanced color solid 24
+set output 'final_pareto.eps'
+set size 0.8,0.8
+set grid
+set zlabel'f_3'
+set xlabel'f_1'
+set ylabel'f_2'
+set ztics 0.4
+set xtics 0.1
+set ytics 0.05
+#set zlabel'Cavitation quality'
+sp "./out_L1.log" u 1:2:3 lt 1 pt 6 ps 0.75  t"",\
+	'ttt' lt 0 pt 7 ps 2.0  t"" 
+##############################
+##############################
+reset
+#set term post eps monochrome solid 24
+set term post enhanced eps color solid 24
+set output 'final_pareto2d1.eps'
+set size 0.8,0.8
+set grid
+set ytics 0.04
+set title''
+set xlabel'f_1'
+set ylabel'f_2'
+p "./out_L1.log" u 1:2 lt 1 pt 6 ps 0.75  t"",\
+	'ttt' u 1:2 lt 0 pt 7 ps 2.0  t"" 
+##############################
+##############################
+reset
+#set term post eps monochrome solid 24
+set term post eps enhanced color solid 24
+set output 'final_pareto2d2.eps'
+set size 0.8,0.8
+set grid
+set title''
+set xlabel'f_2'
+set ylabel 'f_3'
+set xtics 0.05
+p "./out_L1.log" u 2:3 lt 1 pt 6 ps 0.75  t"",\
+	'ttt' u 2:3 lt 0 pt 7 ps 2.0  t"" 
+##############################
+##############################
+reset
+#set term post eps monochrome solid 24
+set term post eps  enhanced color solid 24
+set output 'final_pareto2d3.eps'
+set size 0.8,0.8
+set grid
+set title''
+set xlabel'f_1'
+set ylabel'f_3'
+p "./out_L1.log" u 1:3 lt 1 pt 6 ps 0.75  t"Pareto front",\
+	'ttt' u 1:3 lt 0 pt 7 ps 2.0  t"selected individual" 
+##############################

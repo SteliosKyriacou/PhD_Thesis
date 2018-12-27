@@ -1,0 +1,47 @@
+%
+\begin{titlepage}
+\thispagestyle{empty}
+%
+%
+%
+\begin{flushleft}
+\mbox{
+\begin{minipage}[c]{0.20\textwidth}
+%   \scalebox{.15}{\epsfig{file=pyrforos.eps}}
+   \scalebox{.20}{\includegraphics{pyrforos}}
+\end{minipage}
+\begin{minipage}[c]{30em}
+   \raggedright
+   \sc \bf
+   {\large National Technical University of Athens} \\
+   School of Mechanical Engineering \\
+   Department of Fluids \\
+   Lab of Thermal Turbomachines\\
+   Parallel CFD \& Optimization Unit\\
+\end{minipage}
+}
+\end{flushleft}
+
+\vskip  3cm
+
+\begin{center}
+{\large \bf Evolutionary Algorithm-based Design-Optimization Methods in Turbomachinery}
+\vskip  2cm
+A Thesis Submitted to the National Technical University of Athens
+for the degree of Doctor of Philosophy
+in the Faculty of Mechanical Engineering
+\vskip  1cm
+{\bf Stylianos A. KYRIACOU}
+\vskip  1cm
+%(Κείμενο υπό διόρθωση)
+
+\vskip  5cm
+Supervisor : KYRIAKOS C. GIANNAKOGLOU 
+\vskip .1cm
+Professor NTUA 
+
+\vskip  1cm
+ Athens, 2013
+\end{center}
+
+\end{titlepage}

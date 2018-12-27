@@ -1,0 +1,119 @@
+\ProvidesPackage{mkkalgo}[2005/09/18 Algorithmic environment]
+\NeedsTeXFormat{LaTeX2e}
+
+\RequirePackage{enumlist}
+\RequirePackage{amsthm}
+\RequirePackage{pifont}
+\RequirePackage{ifthen}
+\RequirePackage{calc}
+
+\newcommand{\@algorithmname}{Algorithm}
+\@ifpackagewith{babel}{greek}
+{\renewcommand{\@algorithmname}{\iflanguage{greek}{Αλγόριθμος}{Algorithm}}
+}
+{}
+
+\newcounter{@algoi}
+\newcounter{@algoii}
+\renewcommand{\the@algoi}{\arabic{@algoi}}
+\renewcommand{\the@algoii}{\alph{@algoii}}
+\newcommand{\@label}{}
+
+\newcommand{\eoasymbol}{\ding{122}}
+
+\newlength{\bracksep}
+\setlength{\bracksep}{0.em}
+
+\newcounter{@depth}
+\newenvironment{algorithm}[1][]
+{
+\addtocounter{@depth}{+1}
+\ifthenelse{\equal{\value{@depth}}{1}}
+{\renewcommand{\@label}{#1}\renewcommand{\eolsymbol}{\eoasymbol}
+}
+{\renewcommand{\eolsymbol}{}
+}
+\renewcommand{\p@@algoi}{}
+\ifthenelse{\equal{#1}{}}
+{\renewcommand{\p@@algoii}{\@label\the@algoi}}
+{\renewcommand{\p@@algoii}{\the@algoi}}
+
+\begin{list}
+{}%default label
+{
+\ifthenelse{\equal{\value{@depth}}{1}}
+{\usecounter{@algoi}}
+{\usecounter{@algoii}}
+\renewcommand{\makelabel}[1]
+{
+\ifthenelse{\equal{\value{@depth}}{1}}
+% depth == 1:
+{
+\textbf{\@label \the@algoi.}%
+\ifthenelse{\not\equal{##1}{}}{ [\hspace{\bracksep}##1\hspace{\bracksep}]}{}
+}
+% depth > 1:
+{
+\ifthenelse{\equal{#1}{}}{\textbf{\@label \the@algoi\the@algoii.}}
+{\textbf{#1 \the@algoi\the@algoii}}
+\ifthenelse{\not\equal{##1}{}}{ [\hspace{\bracksep}##1\hspace{\bracksep}]}{}
+}
+}% makelabel
+\settowidth{\labelwidth}{\@label9.}
+\setlength{\@len}{\labelwidth + \labelsep}
+\ifthenelse{\lengthtest{ \@len > \leftmargin}}
+{\setlength{\itemindent}{\@len - \leftmargin}}{}
+}% declarations
+}% end of environment begdef
+{
+\end{list}
+\addtocounter{@depth}{-1}
+}% end of environment enddef
+
+\newlength{\@len}
+\newtheoremstyle{@algstyle}
+{\topsep}% space-above
+{\topsep}% space-below
+{\normalfont}% body-style
+{}% indent
+{\normalfont}% head-style
+{ }% head-after-punct
+{ }% head-after-space
+{\thmnote{\textbf{#3}}}% head-full-spec
+\theoremstyle{@algstyle}\newtheorem{@alg}{}
+\theoremstyle{plain}
+
+\newenvironment{namedalgorithm}[3]
+{
+\renewcommand{\@label}{#1}
+\renewcommand{\p@@algoi}{\@label}
+\renewcommand{\p@@algoii}{\@label\the@algoi}
+\renewcommand{\the@alg}{\@label}
+\addtocounter{@depth}{+1}
+\begin{@alg}[\@algorithmname\ #1]
+\ifthenelse{\not\equal{#1}{}}{(#2).}{}
+\ifthenelse{\not\equal{#1}{}}{#3}{}\newline
+\vspace{-0.5\baselineskip}
+\begin{list}
+{}%default label
+{
+\usecounter{@algoi}
+\renewcommand{\makelabel}[1]{%
+\textbf{\@label \the@algoi.}%
+\ifthenelse{\not\equal{##1}{}}{ [\hspace{\bracksep}##1\hspace{\bracksep}]}{}%
+}% makelabel
+\settowidth{\labelwidth}{\@label9.}
+\setlength{\@len}{\labelwidth + \labelsep}
+\ifthenelse{\lengthtest{ \@len > \leftmargin}}
+{\setlength{\itemindent}{\@len - \leftmargin}}{}
+\setlength{\topsep}{0.mm}
+\renewcommand{\eolsymbol}{\eoasymbol}
+}% declarations
+}% end of environment begdef
+{
+\end{list}
+\end{@alg}
+\addtocounter{@depth}{-1}
+}% end of environment enddef
+
+

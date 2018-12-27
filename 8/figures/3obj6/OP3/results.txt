@@ -1,0 +1,16 @@
+0.0180184   ! mass Flow OutletKC.opt
+0.0237177   ! Swirl  OutletKC.opt
+5.08882   ! Sum of Profiles Load Median Deviation  
+321   ! Sum of SS monotony Changes  
+348   ! Sum of monotony Changes  
+0.033845   ! Sum of BAD CP Profile  
+7.62673   ! hptot  
+7.10995   ! hMzRot  
+-7.10995   ! minus hMzRot  
+7.13643   ! hcuRot();  
+-1.50202   ! sigma_his_rotor_blade  
+-0.749678   ! sigma_his_rotor_hub  
+-0.8954   ! sigma_his_rotor_shroud  
+1.25372   ! Sum of Profiles Load Median Deviation  spanwise
+0.00297596   ! SUM ALL RESIDUALS  
+0.0503418272218769 !massFlow 

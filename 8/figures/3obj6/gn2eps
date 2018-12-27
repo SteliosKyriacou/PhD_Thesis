@@ -1,0 +1,14 @@
+reset
+set term post eps m enhanced
+set output 'final_Pareto.eps'
+set size 0.7,0.7
+set grid
+set ylabel 'f2'   1.2,0.0
+set xlabel 'f1' 1.2,0.0
+#set xr[.0:1.00]
+set title '3 dimentional pareto frond '
+#set key 34.5,1.9
+sp "../../out_L1.log" u 1:2:3 t"Pareto frond",\
+	'ttt' t"sellected individual" 
+
+

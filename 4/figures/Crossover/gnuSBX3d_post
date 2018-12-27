@@ -1,0 +1,33 @@
+#Need results from gnuSBX3dPCA (set tables)
+reset
+#set term post eps m enhanced
+set term post eps color
+set output 'SBX3dparents2.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set title"SBX (n=0)" 
+set grid
+set hidden3d 
+#set palette defined (1 "blue", 0 "white", 2 "red")
+
+set xr[0:8]
+set yr[0:8]
+
+p './SBX3dparents2.dat' u 1:2:3 w image t "", './out_L1.log'  u 4:5 w p t 'Pareto'
+
+#splot './SBX3dparents2.dat' u 1:2:3 w pm3d, \
+#      './out_L1.log' u 4:5:($1*0) w lp
+reset
+#set term post eps m enhanced
+set term post eps color
+set output 'SBX3dparents2PCA.eps'
+set size 0.5,0.5
+set pointsize 0.2 
+set title"SBX (n=0)" 
+set grid
+set hidden3d 
+#set palette defined (1 "blue", 0 "white", 2 "red")
+
+set xr[0:8]
+set yr[0:8]
+p './SBX3dparents2PCA.dat' u 1:2:3 w image t'', './out_L1.log' u 4:5 w p t 'Pareto'

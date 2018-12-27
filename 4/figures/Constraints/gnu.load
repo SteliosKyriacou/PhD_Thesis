@@ -1,0 +1,47 @@
+#HyperVolume
+reset
+set xlabel 'Exact Evaluations'
+set ylabel 'Pareto strength (Hyper-volume indicator)'
+#set xrange [0:1]
+#set yrange [0:1]
+set grid
+set key top left
+set size {1.2,1.2}
+set term post eps mono solid 24
+#set yr [0.7:0.9]
+#set log y
+set output 'HypervolumeComparison.eps'
+p "<paste EA.log_L1.log hyper.dat " u 4:24 w lp t"EA(PCA)" ,\
+  "<paste NOPCA/EA.log_L1.log NOPCA/hyper.dat " u 4:24 w lp t"EA"
+
+#HyperVolume
+reset
+set xlabel 'X1'
+set ylabel 'X2'
+#set xrange [0:1]
+#set yrange [0:1]
+set grid
+set key top right
+set size {1.2,1.2}
+#set term post eps color solid 24
+set term post eps mono solid 24
+#set yr [0.7:0.9]
+#set log y
+set output 'DOFs_NOPCA.eps'
+p "NOPCA/out_L1.log" u 4:5 pt 5 lw 4 w p t"Pareto", "NOPCA/out_L1_G0.log" u 4:5 pt 6 lw 2 w p t"Generetion 0" 
+
+#HyperVolume
+reset
+set xlabel 'F1'
+set ylabel 'F2'
+#set xrange [0:1]
+#set yrange [0:1]
+set grid
+set key top left
+set size {1.2,1.2}
+#set term post eps color solid 24
+set term post eps mono solid 24
+#set yr [0.7:0.9]
+#set log y
+set output 'Pareto_NOPCA.eps'
+p "NOPCA/out_L1.log" u 1:2 lw 4 w p t"" 

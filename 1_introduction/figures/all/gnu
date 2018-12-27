@@ -1,0 +1,90 @@
+reset
+set term post eps m enhanced
+set output 'Optimization.eps'
+set size 0.8,0.8
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xtics 1
+set ytics 5000
+set xlabel 'Year'
+set ylabel ''
+set yr [15000:65000]
+set xr [2001:2012]
+set title 'Publications regarding optimization'
+plot 'pubs_optim' using 1:2 with impulse lw 40 t'http://www.sciencedirect.com'
+
+
+reset
+set term post eps m enhanced
+set output 'EA.eps'
+set size 0.8,0.8
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xtics 1
+set ytics 1000
+set xlabel 'Year'
+set ylabel ''
+set yr [1500:7000]
+set xr [2001:2012]
+set title 'Publications regarding EAs'
+plot 'pubs_EA' using 1:2 with impulse lw 40 t'http://www.sciencedirect.com'
+
+reset
+set term post eps m enhanced
+set output 'turbo.eps'
+set size 0.8,0.8
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xtics 1
+set ytics 10
+set xlabel 'Year'
+set ylabel ''
+set yr [5:65]
+set xr [2001:2012]
+set title 'Publications regarding optimization in turbomachines'
+plot 'pubs_turbomachines' using 1:2 with impulse lw 40 t'http://www.sciencedirect.com'
+
+reset
+set term post eps m enhanced
+set output 'hydr.eps'
+set size 0.8,0.8
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xtics 1
+set ytics 1
+set xlabel 'Year'
+set ylabel ''
+set yr [0:15]
+set xr [2001:2012]
+set title 'Publications regarding optimization in hydraulic turbomachines'
+plot 'pubs_hydralic' using 1:2 with impulse lw 40 t'http://www.sciencedirect.com'
+
+reset
+set term post eps m enhanced
+set output 'therm.eps'
+set size 0.8,0.8
+set pointsize 0.2 
+set grid
+set title ''
+set xr [0:1]
+#set yr [0:10]
+set xtics 1
+set ytics 5
+set xlabel 'Year'
+set ylabel ''
+set yr [0:45]
+set xr [2001:2012]
+set title 'Publications regarding optimization in thermal turbomachines'
+plot 'pubs_thermal' using 1:2 with impulse lw 40 t'http://www.sciencedirect.com'

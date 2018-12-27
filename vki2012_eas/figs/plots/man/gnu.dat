@@ -1,0 +1,22 @@
+#HyperVolume
+reset
+set term post eps m enhanced 
+set output 'manConv.eps'
+set size 0.7,0.7
+set grid
+#set border 3 lw 3
+#unset xtics 
+#unset ytics 
+#unset x2tics
+#unset y2tics
+set xr[:2000]
+#set xtics nomirror 
+#set ytics nomirror 
+set xtics 250 
+#set ytics 0.82,0.02,0.96 
+set xlabel 'Exact Evaluations'
+set ylabel 'I_H' 1.0,0.0
+set key 1500, 0.86
+p 'scoresEA.log'        u 2:((40000-$3)/40000) w l t 'EA' lt 3 lw 3,\
+  'scoresIPEintpl.log'  u 2:((40000-$3)/40000) w l t 'MAEA(RBF)' lw 3,\
+  'scoresIPEauto.log'   u 2:((40000-$3)/40000) w l t 'MAEA(RBF-SOM)' lt 1 lw 3

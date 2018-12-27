@@ -1,0 +1,12 @@
+reset 
+set parametric 
+set view map 
+set palette negative 
+set size square 
+set xrange [-50:50] 
+set yrange [-50:50] 
+set urange [-50:50] 
+set vrange [-50:50] 
+set style line 1 lt 2 lc rgb "black" lw 2 
+splot u,v,u with pm3d, u, 1/u,0 ls 1 
+
